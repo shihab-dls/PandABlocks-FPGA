@@ -4,9 +4,11 @@
 # list see the documentation:
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
 
+import os
 import sys
 from pathlib import Path
 from subprocess import check_output
+from pkg_resources import require
 
 import requests
 
