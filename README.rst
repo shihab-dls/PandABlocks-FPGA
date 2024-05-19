@@ -1,55 +1,55 @@
-PandABlocks-FPGA
-================
+pandablocks
+=============================================================================
 
-|code_ci| |docs_ci| |license|
+|code_ci| |docs_ci| |coverage| |pypi_version| |license|
 
-PandABlocks-FPGA contains the firmware that runs on the FPGA inside a Zynq
-module that is the heart of a PandABlocks enabled device like PandABox.
+This is where you should write a short paragraph that describes what your module does,
+how it does it, and why people should use it.
 
 ============== ==============================================================
+PyPI           ``pip install PandABlocks-FPGA``
 Source code    https://github.com/PandABlocks/PandABlocks-FPGA
 Documentation  https://PandABlocks.github.io/PandABlocks-FPGA
-Changelog      https://github.com/PandABlocks/PandABlocks-FPGA/blob/master/CHANGELOG.rst
+Releases       https://github.com/PandABlocks/PandABlocks-FPGA/releases
 ============== ==============================================================
 
+This is where you should put some images or code snippets that illustrate
+some relevant examples. If it is a library then you might put some
+introductory code here:
 
-Installation
-------------
+.. code-block:: python
 
-You need to define a CONFIG file with some variables in it. The simplest is
-to copy CONFIG.example and edit it. After this type::
+    from pandablocks import __version__
 
-    make
+    print(f"Hello pandablocks {__version__}")
 
-to build the zpkgs for all apps. More information in the documentation.
+Or if it is a commandline tool then you might put some example commands here::
 
-Changelog
----------
+    $ python -m pandablocks --version
 
-See `CHANGELOG`_
-
-Contributing
-------------
-
-See `CONTRIBUTING`_
-
-.. |code_ci| image:: https://github.com/PandABlocks/PandABlocks-FPGA/actions/workflows/code.yml/badge.svg?branch=master
-    :target: https://github.com/PandABlocks/PandABlocks-FPGA/actions?query=workflow%3A%22Code+CI%22
+.. |code_ci| image:: https://github.com/PandABlocks/PandABlocks-FPGA/actions/workflows/code.yml/badge.svg?branch=main
+    :target: https://github.com/PandABlocks/PandABlocks-FPGA/actions/workflows/code.yml
     :alt: Code CI
 
-
-.. |docs_ci| image:: https://github.com/PandABlocks/PandABlocks-FPGA/workflows/Docs%20CI/badge.svg?branch=master
-    :target: https://github.com/PandABlocks/PandABlocks-FPGA/actions?query=workflow%3A%22Docs+CI%22
+.. |docs_ci| image:: https://github.com/PandABlocks/PandABlocks-FPGA/actions/workflows/docs.yml/badge.svg?branch=main
+    :target: https://github.com/PandABlocks/PandABlocks-FPGA/actions/workflows/docs.yml
     :alt: Docs CI
+
+.. |coverage| image:: https://codecov.io/gh/PandABlocks/PandABlocks-FPGA/branch/main/graph/badge.svg
+    :target: https://codecov.io/gh/PandABlocks/PandABlocks-FPGA
+    :alt: Test Coverage
+
+.. |pypi_version| image:: https://img.shields.io/pypi/v/PandABlocks-FPGA.svg
+    :target: https://pypi.org/project/PandABlocks-FPGA
+    :alt: Latest PyPI version
 
 .. |license| image:: https://img.shields.io/badge/License-Apache%202.0-blue.svg
     :target: https://opensource.org/licenses/Apache-2.0
     :alt: Apache License
 
-.. _CHANGELOG:
-    https://github.com/PandABlocks/PandABlocks-FPGA/blob/master/CHANGELOG.rst
 
-.. _CONTRIBUTING:
-    https://github.com/PandABlocks/PandABlocks-FPGA/blob/master/CONTRIBUTING.rst
+..
+    Anything below this line is used when viewing README.rst and will be replaced
+    when included in index.rst
 
-See https://PandABlocks.github.io/PandABlocks-FPGA for more detailed documentation
+See https://PandABlocks.github.io/PandABlocks-FPGA for more detailed documentation.

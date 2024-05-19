@@ -1,0 +1,10 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: PandABlocks-FPGA
+  title: PandABlocks-FPGA
+  description: VHDL for PandA
+spec:
+  type: documentation
+  lifecycle: experimental
+  owner: user:rye74444

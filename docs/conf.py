@@ -1,209 +1,195 @@
-# -*- coding: utf-8 -*-
-# This is needed for docs build, it's here so we can use docs in modules
-import os
+# Configuration file for the Sphinx documentation builder.
+#
+# This file only contains a selection of the most common options. For a full
+# list see the documentation:
+# https://www.sphinx-doc.org/en/master/usage/configuration.html
+
 import sys
-import shutil
-import subprocess
-from pkg_resources import require
+from pathlib import Path
+from subprocess import check_output
 
-require("sphinx_rtd_theme")
-require("matplotlib")
+import requests
 
-# If extensions (or modules to document with autodoc) are in another directory,
-# add these directories to sys.path here. If the directory is relative to the
-# documentation root, use os.path.abspath to make it absolute, like shown here.
-ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
-sys.path.insert(0, ROOT)
-
-# Get the git version
-#git_version = subprocess.check_output(
-#    "git describe --abbrev=7 --dirty --always --tags".split(), text=True)
-
-
-
-# Copy across the module rst files into the build dir
-def setup(app):
-    build_dir = os.path.join(ROOT, "docs", "build")
-    if os.path.isdir(build_dir):
-        shutil.rmtree(build_dir)
-    os.mkdir(build_dir)
-    files = []
-    modules_root = os.path.join(ROOT, "modules")
-    for module_name in sorted(os.listdir(modules_root)):
-        module_root = os.path.join(modules_root, module_name)
-        for f in sorted(os.listdir(module_root)):
-            if f.endswith("_doc.rst"):
-                shutil.copy(os.path.join(module_root, f), build_dir)
-                files.append(os.path.join("build", f[:-4]))
-    target_modules_root = os.path.join(ROOT, "targets", "PandABox", "blocks")
-    #for module_name in sorted(os.listdir(target_modules_root)):
-    #    target_module_root = os.path.join(target_modules_root, module_name)
-    #    for f in sorted(os.listdir(target_module_root)):
-    #        if f.endswith("_doc.rst"):
-    #            shutil.copy(os.path.join(target_module_root, f), build_dir)
-    #            files.append(os.path.join("build", f[:-4]))
-    with open(os.path.join(build_dir, "blocks.txt"), "w") as f:
-        f.write("""
-.. toctree::
-    :maxdepth: 1
-
-    %s
-""" % ("\n    ".join(files),))
-
+import pandablocks
 
 # -- General configuration ------------------------------------------------
+
+# General information about the project.
+project = "PandABlocks-FPGA"
+
+# The full version, including alpha/beta/rc tags.
+release = pandablocks.__version__
+
+# The short X.Y version.
+if "+" in release:
+    # Not on a tag, use branch name
+    root = Path(__file__).absolute().parent.parent
+    git_branch = check_output("git branch --show-current".split(), cwd=root)
+    version = git_branch.decode().strip()
+else:
+    version = release
+
 extensions = [
-    'sphinx.ext.autodoc',
-    'sphinx.ext.intersphinx',
-    'sphinx.ext.viewcode',
-    'sphinx.ext.graphviz',  # Required for digraph in pcomp doc
-    'matplotlib.sphinxext.plot_directive',
-    'common.python.sphinx_timing_directive',
-    'common.python.sphinx_block_fields_directive',
+    # Use this for generating API docs
+    "sphinx.ext.autodoc",
+    # This can parse google style docstrings
+    "sphinx.ext.napoleon",
+    # For linking to external sphinx documentation
+    "sphinx.ext.intersphinx",
+    # Add links to source code in API docs
+    "sphinx.ext.viewcode",
+    # Adds the inheritance-diagram generation directive
+    "sphinx.ext.inheritance_diagram",
+    # Add a copy button to each code block
+    "sphinx_copybutton",
+    # For the card element
+    "sphinx_design",
 ]
 
-try:
-    import sphinxcontrib.napoleon
-except ImportError:
-    extensions.append('sphinx.ext.napoleon')
-else:
-    extensions.append('sphinxcontrib.napoleon')
+# If true, Sphinx will warn about all references where the target cannot
+# be found.
+nitpicky = True
 
+# A list of (type, target) tuples (by default empty) that should be ignored when
+# generating warnings in "nitpicky mode". Note that type should include the
+# domain name if present. Example entries would be ('py:func', 'int') or
+# ('envvar', 'LD_LIBRARY_PATH').
+nitpick_ignore = [
+    ("py:class", "NoneType"),
+    ("py:class", "'str'"),
+    ("py:class", "'float'"),
+    ("py:class", "'int'"),
+    ("py:class", "'bool'"),
+    ("py:class", "'object'"),
+    ("py:class", "'id'"),
+    ("py:class", "typing_extensions.Literal"),
+]
+
+# Both the class’ and the __init__ method’s docstring are concatenated and
+# inserted into the main body of the autoclass directive
 autoclass_content = "both"
 
-autodoc_member_order = 'bysource'
+# Order the members by the order they appear in the source code
+autodoc_member_order = "bysource"
 
+# Don't inherit docstrings from baseclasses
+autodoc_inherit_docstrings = False
+
+# Output graphviz directive produced images in a scalable format
 graphviz_output_format = "svg"
-
-# If true, Sphinx will warn about all references where the target can't be found
-nitpicky = True
 
 # The name of a reST role (builtin or Sphinx extension) to use as the default
 # role, that is, for text marked up `like this`
 default_role = "any"
 
-# Add any paths that contain templates here, relative to this directory.
-templates_path = ['_templates']
-
 # The suffix of source filenames.
-source_suffix = '.rst'
+source_suffix = ".rst"
 
 # The master toctree document.
-master_doc = 'index'
+master_doc = "index"
 
-# General information about the project.
-project = u'PandABlocks-FPGA'
-copyright = u'2015, Diamond Light Source'
-author = u'Tom Cobb'
-
-# The full version, including alpha/beta/rc tags.
-release = subprocess.check_output([
-    'git', 'describe', '--abbrev=7', '--dirty','--always', '--tags'])
-release = release.decode()
-# The short X.Y version.
-version = ".".join(release.split(".")[:2])
-
-exclude_patterns = ['_build']
+# List of patterns, relative to source directory, that match files and
+# directories to ignore when looking for source files.
+# These patterns also affect html_static_path and html_extra_path
+exclude_patterns = ["_build"]
 
 # The name of the Pygments (syntax highlighting) style to use.
-pygments_style = 'sphinx'
+pygments_style = "sphinx"
 
-intersphinx_mapping = {
-    "python": (
-        'https://docs.python.org/2.7/', None),
-    "server": (
-        'http://PandABlocks-server.readthedocs.io/en/latest/', None)
-}
+# This means you can link things like `str` and `asyncio` to the relevant
+# docs in the python documentation.
+intersphinx_mapping = {"python": ("https://docs.python.org/3/", None)}
 
 # A dictionary of graphviz graph attributes for inheritance diagrams.
-inheritance_graph_attrs = dict(rankdir="TB")
+inheritance_graph_attrs = {"rankdir": "TB"}
 
-# -- Options for HTML output ----------------------------------------------
+# Common links that should be available on every page
+rst_epilog = """
+.. _Diamond Light Source: http://www.diamond.ac.uk
+.. _black: https://github.com/psf/black
+.. _ruff: https://beta.ruff.rs/docs/
+.. _mypy: http://mypy-lang.org/
+.. _pre-commit: https://pre-commit.com/
+"""
+
+# Ignore localhost links for periodic check that links in docs are valid
+linkcheck_ignore = [r"http://localhost:\d+/"]
+
+# Set copy-button to ignore python and bash prompts
+# https://sphinx-copybutton.readthedocs.io/en/latest/use.html#using-regexp-prompt-identifiers
+copybutton_prompt_text = r">>> |\.\.\. |\$ |In \[\d*\]: | {2,5}\.\.\.: | {5,8}: "
+copybutton_prompt_is_regexp = True
+
+# -- Options for HTML output -------------------------------------------------
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-try:
-    import sphinx_rtd_theme
-    html_theme = 'sphinx_rtd_theme'
-except ImportError:
-    html_theme = 'default'
-    print('sphinx_rtd_theme not found, using default')
+#
+html_theme = "pydata_sphinx_theme"
+github_repo = "PandABlocks-FPGA"
+github_user = "PandABlocks"
+switcher_json = f"https://{github_user}.github.io/{github_repo}/switcher.json"
+switcher_exists = requests.get(switcher_json).ok
+if not switcher_exists:
+    print(
+        "*** Can't read version switcher, is GitHub pages enabled? \n"
+        "    Once Docs CI job has successfully run once, set the "
+        "Github pages source branch to be 'gh-pages' at:\n"
+        f"    https://github.com/{github_user}/{github_repo}/settings/pages",
+        file=sys.stderr,
+    )
 
-# Options for the sphinx rtd theme, use black
-html_theme_options = dict(style_nav_header_background="black")
+# Theme options for pydata_sphinx_theme
+# We don't check switcher because there are 3 possible states for a repo:
+# 1. New project, docs are not published so there is no switcher
+# 2. Existing project with latest skeleton, switcher exists and works
+# 3. Existing project with old skeleton that makes broken switcher,
+#    switcher exists but is broken
+# Point 3 makes checking switcher difficult, because the updated skeleton
+# will fix the switcher at the end of the docs workflow, but never gets a chance
+# to complete as the docs build warns and fails.
+html_theme_options = {
+    "logo": {
+        "text": project,
+    },
+    "use_edit_page_button": True,
+    "github_url": f"https://github.com/{github_user}/{github_repo}",
+    "icon_links": [
+        {
+            "name": "PyPI",
+            "url": f"https://pypi.org/project/{project}",
+            "icon": "fas fa-cube",
+        }
+    ],
+    "switcher": {
+        "json_url": switcher_json,
+        "version_match": version,
+    },
+    "check_switcher": False,
+    "navbar_end": ["theme-switcher", "icon-links", "version-switcher"],
+    "external_links": [
+        {
+            "name": "Release Notes",
+            "url": f"https://github.com/{github_user}/{github_repo}/releases",
+        }
+    ],
+    "navigation_with_keys": False,
+}
 
-# Add some CSS classes for columns and other tweaks in a custom css file
-html_css_files = ["theme_overrides.css"]
-
-# Add any paths that contain custom themes here, relative to this directory.
-#html_theme_path = []
-
-# Add any paths that contain custom static files (such as style sheets) here,
-# relative to this directory. They are copied after the builtin static files,
-# so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ['_static']
-
-# Custom sidebar templates, maps document names to template names.
-#html_sidebars = {}
-
-# Additional templates that should be rendered to pages, maps page names to
-# template names.
-#html_additional_pages = {}
+# A dictionary of values to pass into the template engine’s context for all pages
+html_context = {
+    "github_user": github_user,
+    "github_repo": project,
+    "github_version": version,
+    "doc_path": "docs",
+}
 
 # If true, "Created using Sphinx" is shown in the HTML footer. Default is True.
 html_show_sphinx = False
 
 # If true, "(C) Copyright ..." is shown in the HTML footer. Default is True.
-html_show_copyright = True
-
-# Output file base name for HTML help builder.
-htmlhelp_basename = 'PandABlocks-FPGAdoc'
+html_show_copyright = False
 
 # Logo
-html_logo = 'PandA-logo-for-black-background.svg'
-html_favicon = 'PandA-logo.ico'
-
-
-# -- Options for LaTeX output ---------------------------------------------
-
-latex_elements = {
-    # The paper size ('letterpaper' or 'a4paper').
-    #'papersize': 'letterpaper',
-
-    # The font size ('10pt', '11pt' or '12pt').
-    #'pointsize': '10pt',
-
-    # Additional stuff for the LaTeX preamble.
-    #'preamble': '',
-}
-
-# Grouping the document tree into LaTeX files. List of tuples
-# (source start file, target name, title,
-#  author, documentclass [howto, manual, or own class]).
-latex_documents = [
-    ('contents', 'PandABlocks-FPGA.tex', u'PandABlocks-FPGA Documentation',
-     u'Tom Cobb', 'manual'),
-]
-
-# -- Options for manual page output ---------------------------------------
-
-# One entry per manual page. List of tuples
-# (source start file, name, description, authors, manual section).
-man_pages = [
-    ('contents', 'PandABlocks-FPGA', u'PandABlocks-FPGA Documentation',
-     [u'Tom Cobb'], 1)
-]
-
-# -- Options for Texinfo output -------------------------------------------
-
-# Grouping the document tree into Texinfo files. List of tuples
-# (source start file, target name, title, author,
-#  dir menu entry, description, category)
-texinfo_documents = [
-    ('contents', 'PandABlocks-FPGA', u'PandABlocks-FPGA Documentation',
-     u'Tom Cobb', 'PandABlocks-FPGA', 'A short description',
-     'Miscellaneous'),
-]
-
-# Common links that should be available on every page
-rst_epilog = """"""
+html_logo = "images/dls-logo.svg"
+html_favicon = "images/dls-favicon.ico"

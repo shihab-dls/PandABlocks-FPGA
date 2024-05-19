@@ -1,0 +1,14 @@
+# Changes here will be overwritten by Copier
+_commit: 1.0.0
+_src_path: gh:DiamondLightSource/python-copier-template
+author_email: shihab.suliman.ac.uk
+author_name: Shihab Suliman
+component_owner: user:rye74444
+description: VHDL for PandA
+distribution_name: PandABlocks-FPGA
+docker: false
+docs_type: sphinx
+git_platform: github.com
+github_org: PandABlocks
+package_name: pandablocks
+repo_name: PandABlocks-FPGA
