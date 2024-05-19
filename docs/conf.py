@@ -53,9 +53,12 @@ extensions = [
     "sphinx_design",
     # So we can write markdown files
     "myst_parser",
+    # Required for digraph in pcomp doc
+    "sphinx.ext.graphviz",
     # Timing plots
-    'matplotlib.sphinxext.plot_directive',
-    'common.python.sphinx_timing_directive',
+    "matplotlib.sphinxext.plot_directive",
+    "common.python.sphinx_timing_directive",
+    "common.python.sphinx_block_fields_directive",
 ]
 
 # So we can use the ::: syntax
