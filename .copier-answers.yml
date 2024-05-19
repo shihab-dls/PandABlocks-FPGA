@@ -1,5 +1,5 @@
 # Changes here will be overwritten by Copier
-_commit: 1.0.0
+_commit: 2.1.0
 _src_path: gh:DiamondLightSource/python-copier-template
 author_email: shihab.suliman.ac.uk
 author_name: Shihab Suliman
@@ -11,4 +11,6 @@ docs_type: sphinx
 git_platform: github.com
 github_org: PandABlocks
 package_name: pandablocks
+pypi: false
 repo_name: PandABlocks-FPGA
+type_checker: pyright
