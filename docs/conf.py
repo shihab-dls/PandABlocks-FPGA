@@ -46,6 +46,9 @@ extensions = [
     "sphinx_design",
     # So we can write markdown files
     "myst_parser",
+    # Timing plots
+    'matplotlib.sphinxext.plot_directive',
+    'common.python.sphinx_timing_directive',
 ]
 
 # So we can use the ::: syntax
