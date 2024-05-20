@@ -223,4 +223,4 @@ html_show_copyright = False
 
 # Logo
 html_logo = "images/PandA-logo-for-black-background.svg"
-html_favicon = PandA-logo.ico
+html_favicon = "images/PandA-logo.ico"
