@@ -10,21 +10,12 @@ html_theme.sidebar_secondary.remove: true
 How the documentation is structured
 -----------------------------------
 
-Documentation is split into [four categories](https://diataxis.fr), also accessible from links in the top bar.
+Documentation is split into [three categories](https://diataxis.fr), also accessible from links in the top bar.
 
 <!-- https://sphinx-design.readthedocs.io/en/latest/grids.html -->
 
 ::::{grid} 2
 :gutter: 4
-
-:::{grid-item-card} {material-regular}`directions_walk;2em`
-```{toctree}
-:maxdepth: 2
-tutorials
-```
-+++
-Tutorials for typical PandA usage.
-:::
 
 :::{grid-item-card} {material-regular}`directions;2em`
 ```{toctree}
@@ -33,15 +24,6 @@ how-to
 ```
 +++
 Practical step-by-step guides for the more experienced user.
-:::
-
-:::{grid-item-card} {material-regular}`info;2em`
-```{toctree}
-:maxdepth: 2
-explanations
-```
-+++
-Explanations of how it works and why it works that way.
 :::
 
 :::{grid-item-card} {material-regular}`menu_book;2em`
@@ -53,8 +35,11 @@ reference
 Technical reference material.
 :::
 
-:::{dropdown}
+:::{dropdown} Available Blocks
+```{toctree}
+:maxdepth: 2
 blocks.rst
+```
 :::
 
 ::::
