@@ -7,7 +7,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>common.python.configs &#8212; PandABlocks-FPGA 0.1.dev2610+gc613dba documentation</title>
+    <title>common.python.configs &#8212; PandABlocks-FPGA 0.1.dev2612+gec72057 documentation</title>
   
   
   
@@ -38,7 +38,7 @@
 <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script src="../../../_static/documentation_options.js?v=d9f47358"></script>
+    <script src="../../../_static/documentation_options.js?v=c229d2bd"></script>
     <script src="../../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -149,13 +149,6 @@
   <ul class="bd-navbar-elements navbar-nav">
     
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../../tutorials.html">
-                        Tutorials
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
                       <a class="nav-link nav-internal" href="../../../how-to.html">
                         How-to Guides
                       </a>
@@ -163,15 +156,15 @@
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../../explanations.html">
-                        Explanations
+                      <a class="nav-link nav-internal" href="../../../reference.html">
+                        Reference
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../../reference.html">
-                        Reference
+                      <a class="nav-link nav-internal" href="../../../blocks.html">
+                        Available Blocks
                       </a>
                     </li>
                 
@@ -308,13 +301,6 @@ document.write(`
   <ul class="bd-navbar-elements navbar-nav">
     
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../../tutorials.html">
-                        Tutorials
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
                       <a class="nav-link nav-internal" href="../../../how-to.html">
                         How-to Guides
                       </a>
@@ -322,15 +308,15 @@ document.write(`
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../../explanations.html">
-                        Explanations
+                      <a class="nav-link nav-internal" href="../../../reference.html">
+                        Reference
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../../reference.html">
-                        Reference
+                      <a class="nav-link nav-internal" href="../../../blocks.html">
+                        Available Blocks
                       </a>
                     </li>
                 
@@ -479,7 +465,7 @@ document.write(`
 
 
 <div class="viewcode-block" id="pad">
-<a class="viewcode-back" href="../../../explanations/framework.html#common.python.configs.pad">[docs]</a>
+<a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.pad">[docs]</a>
 <span class="k">def</span> <span class="nf">pad</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">spaces</span><span class="o">=</span><span class="mi">19</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Pad the right of a name with spaces until it is at least spaces long&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">name</span><span class="o">.</span><span class="n">ljust</span><span class="p">(</span><span class="n">spaces</span><span class="p">)</span></div>
@@ -487,7 +473,7 @@ document.write(`
 
 
 <div class="viewcode-block" id="all_subclasses">
-<a class="viewcode-back" href="../../../explanations/framework.html#common.python.configs.all_subclasses">[docs]</a>
+<a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.all_subclasses">[docs]</a>
 <span class="k">def</span> <span class="nf">all_subclasses</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Recursively find all the subclasses of cls&quot;&quot;&quot;</span>
     <span class="n">ret</span> <span class="o">=</span> <span class="p">[]</span>
@@ -556,7 +542,7 @@ document.write(`
 
 
 <div class="viewcode-block" id="BlockConfig">
-<a class="viewcode-back" href="../../../explanations/framework.html#common.python.configs.BlockConfig">[docs]</a>
+<a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.BlockConfig">[docs]</a>
 <span class="k">class</span> <span class="nc">BlockConfig</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;The config for a single Block&quot;&quot;&quot;</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">number</span><span class="p">,</span> <span class="n">ini_path</span><span class="p">,</span> <span class="n">site</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -607,7 +593,7 @@ document.write(`
         <span class="bp">self</span><span class="o">.</span><span class="n">block_suffixes</span> <span class="o">=</span> <span class="n">ini_get</span><span class="p">(</span><span class="n">ini</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="s1">&#39;block_suffixes&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
 
 <div class="viewcode-block" id="BlockConfig.register_addresses">
-<a class="viewcode-back" href="../../../explanations/framework.html#common.python.configs.BlockConfig.register_addresses">[docs]</a>
+<a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.BlockConfig.register_addresses">[docs]</a>
     <span class="k">def</span> <span class="nf">register_addresses</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">block_counters</span><span class="p">):</span>
         <span class="c1"># type: (RegisterCounter) -&gt; None</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Register this block in the address space&quot;&quot;&quot;</span>
@@ -618,7 +604,7 @@ document.write(`
 
 
 <div class="viewcode-block" id="BlockConfig.filter_fields">
-<a class="viewcode-back" href="../../../explanations/framework.html#common.python.configs.BlockConfig.filter_fields">[docs]</a>
+<a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.BlockConfig.filter_fields">[docs]</a>
     <span class="k">def</span> <span class="nf">filter_fields</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">regex</span><span class="p">,</span> <span class="n">matching</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
         <span class="c1"># type: (str, bool) -&gt; Iterable[FieldConfig]</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Filter our child fields by typ. If not matching return those</span>
@@ -647,7 +633,7 @@ document.write(`
         <span class="k">return</span> <span class="n">combinedInterfaces</span>
 
 <div class="viewcode-block" id="BlockConfig.generateInterfaceConstraints">
-<a class="viewcode-back" href="../../../explanations/framework.html#common.python.configs.BlockConfig.generateInterfaceConstraints">[docs]</a>
+<a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.BlockConfig.generateInterfaceConstraints">[docs]</a>
     <span class="k">def</span> <span class="nf">generateInterfaceConstraints</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Generate MGT Pints constraints&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">interfaceConstraints</span><span class="o">=</span><span class="p">[]</span>
@@ -693,7 +679,7 @@ document.write(`
 
 
 <div class="viewcode-block" id="RegisterConfig">
-<a class="viewcode-back" href="../../../explanations/framework.html#common.python.configs.RegisterConfig">[docs]</a>
+<a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.RegisterConfig">[docs]</a>
 <span class="k">class</span> <span class="nc">RegisterConfig</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;A low level register name and number backing this field&quot;&quot;&quot;</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">number</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">prefix</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">extension</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">write_extension</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">read_extension</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">):</span>
@@ -714,7 +700,7 @@ document.write(`
 
 
 <div class="viewcode-block" id="BusEntryConfig">
-<a class="viewcode-back" href="../../../explanations/framework.html#common.python.configs.BusEntryConfig">[docs]</a>
+<a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.BusEntryConfig">[docs]</a>
 <span class="k">class</span> <span class="nc">BusEntryConfig</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;A bus entry belonging to a field&quot;&quot;&quot;</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">bus</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
@@ -729,7 +715,7 @@ document.write(`
 
 
 <div class="viewcode-block" id="FieldConfig">
-<a class="viewcode-back" href="../../../explanations/framework.html#common.python.configs.FieldConfig">[docs]</a>
+<a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.FieldConfig">[docs]</a>
 <span class="k">class</span> <span class="nc">FieldConfig</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;The config for a single Field of a Block&quot;&quot;&quot;</span>
     <span class="c1">#: Regex for matching a type string to this field</span>
@@ -771,7 +757,7 @@ document.write(`
         <span class="bp">self</span><span class="o">.</span><span class="n">extra_config_lines</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">parse_extra_config</span><span class="p">(</span><span class="n">extra_config</span><span class="p">))</span>
 
 <div class="viewcode-block" id="FieldConfig.parse_extra_config">
-<a class="viewcode-back" href="../../../explanations/framework.html#common.python.configs.FieldConfig.parse_extra_config">[docs]</a>
+<a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.FieldConfig.parse_extra_config">[docs]</a>
     <span class="k">def</span> <span class="nf">parse_extra_config</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">extra_config</span><span class="p">):</span>
         <span class="c1"># type: (Dict[str, Any]) -&gt; Iterable[str]</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Produce any extra config lines from self.kwargs&quot;&quot;&quot;</span>
@@ -781,7 +767,7 @@ document.write(`
 
 
 <div class="viewcode-block" id="FieldConfig.register_addresses">
-<a class="viewcode-back" href="../../../explanations/framework.html#common.python.configs.FieldConfig.register_addresses">[docs]</a>
+<a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.FieldConfig.register_addresses">[docs]</a>
     <span class="k">def</span> <span class="nf">register_addresses</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">counters</span><span class="p">):</span>
         <span class="c1"># type: (FieldCounter) -&gt; None</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Create registers using the FieldCounter object&quot;&quot;&quot;</span>
@@ -789,7 +775,7 @@ document.write(`
 
 
 <div class="viewcode-block" id="FieldConfig.address_line">
-<a class="viewcode-back" href="../../../explanations/framework.html#common.python.configs.FieldConfig.address_line">[docs]</a>
+<a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.FieldConfig.address_line">[docs]</a>
     <span class="k">def</span> <span class="nf">address_line</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="c1"># type: () -&gt; str</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Produce the line that should go in the registers file after name&quot;&quot;&quot;</span>
@@ -826,7 +812,7 @@ document.write(`
 
 
 <div class="viewcode-block" id="FieldConfig.config_line">
-<a class="viewcode-back" href="../../../explanations/framework.html#common.python.configs.FieldConfig.config_line">[docs]</a>
+<a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.FieldConfig.config_line">[docs]</a>
     <span class="k">def</span> <span class="nf">config_line</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="c1"># type: () -&gt; str</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Produce the line that should go in the config file after name&quot;&quot;&quot;</span>
@@ -834,7 +820,7 @@ document.write(`
 
 
 <div class="viewcode-block" id="FieldConfig.numbered_registers">
-<a class="viewcode-back" href="../../../explanations/framework.html#common.python.configs.FieldConfig.numbered_registers">[docs]</a>
+<a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.FieldConfig.numbered_registers">[docs]</a>
     <span class="k">def</span> <span class="nf">numbered_registers</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="c1"># type: () -&gt; List[RegisterConfig]</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Filter self.registers, only producing registers with a number</span>
@@ -871,7 +857,7 @@ document.write(`
 
 
 <div class="viewcode-block" id="BitOutFieldConfig">
-<a class="viewcode-back" href="../../../explanations/framework.html#common.python.configs.BitOutFieldConfig">[docs]</a>
+<a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.BitOutFieldConfig">[docs]</a>
 <span class="k">class</span> <span class="nc">BitOutFieldConfig</span><span class="p">(</span><span class="n">FieldConfig</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;These fields represent a single entry on the bit bus&quot;&quot;&quot;</span>
     <span class="n">type_regex</span> <span class="o">=</span> <span class="s2">&quot;bit_out&quot;</span>
@@ -885,7 +871,7 @@ document.write(`
 
 
 <div class="viewcode-block" id="PosOutFieldConfig">
-<a class="viewcode-back" href="../../../explanations/framework.html#common.python.configs.PosOutFieldConfig">[docs]</a>
+<a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.PosOutFieldConfig">[docs]</a>
 <span class="k">class</span> <span class="nc">PosOutFieldConfig</span><span class="p">(</span><span class="n">FieldConfig</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;These fields represent a position output&quot;&quot;&quot;</span>
     <span class="n">type_regex</span> <span class="o">=</span> <span class="s2">&quot;pos_out&quot;</span>
@@ -907,7 +893,7 @@ document.write(`
         <span class="k">return</span> <span class="nb">iter</span><span class="p">(())</span>
 
 <div class="viewcode-block" id="PosOutFieldConfig.config_line">
-<a class="viewcode-back" href="../../../explanations/framework.html#common.python.configs.PosOutFieldConfig.config_line">[docs]</a>
+<a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.PosOutFieldConfig.config_line">[docs]</a>
     <span class="k">def</span> <span class="nf">config_line</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="c1"># type: () -&gt; str</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Produce the line that should go in the config file after name&quot;&quot;&quot;</span>
@@ -921,7 +907,7 @@ document.write(`
 
 
 <div class="viewcode-block" id="ExtOutFieldConfig">
-<a class="viewcode-back" href="../../../explanations/framework.html#common.python.configs.ExtOutFieldConfig">[docs]</a>
+<a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.ExtOutFieldConfig">[docs]</a>
 <span class="k">class</span> <span class="nc">ExtOutFieldConfig</span><span class="p">(</span><span class="n">FieldConfig</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;These fields represent a ext output&quot;&quot;&quot;</span>
     <span class="n">type_regex</span> <span class="o">=</span> <span class="s2">&quot;ext_out&quot;</span>
@@ -935,7 +921,7 @@ document.write(`
 
 
 <div class="viewcode-block" id="ExtOutTimeFieldConfig">
-<a class="viewcode-back" href="../../../explanations/framework.html#common.python.configs.ExtOutTimeFieldConfig">[docs]</a>
+<a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.ExtOutTimeFieldConfig">[docs]</a>
 <span class="k">class</span> <span class="nc">ExtOutTimeFieldConfig</span><span class="p">(</span><span class="n">ExtOutFieldConfig</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;These fields represent a ext output timestamp, which requires two</span>
 <span class="sd">    registers&quot;&quot;&quot;</span>
@@ -951,7 +937,7 @@ document.write(`
 
 
 <div class="viewcode-block" id="TableFieldConfig">
-<a class="viewcode-back" href="../../../explanations/framework.html#common.python.configs.TableFieldConfig">[docs]</a>
+<a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.TableFieldConfig">[docs]</a>
 <span class="k">class</span> <span class="nc">TableFieldConfig</span><span class="p">(</span><span class="n">FieldConfig</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;These fields represent a table field&quot;&quot;&quot;</span>
     <span class="n">type_regex</span> <span class="o">=</span> <span class="s2">&quot;table&quot;</span>
@@ -968,7 +954,7 @@ document.write(`
             <span class="n">RegisterConfig</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s2">&quot;_LENGTH&quot;</span><span class="p">,</span> <span class="n">counters</span><span class="o">.</span><span class="n">new_field</span><span class="p">())])</span>
 
 <div class="viewcode-block" id="TableFieldConfig.config_line">
-<a class="viewcode-back" href="../../../explanations/framework.html#common.python.configs.TableFieldConfig.config_line">[docs]</a>
+<a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.TableFieldConfig.config_line">[docs]</a>
     <span class="k">def</span> <span class="nf">config_line</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="c1"># type: () -&gt; str</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Produce the line that should go in the config file after name&quot;&quot;&quot;</span>
@@ -1002,7 +988,7 @@ document.write(`
 
 
 <div class="viewcode-block" id="TableShortFieldConfig">
-<a class="viewcode-back" href="../../../explanations/framework.html#common.python.configs.TableShortFieldConfig">[docs]</a>
+<a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.TableShortFieldConfig">[docs]</a>
 <span class="k">class</span> <span class="nc">TableShortFieldConfig</span><span class="p">(</span><span class="n">TableFieldConfig</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;These fields represent a table field&quot;&quot;&quot;</span>
     <span class="n">type_regex</span> <span class="o">=</span> <span class="s2">&quot;table short&quot;</span>
@@ -1028,7 +1014,7 @@ document.write(`
 
 
 <div class="viewcode-block" id="ParamFieldConfig">
-<a class="viewcode-back" href="../../../explanations/framework.html#common.python.configs.ParamFieldConfig">[docs]</a>
+<a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.ParamFieldConfig">[docs]</a>
 <span class="k">class</span> <span class="nc">ParamFieldConfig</span><span class="p">(</span><span class="n">FieldConfig</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;These fields represent all other set/get parameters backed with a single</span>
 <span class="sd">    register&quot;&quot;&quot;</span>
@@ -1045,7 +1031,7 @@ document.write(`
             <span class="n">RegisterConfig</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">address</span><span class="p">,</span> <span class="n">extension</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">extension</span><span class="p">,</span> <span class="n">write_extension</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">extension_write</span><span class="p">,</span> <span class="n">read_extension</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">extension_read</span><span class="p">))</span>
 
 <div class="viewcode-block" id="ParamFieldConfig.config_line">
-<a class="viewcode-back" href="../../../explanations/framework.html#common.python.configs.ParamFieldConfig.config_line">[docs]</a>
+<a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.ParamFieldConfig.config_line">[docs]</a>
     <span class="k">def</span> <span class="nf">config_line</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="c1"># type: () -&gt; str</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Produce the line that should go in the config file after name&quot;&quot;&quot;</span>
@@ -1057,7 +1043,7 @@ document.write(`
 
 
 <div class="viewcode-block" id="CalcExtensionFieldConfig">
-<a class="viewcode-back" href="../../../explanations/framework.html#common.python.configs.CalcExtensionFieldConfig">[docs]</a>
+<a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.CalcExtensionFieldConfig">[docs]</a>
 <span class="k">class</span> <span class="nc">CalcExtensionFieldConfig</span><span class="p">(</span><span class="n">ParamFieldConfig</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;These fields act in the same way as write record from the VHDL generation </span>
 <span class="sd">    point of view, but do not have a config entry&quot;&quot;&quot;</span>
@@ -1070,7 +1056,7 @@ document.write(`
 
 
 <div class="viewcode-block" id="EnumParamFieldConfig">
-<a class="viewcode-back" href="../../../explanations/framework.html#common.python.configs.EnumParamFieldConfig">[docs]</a>
+<a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.EnumParamFieldConfig">[docs]</a>
 <span class="k">class</span> <span class="nc">EnumParamFieldConfig</span><span class="p">(</span><span class="n">ParamFieldConfig</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;An enum field with its integer entries and string values&quot;&quot;&quot;</span>
     <span class="n">type_regex</span> <span class="o">=</span> <span class="s2">&quot;(param|read|write) enum&quot;</span>
@@ -1085,7 +1071,7 @@ document.write(`
 
 
 <div class="viewcode-block" id="UintParamFieldConfig">
-<a class="viewcode-back" href="../../../explanations/framework.html#common.python.configs.UintParamFieldConfig">[docs]</a>
+<a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.UintParamFieldConfig">[docs]</a>
 <span class="k">class</span> <span class="nc">UintParamFieldConfig</span><span class="p">(</span><span class="n">ParamFieldConfig</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;A special These fields represent all other set/get parameters backed with</span>
 <span class="sd">     a single register&quot;&quot;&quot;</span>
@@ -1100,7 +1086,7 @@ document.write(`
             <span class="n">extra_config</span><span class="p">)</span>
 
 <div class="viewcode-block" id="UintParamFieldConfig.config_line">
-<a class="viewcode-back" href="../../../explanations/framework.html#common.python.configs.UintParamFieldConfig.config_line">[docs]</a>
+<a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.UintParamFieldConfig.config_line">[docs]</a>
     <span class="k">def</span> <span class="nf">config_line</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="c1"># type: () -&gt; str</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Produce the line that should go in the config file after name&quot;&quot;&quot;</span>
@@ -1113,7 +1099,7 @@ document.write(`
 
 
 <div class="viewcode-block" id="ScalarParamFieldConfig">
-<a class="viewcode-back" href="../../../explanations/framework.html#common.python.configs.ScalarParamFieldConfig">[docs]</a>
+<a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.ScalarParamFieldConfig">[docs]</a>
 <span class="k">class</span> <span class="nc">ScalarParamFieldConfig</span><span class="p">(</span><span class="n">ParamFieldConfig</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot; A special Read config for reading the different config of a</span>
 <span class="sd">    read scalar&quot;&quot;&quot;</span>
@@ -1132,7 +1118,7 @@ document.write(`
             <span class="n">extra_config</span><span class="p">)</span>
 
 <div class="viewcode-block" id="ScalarParamFieldConfig.config_line">
-<a class="viewcode-back" href="../../../explanations/framework.html#common.python.configs.ScalarParamFieldConfig.config_line">[docs]</a>
+<a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.ScalarParamFieldConfig.config_line">[docs]</a>
     <span class="k">def</span> <span class="nf">config_line</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="c1"># type: () -&gt; str</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Produce the line that should go in the config file after name&quot;&quot;&quot;</span>
@@ -1147,7 +1133,7 @@ document.write(`
 
 
 <div class="viewcode-block" id="BitMuxFieldConfig">
-<a class="viewcode-back" href="../../../explanations/framework.html#common.python.configs.BitMuxFieldConfig">[docs]</a>
+<a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.BitMuxFieldConfig">[docs]</a>
 <span class="k">class</span> <span class="nc">BitMuxFieldConfig</span><span class="p">(</span><span class="n">FieldConfig</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;These fields represent a single entry on the pos bus&quot;&quot;&quot;</span>
     <span class="n">type_regex</span> <span class="o">=</span> <span class="s2">&quot;bit_mux&quot;</span>
@@ -1162,7 +1148,7 @@ document.write(`
 
 
 <div class="viewcode-block" id="PosMuxFieldConfig">
-<a class="viewcode-back" href="../../../explanations/framework.html#common.python.configs.PosMuxFieldConfig">[docs]</a>
+<a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.PosMuxFieldConfig">[docs]</a>
 <span class="k">class</span> <span class="nc">PosMuxFieldConfig</span><span class="p">(</span><span class="n">FieldConfig</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;The fields represent a position input multiplexer selection&quot;&quot;&quot;</span>
     <span class="n">type_regex</span> <span class="o">=</span> <span class="s2">&quot;pos_mux&quot;</span>
@@ -1175,7 +1161,7 @@ document.write(`
 
 
 <div class="viewcode-block" id="TimeFieldConfig">
-<a class="viewcode-back" href="../../../explanations/framework.html#common.python.configs.TimeFieldConfig">[docs]</a>
+<a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.TimeFieldConfig">[docs]</a>
 <span class="k">class</span> <span class="nc">TimeFieldConfig</span><span class="p">(</span><span class="n">FieldConfig</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;The fields represent a configurable timer parameter &quot;&quot;&quot;</span>
     <span class="n">type_regex</span> <span class="o">=</span> <span class="s2">&quot;time&quot;</span>
@@ -1189,7 +1175,7 @@ document.write(`
 
 
 <div class="viewcode-block" id="TargetSiteConfig">
-<a class="viewcode-back" href="../../../explanations/framework.html#common.python.configs.TargetSiteConfig">[docs]</a>
+<a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.TargetSiteConfig">[docs]</a>
 <span class="k">class</span> <span class="nc">TargetSiteConfig</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;The config for the target sites&quot;&quot;&quot;</span>
     <span class="c1">#: Regex for matching a type string to this field</span>
