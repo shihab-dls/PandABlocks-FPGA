@@ -19,6 +19,35 @@ require("matplotlib")
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 sys.path.insert(0, ROOT)
 
+# Copy across the module rst files into the build dir
+def setup(app):
+    build_dir = os.path.join(ROOT, "docs", "build")
+    if os.path.isdir(build_dir):
+        shutil.rmtree(build_dir)
+    os.mkdir(build_dir)
+    files = []
+    modules_root = os.path.join(ROOT, "modules")
+    for module_name in sorted(os.listdir(modules_root)):
+        module_root = os.path.join(modules_root, module_name)
+        for f in sorted(os.listdir(module_root)):
+            if f.endswith("_doc.rst"):
+                shutil.copy(os.path.join(module_root, f), build_dir)
+                files.append(os.path.join("build", f[:-4]))
+    target_modules_root = os.path.join(ROOT, "targets", "PandABox", "blocks")
+    #for module_name in sorted(os.listdir(target_modules_root)):
+    #    target_module_root = os.path.join(target_modules_root, module_name)
+    #    for f in sorted(os.listdir(target_module_root)):
+    #        if f.endswith("_doc.rst"):
+    #            shutil.copy(os.path.join(target_module_root, f), build_dir)
+    #            files.append(os.path.join("build", f[:-4]))
+    with open(os.path.join(build_dir, "blocks.txt"), "w") as f:
+        f.write("""
+.. toctree::
+    :maxdepth: 1
+
+    %s
+""" % ("\n    ".join(files),))
+
 # -- General configuration ------------------------------------------------
 
 # General information about the project.
