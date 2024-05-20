@@ -23,7 +23,7 @@ Documentation is split into [four categories](https://diataxis.fr), also accessi
 tutorials
 ```
 +++
-Tutorials for installation and typical usage. New users start here.
+Tutorials for typical PandA usage.
 :::
 
 :::{grid-item-card} {material-regular}`directions;2em`
@@ -50,7 +50,7 @@ Explanations of how it works and why it works that way.
 reference
 ```
 +++
-Technical reference material including APIs and release notes.
+Technical reference material.
 :::
 
 ::::
