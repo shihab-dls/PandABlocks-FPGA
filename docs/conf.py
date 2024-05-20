@@ -10,6 +10,7 @@ from pathlib import Path
 from subprocess import check_output
 from pkg_resources import require
 import shutil
+from urllib.request import urlretrieve
 
 import requests
 
@@ -19,6 +20,11 @@ require("sphinx_rtd_theme")
 require("matplotlib")
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 sys.path.insert(0, ROOT)
+
+urlretrieve (
+    "https://raw.githubusercontent.com/shihab-dls/PandABlocks-FPGA/master/docs/index.md",
+    "reference/check.md"
+)
 
 # Copy across the module rst files into the build dir
 def setup(app):
