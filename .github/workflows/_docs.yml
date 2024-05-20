@@ -23,7 +23,7 @@ jobs:
         uses: ./.github/actions/install_requirements
 
       - name: Build docs
-        run: tox -e docs && ls docs/build
+        run: mkdir /build && tox -e docs
 
       - name: Remove environment.pickle
         run: rm build/html/.doctrees/environment.pickle
