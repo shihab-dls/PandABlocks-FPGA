@@ -9,6 +9,7 @@ import sys
 from pathlib import Path
 from subprocess import check_output
 from pkg_resources import require
+import shutil
 
 import requests
 
