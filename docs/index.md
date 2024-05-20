@@ -37,9 +37,8 @@ Practical step-by-step guides for the more experienced user.
 
 :::{grid-item-card} {material-regular}`info;2em`
 ```{toctree}
-:blob: 2
+:maxdepth: 2
 explanations
-blocks.rst
 ```
 +++
 Explanations of how it works and why it works that way.
@@ -49,6 +48,7 @@ Explanations of how it works and why it works that way.
 ```{toctree}
 :maxdepth: 2
 reference
+blocks.rst
 ```
 +++
 Technical reference material including APIs and release notes.
