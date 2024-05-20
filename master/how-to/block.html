@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Writing a Block &#8212; PandABlocks-FPGA 0.1.dev2602+g8cee1f4 documentation</title>
+    <title>Writing a Block &#8212; PandABlocks-FPGA 0.1.dev2603+g70233da documentation</title>
   
   
   
@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script src="../_static/documentation_options.js?v=9834faaa"></script>
+    <script src="../_static/documentation_options.js?v=ab0405ba"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -175,13 +175,6 @@
                     <li class="nav-item">
                       <a class="nav-link nav-internal" href="../reference.html">
                         Reference
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../blocks.html">
-                        Available Blocks
                       </a>
                     </li>
                 
@@ -346,13 +339,6 @@ document.write(`
                       </a>
                     </li>
                 
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../blocks.html">
-                        Available Blocks
-                      </a>
-                    </li>
-                
   </ul>
 </nav></div>
         
@@ -498,7 +484,7 @@ document.write(`
                   
   <section id="writing-a-block">
 <span id="block-reference"></span><h1>Writing a Block<a class="headerlink" href="#writing-a-block" title="Link to this heading">#</a></h1>
-<p>If you have checked the list of <a class="reference internal" href="../blocks.html#blocks-doc"><span class="std std-ref">Available Blocks</span></a> and need a feature that is not
+<p>If you have checked the list of <a class="reference internal" href="../reference/blocks.html#blocks-doc"><span class="std std-ref">Available Blocks</span></a> and need a feature that is not
 there you can extend an existing <a class="reference internal" href="../reference/glossary.html#block"><span class="std std-ref">Block</span></a> or create a new one. If the feature
 fits with the behaviour of an existing Block and can be added without breaking
 backwards compatibility it is preferable to add it there. If there is a new
@@ -576,7 +562,7 @@ purpose and connections of the Field to the system. It is passed straight
 through to the field specific line in the config file for the TCP server so
 should be written according to <a class="reference external" href=":ref:`FieldType&lt;server:fields&gt;`">type</a> documentation. Subsequent indented lines
 in the config file are supplied according to the <code class="docutils literal notranslate"><span class="pre">type</span></code> value and are
-documented in <a class="reference internal" href="../reference/blocks.html#extra-field-keys"><span class="std std-ref">Extra Field Keys</span></a>.</p>
+documented in <a class="reference internal" href="#extra-field-keys"><span class="std std-ref">Extra Field Keys</span></a>.</p>
 <p>If <code class="docutils literal notranslate"><span class="pre">type</span></code> is set as <code class="docutils literal notranslate"><span class="pre">extension_write</span></code> or <code class="docutils literal notranslate"><span class="pre">extension_read</span></code> the block is
 a hidden register. It has a hardware register but does not generate block
 names.</p>
@@ -673,7 +659,7 @@ next changes</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">NAMES</span></code>: A <a class="reference external" href="https://docs.python.org/3/library/collections.html#collections.namedtuple" title="(in Python v3.12)"><code class="xref any docutils literal notranslate"><span class="pre">collections.namedtuple</span></code></a> with a string attribute for every field,
 for comparing field names with.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">PROPERTIES</span></code>: A <a class="reference external" href="https://docs.python.org/3/library/functions.html#property" title="(in Python v3.12)"><code class="xref any docutils literal notranslate"><span class="pre">property</span></code></a> for each Field of the Block that can be attached
-to the <a class="reference internal" href="../reference/blocks.html#common.python.simulations.BlockSimulation" title="common.python.simulations.BlockSimulation"><code class="xref any py py-class docutils literal notranslate"><span class="pre">BlockSimulation</span></code></a> class</p></li>
+to the <a class="reference internal" href="#common.python.simulations.BlockSimulation" title="common.python.simulations.BlockSimulation"><code class="xref any py py-class docutils literal notranslate"><span class="pre">BlockSimulation</span></code></a> class</p></li>
 </ul>
 <p>Now we are ready to create our simulation class:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MyBlockSimulation</span><span class="p">(</span><span class="n">BlockSimulation</span><span class="p">):</span>

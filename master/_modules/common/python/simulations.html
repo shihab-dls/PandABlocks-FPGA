@@ -7,7 +7,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>common.python.simulations &#8212; PandABlocks-FPGA 0.1.dev2602+g8cee1f4 documentation</title>
+    <title>common.python.simulations &#8212; PandABlocks-FPGA 0.1.dev2603+g70233da documentation</title>
   
   
   
@@ -38,7 +38,7 @@
 <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script src="../../../_static/documentation_options.js?v=9834faaa"></script>
+    <script src="../../../_static/documentation_options.js?v=ab0405ba"></script>
     <script src="../../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -172,13 +172,6 @@
                     <li class="nav-item">
                       <a class="nav-link nav-internal" href="../../../reference.html">
                         Reference
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../../blocks.html">
-                        Available Blocks
                       </a>
                     </li>
                 
@@ -338,13 +331,6 @@ document.write(`
                     <li class="nav-item">
                       <a class="nav-link nav-internal" href="../../../reference.html">
                         Reference
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../../blocks.html">
-                        Available Blocks
                       </a>
                     </li>
                 
@@ -560,7 +546,7 @@ document.write(`
 
 
 <div class="viewcode-block" id="BlockSimulation">
-<a class="viewcode-back" href="../../../reference/blocks.html#common.python.simulations.BlockSimulation">[docs]</a>
+<a class="viewcode-back" href="../../../how-to/block.html#common.python.simulations.BlockSimulation">[docs]</a>
 <span class="nd">@add_metaclass</span><span class="p">(</span><span class="n">BlockSimulationMeta</span><span class="p">)</span>
 <span class="k">class</span> <span class="nc">BlockSimulation</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="n">bit_bus</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">bool_</span><span class="p">)</span>
@@ -571,7 +557,7 @@ document.write(`
     <span class="n">changes</span> <span class="o">=</span> <span class="kc">None</span>
 
 <div class="viewcode-block" id="BlockSimulation.bits_to_int">
-<a class="viewcode-back" href="../../../reference/blocks.html#common.python.simulations.BlockSimulation.bits_to_int">[docs]</a>
+<a class="viewcode-back" href="../../../how-to/block.html#common.python.simulations.BlockSimulation.bits_to_int">[docs]</a>
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">bits_to_int</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">bits</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Convert 32 element bit array into an int number&quot;&quot;&quot;</span>
@@ -579,7 +565,7 @@ document.write(`
 
 
 <div class="viewcode-block" id="BlockSimulation.on_changes">
-<a class="viewcode-back" href="../../../reference/blocks.html#common.python.simulations.BlockSimulation.on_changes">[docs]</a>
+<a class="viewcode-back" href="../../../how-to/block.html#common.python.simulations.BlockSimulation.on_changes">[docs]</a>
     <span class="k">def</span> <span class="nf">on_changes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ts</span><span class="p">,</span> <span class="n">changes</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Handle field changes at a particular timestamp</span>
 
