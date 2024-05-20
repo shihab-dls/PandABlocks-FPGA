@@ -35,11 +35,10 @@ reference
 Technical reference material.
 :::
 
+::::
 :::{dropdown} Available Blocks
 ```{toctree}
 :maxdepth: 2
 blocks.rst
 ```
 :::
-
-::::
