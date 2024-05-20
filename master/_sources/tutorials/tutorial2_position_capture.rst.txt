@@ -35,6 +35,11 @@ We start off with both CLOCK Blocks set to a period of 1s, so each second the
 COUNTER will increment by one, followed by a PCAP trigger half a second later.
 This is best viewed as a timing diagram:
 
+.. timing_plot::
+   :path: docs/tutorials/tutorial2.timing.ini
+   :section: Trigger Only
+   :xlabel: Milliseconds
+
 What PCAP does on that trigger is determined by the PCAP Block settings, and
 the contents of the Bits and Positions tables. For Bits you can turn capture
 (instantaneous at the time of trigger) on and off. For Positions, you have a
@@ -127,6 +132,11 @@ to 0.2s, and click PCAP.ARM and you will see the captured value change::
 
 If we look at the timing plot, we can see this also matched what we expect, the
 value is captured mid way through each increment of 5:
+
+.. timing_plot::
+   :path: docs/tutorials/tutorial2.timing.ini
+   :section: Trigger Only
+   :xlabel: Milliseconds
 
 Now let's investigate the other options. If we change the Positions table
 so COUNTER1.OUT captures the Diff instead of Value then we will see it captures

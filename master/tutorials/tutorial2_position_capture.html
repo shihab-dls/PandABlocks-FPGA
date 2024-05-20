@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Position Capture Tutorial &#8212; PandABlocks-FPGA 0.1.dev2598+g10f3900 documentation</title>
+    <title>Position Capture Tutorial &#8212; PandABlocks-FPGA 0.1.dev2600+ge5616db documentation</title>
   
   
   
@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script src="../_static/documentation_options.js?v=1fa4ac58"></script>
+    <script src="../_static/documentation_options.js?v=68e0a38b"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -52,7 +52,6 @@
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'master';
         DOCUMENTATION_OPTIONS.show_version_warning_banner = false;
         </script>
-    <link rel="icon" href="../_static/dls-logo.svg"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Position Compare Tutorial" href="tutorial3_position_compare.html" />
@@ -127,14 +126,6 @@
   
   
   
-  
-    
-    
-      
-    
-    
-    <img src="../_static/dls-logo.svg" class="logo__image only-light" alt=""/>
-    <script>document.write(`<img src="../_static/dls-logo.svg" class="logo__image only-dark" alt=""/>`);</script>
   
   
     <p class="title logo__title">PandABlocks-FPGA</p>
@@ -436,7 +427,6 @@ document.write(`
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial1_blinking_leds.html">Blinking LEDs Tutorial</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Position Capture Tutorial</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial3_position_compare.html">Position Compare Tutorial</a></li>
@@ -525,6 +515,10 @@ counter value.</p></li>
 <p>We start off with both CLOCK Blocks set to a period of 1s, so each second the
 COUNTER will increment by one, followed by a PCAP trigger half a second later.
 This is best viewed as a timing diagram:</p>
+<p>(<a class="reference download internal" download="" href="../_downloads/85bb13b2419ba78816c5000dfc448f81/tutorial2_position_capture-1.py"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">code</span></code></a>, <a class="reference download internal" download="" href="../_downloads/0ebd22aa6177e90301d07e15d237dafe/tutorial2_position_capture-1.png"><code class="xref download docutils literal notranslate"><span class="pre">png</span></code></a>, <a class="reference download internal" download="" href="../_downloads/2fef5372575d1c2de0d3b2dba0752116/tutorial2_position_capture-1.hires.png"><code class="xref download docutils literal notranslate"><span class="pre">hires.png</span></code></a>, <a class="reference download internal" download="" href="../_downloads/9e6abe3739e25f436837c1437d3a9848/tutorial2_position_capture-1.pdf"><code class="xref download docutils literal notranslate"><span class="pre">pdf</span></code></a>)</p>
+<figure class="align-default">
+<img alt="../_images/tutorial2_position_capture-1.png" class="plot-directive" src="../_images/tutorial2_position_capture-1.png" />
+</figure>
 <p>What PCAP does on that trigger is determined by the PCAP Block settings, and
 the contents of the Bits and Positions tables. For Bits you can turn capture
 (instantaneous at the time of trigger) on and off. For Positions, you have a
@@ -630,6 +624,10 @@ to 0.2s, and click PCAP.ARM and you will see the captured value change:</p>
 </div>
 <p>If we look at the timing plot, we can see this also matched what we expect, the
 value is captured mid way through each increment of 5:</p>
+<p>(<a class="reference download internal" download="" href="../_downloads/b897bee6d8808d281368e46b1c6a0236/tutorial2_position_capture-2.py"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">code</span></code></a>, <a class="reference download internal" download="" href="../_downloads/7b0bed1222ffbe5828d0258a621c94a0/tutorial2_position_capture-2.png"><code class="xref download docutils literal notranslate"><span class="pre">png</span></code></a>, <a class="reference download internal" download="" href="../_downloads/16a7da47f9c384842cff93a9c026d21c/tutorial2_position_capture-2.hires.png"><code class="xref download docutils literal notranslate"><span class="pre">hires.png</span></code></a>, <a class="reference download internal" download="" href="../_downloads/08af42c976010f7f854a8134ff86cf6a/tutorial2_position_capture-2.pdf"><code class="xref download docutils literal notranslate"><span class="pre">pdf</span></code></a>)</p>
+<figure class="align-default">
+<img alt="../_images/tutorial2_position_capture-2.png" class="plot-directive" src="../_images/tutorial2_position_capture-2.png" />
+</figure>
 <p>Now let’s investigate the other options. If we change the Positions table
 so COUNTER1.OUT captures the Diff instead of Value then we will see it captures
 the difference between the value at the rising edge of the gate, and the
