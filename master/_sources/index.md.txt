@@ -2,10 +2,12 @@
 html_theme.sidebar_secondary.remove: true
 ---
 
-```{include} ../README.rst
-:end-before: <!-- README only content
-```
+What can PandABlocks do?
+-------------------------
 
+PandABlocks is a framework enabling a number of functional [Block](reference/glossary.rst#Block) instances to be written and loaded to an FPGA, with their parameters (including their connections to other Blocks) changed at runtime. It allows flexible triggering and processing systems to be created, by users who are unfamiliar with writing FPGA firmware.
+
+![image](fpga_arch.png)
 
 How the documentation is structured
 -----------------------------------
