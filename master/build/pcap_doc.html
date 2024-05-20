@@ -1,265 +1,478 @@
+
 <!DOCTYPE html>
-<html class="writer-html5" lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PCAP - Position Capture &mdash; PandABlocks-FPGA 3f59bb6
- documentation</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/theme_overrides.css" />
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>PCAP - Position Capture &#8212; PandABlocks-FPGA 0.1.dev2596+g4a1f23e documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-    <link rel="shortcut icon" href="../_static/PandA-logo.ico"/>
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=fd3f3429" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
-    <script src="../_static/js/theme.js"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../_static/documentation_options.js?v=fa91da66"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=30646c52"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'build/pcap_doc';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.15.2';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://PandABlocks.github.io/PandABlocks-FPGA/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'master';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner = false;
+        </script>
+    <link rel="icon" href="../_static/dls-logo.svg"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="PCOMP - Position Compare" href="pcomp_doc.html" />
-    <link rel="prev" title="OUTENC - Output encoder" href="outenc_doc.html" /> 
-</head>
-
-<body class="wy-body-for-nav"> 
-  <div class="wy-grid-for-nav">
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-scroll">
-        <div class="wy-side-nav-search"  style="background: black" >
-
-          
-          
-          <a href="../index.html" class="icon icon-home">
-            PandABlocks-FPGA
-              <img src="../_static/PandA-logo-for-black-background.svg" class="logo" alt="Logo"/>
-          </a>
-              <div class="version">
-                3f59bb6
-
-              </div>
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
-    <input type="hidden" name="check_keywords" value="yes" />
-    <input type="hidden" name="area" value="default" />
-  </form>
-</div>
-        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-  <style>
-    /* style mobile top nav to look like main nav */
-    .wy-nav-top {
-        background: black
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
   
-              <p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../index.html">What can PandABlocks do?</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../index.html#how-is-the-documentation-structured">How is the documentation structured?</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../index.html#using-an-existing-pandablocks-device">Using an existing PandABlocks device</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#generating-a-new-set-of-blocks-for-a-pandablocks-device">Generating a new set of Blocks for a PandABlocks device</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#extending-the-functionality-of-a-pandablocks-device">Extending the functionality of a PandABlocks device</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../index.html#working-on-the-core-autogeneration-framework">Working on the core autogeneration framework</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/tutorial1_blinking_leds.html">Blinking LEDs Tutorial</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/tutorial2_position_capture.html">Position Capture Tutorial</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/tutorial3_position_compare.html">Position Compare Tutorial</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/tutorial4_snake_scan.html">Snake Scan Tutorial</a></li>
-<li class="toctree-l3 current"><a class="reference internal" href="../blocks.html">Available Blocks</a><ul class="current">
-<li class="toctree-l4"><a class="reference internal" href="bits_doc.html">BITS - Soft inputs and constant bits</a></li>
-<li class="toctree-l4"><a class="reference internal" href="calc_doc.html">CALC - Position Calc</a></li>
-<li class="toctree-l4"><a class="reference internal" href="clock_doc.html">CLOCK - Configurable clock</a></li>
-<li class="toctree-l4"><a class="reference internal" href="counter_doc.html">COUNTER - Up/Down pulse counter</a></li>
-<li class="toctree-l4"><a class="reference internal" href="div_doc.html">DIV - Pulse divider</a></li>
-<li class="toctree-l4"><a class="reference internal" href="filter_doc.html">FILTER - Filter</a></li>
-<li class="toctree-l4"><a class="reference internal" href="fmc_24v_doc.html">FMC_24V - FMC 24V IO Module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="fmc_acq427_doc.html">FMC_ACQ427 - FMC ACQ427 Module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="fmc_acq430_doc.html">FMC_ACQ430 - FMC ACQ430 Module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="fmc_loopback_doc.html">FMC_LOOPBACK - FMC Loopback Module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="inenc_doc.html">INENC - Input encoder</a></li>
-<li class="toctree-l4"><a class="reference internal" href="lut_doc.html">LUT - 5 Input lookup table</a></li>
-<li class="toctree-l4"><a class="reference internal" href="lvdsin_doc.html">LVDSIN - LVDS Input</a></li>
-<li class="toctree-l4"><a class="reference internal" href="lvdsout_doc.html">LVDSOUT - LVDS Output</a></li>
-<li class="toctree-l4"><a class="reference internal" href="outenc_doc.html">OUTENC - Output encoder</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">PCAP - Position Capture</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pcomp_doc.html">PCOMP - Position Compare</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pgen_doc.html">PGEN - Position Generator</a></li>
-<li class="toctree-l4"><a class="reference internal" href="posenc_doc.html">POSENC - Quadrature and step/direction encoder</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pulse_doc.html">PULSE - One-shot pulse delay and stretch</a></li>
-<li class="toctree-l4"><a class="reference internal" href="qdec_doc.html">QDEC - Quadrature Decoder</a></li>
-<li class="toctree-l4"><a class="reference internal" href="seq_doc.html">SEQ - Sequencer</a></li>
-<li class="toctree-l4"><a class="reference internal" href="sfp_dls_eventr_doc.html">SFP_DLS_EVENTR - SFP Event Receiver Module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="sfp_loopback_doc.html">SFP_LOOPBACK- SFP Loopback Module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="sfp_panda_sync_doc.html">SFP_PANDA_SYNC - Synchronize data between 2 PandAs</a></li>
-<li class="toctree-l4"><a class="reference internal" href="sfp_udpontrig_doc.html">SFP_UDPONTRIG - SFP UDP on trig Module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="srgate_doc.html">SRGATE - Set Reset Gate</a></li>
-<li class="toctree-l4"><a class="reference internal" href="system_doc.html">SYSTEM - System control FPGA</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ttlin_doc.html">TTLIN - TTL Input</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ttlout_doc.html">TTLOUT - TTL Output</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../reference/contributing.html">Contributing</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../reference/app.html">Assembling Blocks into an App</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../reference/block.html">Writing a Block</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../reference/framework.html">Autogeneration framework architecture</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../reference/changelog.html">Changelog</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../reference/glossary.html">Glossary</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../reference/testing.html">Running the tests</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial1_blinking_leds.html">Blinking LEDs Tutorial</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial2_position_capture.html">Position Capture Tutorial</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial3_position_compare.html">Position Compare Tutorial</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial4_snake_scan.html">Snake Scan Tutorial</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
-<ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="../blocks.html">Available Blocks</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="bits_doc.html">BITS - Soft inputs and constant bits</a></li>
-<li class="toctree-l2"><a class="reference internal" href="calc_doc.html">CALC - Position Calc</a></li>
-<li class="toctree-l2"><a class="reference internal" href="clock_doc.html">CLOCK - Configurable clock</a></li>
-<li class="toctree-l2"><a class="reference internal" href="counter_doc.html">COUNTER - Up/Down pulse counter</a></li>
-<li class="toctree-l2"><a class="reference internal" href="div_doc.html">DIV - Pulse divider</a></li>
-<li class="toctree-l2"><a class="reference internal" href="filter_doc.html">FILTER - Filter</a></li>
-<li class="toctree-l2"><a class="reference internal" href="fmc_24v_doc.html">FMC_24V - FMC 24V IO Module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="fmc_acq427_doc.html">FMC_ACQ427 - FMC ACQ427 Module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="fmc_acq430_doc.html">FMC_ACQ430 - FMC ACQ430 Module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="fmc_loopback_doc.html">FMC_LOOPBACK - FMC Loopback Module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="inenc_doc.html">INENC - Input encoder</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lut_doc.html">LUT - 5 Input lookup table</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lvdsin_doc.html">LVDSIN - LVDS Input</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lvdsout_doc.html">LVDSOUT - LVDS Output</a></li>
-<li class="toctree-l2"><a class="reference internal" href="outenc_doc.html">OUTENC - Output encoder</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">PCAP - Position Capture</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#fields">Fields</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#arming">Arming</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#capturing-fields">Capturing fields</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#pos-bus-capture">Pos bus capture</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#mode-0-value">Mode 0 - Value</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#mode-1-difference">Mode 1 - Difference</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#mode-2-3-sum-lo-hi">Mode 2/3 - Sum Lo/Hi</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#mode-4-5-min-max">Mode 4/5 - Min/Max</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#mode-6-7-8-sum-of-squared-values-lo-mid-hi">Mode 6/7/8 - Sum of Squared values Lo/Mid/Hi</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#number-of-samples">Number of samples</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#timestamps">Timestamps</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#bit-bus-capture">Bit bus capture</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#triggering-options">Triggering options</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#error-conditions">Error conditions</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="pcomp_doc.html">PCOMP - Position Compare</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pgen_doc.html">PGEN - Position Generator</a></li>
-<li class="toctree-l2"><a class="reference internal" href="posenc_doc.html">POSENC - Quadrature and step/direction encoder</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pulse_doc.html">PULSE - One-shot pulse delay and stretch</a></li>
-<li class="toctree-l2"><a class="reference internal" href="qdec_doc.html">QDEC - Quadrature Decoder</a></li>
-<li class="toctree-l2"><a class="reference internal" href="seq_doc.html">SEQ - Sequencer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sfp_dls_eventr_doc.html">SFP_DLS_EVENTR - SFP Event Receiver Module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sfp_loopback_doc.html">SFP_LOOPBACK- SFP Loopback Module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sfp_panda_sync_doc.html">SFP_PANDA_SYNC - Synchronize data between 2 PandAs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sfp_udpontrig_doc.html">SFP_UDPONTRIG - SFP UDP on trig Module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="srgate_doc.html">SRGATE - Set Reset Gate</a></li>
-<li class="toctree-l2"><a class="reference internal" href="system_doc.html">SYSTEM - System control FPGA</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ttlin_doc.html">TTLIN - TTL Input</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ttlout_doc.html">TTLOUT - TTL Output</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../reference/contributing.html">Contributing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../reference/app.html">Assembling Blocks into an App</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../reference/block.html">Writing a Block</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../reference/framework.html">Autogeneration framework architecture</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../reference/changelog.html">Changelog</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../reference/glossary.html">Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../reference/testing.html">Running the tests</a></li>
-</ul>
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-  <!-- Include link to changelog -->
-  <a href="https://github.com/PandABlocks/PandABlocks-FPGA/blob/master/CHANGELOG.rst">Changelog</a>
-  <!-- Add versions for selected branches + tags -->
-  <p class="caption"><span class="caption-text">Versions</span></p>
-  <ul id="versions"/>
-  <script>
-    // Add any branches to appear in the side pane here, tags will be added below
-    // Will only appear if docs are built and pushed in gh-pages
-    var versions = ['master', 'main'];
-    var dirs = new Set();
-    function addVersion(name) {
-      if (dirs.has(name)) {
-        var li = document.createElement("li");
-        var a = document.createElement("a");
-        a.href = 'https://PandABlocks.github.io/PandABlocks-FPGA/' + name;
-        a.innerText = name;
-        li.appendChild(a)
-        document.getElementById('versions').appendChild(li);
-      }
-    }
-    Promise.all([
-      // Find gh-pages directories and populate `dirs`
-      fetch("https://api.github.com/repos/PandABlocks/PandABlocks-FPGA/contents?ref=gh-pages")
-      .then(response => response.json())
-      .then(data => data.forEach(function(e) {
-        if (e.type == "dir") dirs.add(e.name);
-      })),
-      // Add tags to `versions`
-      fetch('https://api.github.com/repos/PandABlocks/PandABlocks-FPGA/tags')
-        .then(response => response.json())
-        .then(data => data.forEach(function(e) {
-          versions.push(e.name);
-        }))
-      ]).then(_ => versions.forEach(addVersion))
-  </script>
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
 
-        </div>
-      </div>
-    </nav>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: black" >
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">PandABlocks-FPGA</a>
-      </nav>
+  
 
-      <div class="wy-nav-content">
-        <div class="rst-content">
-          <div role="navigation" aria-label="Page navigation">
-  <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-          <li class="breadcrumb-item"><a href="../blocks.html">Available Blocks</a></li>
-      <li class="breadcrumb-item active">PCAP - Position Capture</li>
-      <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/build/pcap_doc.rst.txt" rel="nofollow"> View page source</a>
-      </li>
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/dls-logo.svg" class="logo__image only-light" alt=""/>
+    <script>document.write(`<img src="../_static/dls-logo.svg" class="logo__image only-dark" alt=""/>`);</script>
+  
+  
+    <p class="title logo__title">PandABlocks-FPGA</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav class="navbar-nav">
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tutorials.html">
+                        Tutorials
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../how-to.html">
+                        How-to Guides
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../explanations.html">
+                        Explanations
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../reference.html">
+                        Reference
+                      </a>
+                    </li>
+                
   </ul>
-  <hr/>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/PandABlocks/PandABlocks-FPGA" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/PandABlocks-FPGA" title="PyPI" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fas fa-cube fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">PyPI</span></a>
+        </li>
+</ul></div>
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-2"
+      type="button"
+      class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-2"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-2"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-2">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
 </div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody">
-             
-  <div class="section" id="pcap-position-capture">
-<h1>PCAP - Position Capture<a class="headerlink" href="#pcap-position-capture" title="Permalink to this heading"></a></h1>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item">
+<nav class="navbar-nav">
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tutorials.html">
+                        Tutorials
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../how-to.html">
+                        How-to Guides
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../explanations.html">
+                        Explanations
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../reference.html">
+                        Reference
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/PandABlocks/PandABlocks-FPGA" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/PandABlocks-FPGA" title="PyPI" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fas fa-cube fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">PyPI</span></a>
+        </li>
+</ul></div>
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-3"
+      type="button"
+      class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-3"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-3"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-3">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page">PCAP -...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="pcap-position-capture">
+<h1>PCAP - Position Capture<a class="headerlink" href="#pcap-position-capture" title="Link to this heading">#</a></h1>
 <p>Position capture has the capability to capture anything that is happening
 on the pos_bus or bit_bus. It listens to ENABLE, GATE and CAPTURE signals, and
 can capture the value at capture, sum, sum of squared values, min and max.</p>
-<div class="section" id="fields">
-<h2>Fields<a class="headerlink" href="#fields" title="Permalink to this heading"></a></h2>
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 21%" />
-<col style="width: 21%" />
-<col style="width: 58%" />
-</colgroup>
+<section id="fields">
+<h2>Fields<a class="headerlink" href="#fields" title="Link to this heading">#</a></h2>
+<table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Name</p></th>
 <th class="head"><p>Type</p></th>
@@ -341,24 +554,24 @@ can capture the value at capture, sum, sum of squared values, min and max.</p>
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="arming">
-<h2>Arming<a class="headerlink" href="#arming" title="Permalink to this heading"></a></h2>
+</section>
+<section id="arming">
+<h2>Arming<a class="headerlink" href="#arming" title="Link to this heading">#</a></h2>
 <p>To start off the block an arm signal is required with a write to <code class="docutils literal notranslate"><span class="pre">*PCAP.ARM=</span></code>.
 The active signal is raised immediately on ARM, and dropped either on
 <code class="docutils literal notranslate"><span class="pre">*PCAP.DISARM</span></code>:</p>
-<p>(<a class="reference external" href="../build/pcap_doc-1.py">Source code</a>, <a class="reference external" href="../build/pcap_doc-1.png">png</a>, <a class="reference external" href="../build/pcap_doc-1.hires.png">hires.png</a>, <a class="reference external" href="../build/pcap_doc-1.pdf">pdf</a>)</p>
-<div class="figure align-default">
-<img alt="../_images/pcap_doc-1.png" src="../_images/pcap_doc-1.png" />
-</div>
+<p>(<a class="reference download internal" download="" href="../_downloads/006bffcc9cbe0b1b2228c63cb32f57cd/pcap_doc-1.py"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">code</span></code></a>, <a class="reference download internal" download="" href="../_downloads/53488a8c2da9bb9934f7b4cc7b9520f1/pcap_doc-1.png"><code class="xref download docutils literal notranslate"><span class="pre">png</span></code></a>, <a class="reference download internal" download="" href="../_downloads/beae5233b21888b52e127d25fe5ded70/pcap_doc-1.hires.png"><code class="xref download docutils literal notranslate"><span class="pre">hires.png</span></code></a>, <a class="reference download internal" download="" href="../_downloads/b9d115985e3baa147c8c55b5a5da4439/pcap_doc-1.pdf"><code class="xref download docutils literal notranslate"><span class="pre">pdf</span></code></a>)</p>
+<figure class="align-default">
+<img alt="../_images/pcap_doc-1.png" class="plot-directive" src="../_images/pcap_doc-1.png" />
+</figure>
 <p>Or on the falling edge of ENABLE:</p>
-<p>(<a class="reference external" href="../build/pcap_doc-2.py">Source code</a>, <a class="reference external" href="../build/pcap_doc-2.png">png</a>, <a class="reference external" href="../build/pcap_doc-2.hires.png">hires.png</a>, <a class="reference external" href="../build/pcap_doc-2.pdf">pdf</a>)</p>
-<div class="figure align-default">
-<img alt="../_images/pcap_doc-2.png" src="../_images/pcap_doc-2.png" />
-</div>
-</div>
-<div class="section" id="capturing-fields">
-<h2>Capturing fields<a class="headerlink" href="#capturing-fields" title="Permalink to this heading"></a></h2>
+<p>(<a class="reference download internal" download="" href="../_downloads/79c117cb669e8436a743476c0bab2c6d/pcap_doc-2.py"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">code</span></code></a>, <a class="reference download internal" download="" href="../_downloads/551fb64c3c3ffd5761053b1da68f6aba/pcap_doc-2.png"><code class="xref download docutils literal notranslate"><span class="pre">png</span></code></a>, <a class="reference download internal" download="" href="../_downloads/6685a4104d394d865a24063345733b04/pcap_doc-2.hires.png"><code class="xref download docutils literal notranslate"><span class="pre">hires.png</span></code></a>, <a class="reference download internal" download="" href="../_downloads/94b5847dc06e77c5d51c5a67323614fb/pcap_doc-2.pdf"><code class="xref download docutils literal notranslate"><span class="pre">pdf</span></code></a>)</p>
+<figure class="align-default">
+<img alt="../_images/pcap_doc-2.png" class="plot-directive" src="../_images/pcap_doc-2.png" />
+</figure>
+</section>
+<section id="capturing-fields">
+<h2>Capturing fields<a class="headerlink" href="#capturing-fields" title="Link to this heading">#</a></h2>
 <p>Capturing fields is done by specifying a series of WRITE addresses. These are
 made up of a mode in the bottom 4 bits, and an index in the 6 bits above them.
 Indexes &lt; 32 refer to entries on the pos_bus, while indexes &gt;= 32 are extra
@@ -370,15 +583,11 @@ server over DMA, before being sent to the user. It is reconstructed into a
 table in each of the examples below for ease of reading.</p>
 <p>The following example shows PCAP being configured to capture the timestamp
 when CAPTURE goes high (0x24 is the bottom 32-bits of TS_CAPTURE).</p>
-<p>(<a class="reference external" href="../build/pcap_doc-3.py">Source code</a>, <a class="reference external" href="../build/pcap_doc-3.png">png</a>, <a class="reference external" href="../build/pcap_doc-3.hires.png">hires.png</a>, <a class="reference external" href="../build/pcap_doc-3.pdf">pdf</a>)</p>
-<div class="figure align-default">
-<img alt="../_images/pcap_doc-3.png" src="../_images/pcap_doc-3.png" />
-</div>
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 38%" />
-<col style="width: 63%" />
-</colgroup>
+<p>(<a class="reference download internal" download="" href="../_downloads/c83c4bbe5d62b08c5df605ecbcfd6a01/pcap_doc-3.py"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">code</span></code></a>, <a class="reference download internal" download="" href="../_downloads/465665dd1104809f0359b5879eef75b1/pcap_doc-3.png"><code class="xref download docutils literal notranslate"><span class="pre">png</span></code></a>, <a class="reference download internal" download="" href="../_downloads/2fbc6adce287f1447a158b8aeb66bf51/pcap_doc-3.hires.png"><code class="xref download docutils literal notranslate"><span class="pre">hires.png</span></code></a>, <a class="reference download internal" download="" href="../_downloads/f59d9ed771cfdb402d28c53fbf5b5537/pcap_doc-3.pdf"><code class="xref download docutils literal notranslate"><span class="pre">pdf</span></code></a>)</p>
+<figure class="align-default">
+<img alt="../_images/pcap_doc-3.png" class="plot-directive" src="../_images/pcap_doc-3.png" />
+</figure>
+<table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Row</p></th>
 <th class="head"><p>0x240</p></th>
@@ -393,23 +602,19 @@ when CAPTURE goes high (0x24 is the bottom 32-bits of TS_CAPTURE).</p>
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="pos-bus-capture">
-<h2>Pos bus capture<a class="headerlink" href="#pos-bus-capture" title="Permalink to this heading"></a></h2>
+</section>
+<section id="pos-bus-capture">
+<h2>Pos bus capture<a class="headerlink" href="#pos-bus-capture" title="Link to this heading">#</a></h2>
 <p>As well as general fields like the timestamp, any pos_bus index can be captured.
 Pos bus fields have multiple modes that they can capture in.</p>
-<div class="section" id="mode-0-value">
-<h3>Mode 0 - Value<a class="headerlink" href="#mode-0-value" title="Permalink to this heading"></a></h3>
+<section id="mode-0-value">
+<h3>Mode 0 - Value<a class="headerlink" href="#mode-0-value" title="Link to this heading">#</a></h3>
 <p>This gives an instantaneous capture of value no matter what the state of GATE:</p>
-<p>(<a class="reference external" href="../build/pcap_doc-4.py">Source code</a>, <a class="reference external" href="../build/pcap_doc-4.png">png</a>, <a class="reference external" href="../build/pcap_doc-4.hires.png">hires.png</a>, <a class="reference external" href="../build/pcap_doc-4.pdf">pdf</a>)</p>
-<div class="figure align-default">
-<img alt="../_images/pcap_doc-4.png" src="../_images/pcap_doc-4.png" />
-</div>
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 43%" />
-<col style="width: 57%" />
-</colgroup>
+<p>(<a class="reference download internal" download="" href="../_downloads/3d5525766e80ee144e10dafe6ba28000/pcap_doc-4.py"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">code</span></code></a>, <a class="reference download internal" download="" href="../_downloads/ac957dfd78259915bf665b2fa015aad4/pcap_doc-4.png"><code class="xref download docutils literal notranslate"><span class="pre">png</span></code></a>, <a class="reference download internal" download="" href="../_downloads/34e3e5dad85d3fe9ba8d36603987d31f/pcap_doc-4.hires.png"><code class="xref download docutils literal notranslate"><span class="pre">hires.png</span></code></a>, <a class="reference download internal" download="" href="../_downloads/a26421e0b33f502bcaaa25857aacc212/pcap_doc-4.pdf"><code class="xref download docutils literal notranslate"><span class="pre">pdf</span></code></a>)</p>
+<figure class="align-default">
+<img alt="../_images/pcap_doc-4.png" class="plot-directive" src="../_images/pcap_doc-4.png" />
+</figure>
+<table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Row</p></th>
 <th class="head"><p>0x50</p></th>
@@ -427,20 +632,16 @@ Pos bus fields have multiple modes that they can capture in.</p>
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="mode-1-difference">
-<h3>Mode 1 - Difference<a class="headerlink" href="#mode-1-difference" title="Permalink to this heading"></a></h3>
+</section>
+<section id="mode-1-difference">
+<h3>Mode 1 - Difference<a class="headerlink" href="#mode-1-difference" title="Link to this heading">#</a></h3>
 <p>This is mainly used for something like an incrementing counter value.
 It will only count the differences while GATE was high:</p>
-<p>(<a class="reference external" href="../build/pcap_doc-5.py">Source code</a>, <a class="reference external" href="../build/pcap_doc-5.png">png</a>, <a class="reference external" href="../build/pcap_doc-5.hires.png">hires.png</a>, <a class="reference external" href="../build/pcap_doc-5.pdf">pdf</a>)</p>
-<div class="figure align-default">
-<img alt="../_images/pcap_doc-5.png" src="../_images/pcap_doc-5.png" />
-</div>
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 43%" />
-<col style="width: 57%" />
-</colgroup>
+<p>(<a class="reference download internal" download="" href="../_downloads/fb6fcf5636cbe700838e12bb38cca831/pcap_doc-5.py"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">code</span></code></a>, <a class="reference download internal" download="" href="../_downloads/6691a69ec0bfaa9578bf46ce2a53c065/pcap_doc-5.png"><code class="xref download docutils literal notranslate"><span class="pre">png</span></code></a>, <a class="reference download internal" download="" href="../_downloads/8ca87204ae9988295743551087ac6c5b/pcap_doc-5.hires.png"><code class="xref download docutils literal notranslate"><span class="pre">hires.png</span></code></a>, <a class="reference download internal" download="" href="../_downloads/4ceb0e4d939a995b158f656dd71b7e1f/pcap_doc-5.pdf"><code class="xref download docutils literal notranslate"><span class="pre">pdf</span></code></a>)</p>
+<figure class="align-default">
+<img alt="../_images/pcap_doc-5.png" class="plot-directive" src="../_images/pcap_doc-5.png" />
+</figure>
+<table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Row</p></th>
 <th class="head"><p>0xB1</p></th>
@@ -455,19 +656,15 @@ It will only count the differences while GATE was high:</p>
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="mode-2-3-sum-lo-hi">
-<h3>Mode 2/3 - Sum Lo/Hi<a class="headerlink" href="#mode-2-3-sum-lo-hi" title="Permalink to this heading"></a></h3>
+</section>
+<section id="mode-2-3-sum-lo-hi">
+<h3>Mode 2/3 - Sum Lo/Hi<a class="headerlink" href="#mode-2-3-sum-lo-hi" title="Link to this heading">#</a></h3>
 <p>Mode 2 is the lower 32-bits of the sum of all samples while GATE was high:</p>
-<p>(<a class="reference external" href="../build/pcap_doc-6.py">Source code</a>, <a class="reference external" href="../build/pcap_doc-6.png">png</a>, <a class="reference external" href="../build/pcap_doc-6.hires.png">hires.png</a>, <a class="reference external" href="../build/pcap_doc-6.pdf">pdf</a>)</p>
-<div class="figure align-default">
-<img alt="../_images/pcap_doc-6.png" src="../_images/pcap_doc-6.png" />
-</div>
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 43%" />
-<col style="width: 57%" />
-</colgroup>
+<p>(<a class="reference download internal" download="" href="../_downloads/bfdb966f724333fce5c50cb43b5650b1/pcap_doc-6.py"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">code</span></code></a>, <a class="reference download internal" download="" href="../_downloads/014ff1dd54fae8df65892eb6f10d1c24/pcap_doc-6.png"><code class="xref download docutils literal notranslate"><span class="pre">png</span></code></a>, <a class="reference download internal" download="" href="../_downloads/8daac646c022e2f666361b4692e2f1ff/pcap_doc-6.hires.png"><code class="xref download docutils literal notranslate"><span class="pre">hires.png</span></code></a>, <a class="reference download internal" download="" href="../_downloads/8cdba9657fcdda364f76d8558f9a374f/pcap_doc-6.pdf"><code class="xref download docutils literal notranslate"><span class="pre">pdf</span></code></a>)</p>
+<figure class="align-default">
+<img alt="../_images/pcap_doc-6.png" class="plot-directive" src="../_images/pcap_doc-6.png" />
+</figure>
+<table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Row</p></th>
 <th class="head"><p>0x32</p></th>
@@ -487,16 +684,11 @@ It will only count the differences while GATE was high:</p>
 </table>
 <p>Mode 2 and 3 together gives the full 64-bits of sum, needed for any sizeable
 values on the pos_bus:</p>
-<p>(<a class="reference external" href="../build/pcap_doc-7.py">Source code</a>, <a class="reference external" href="../build/pcap_doc-7.png">png</a>, <a class="reference external" href="../build/pcap_doc-7.hires.png">hires.png</a>, <a class="reference external" href="../build/pcap_doc-7.pdf">pdf</a>)</p>
-<div class="figure align-default">
-<img alt="../_images/pcap_doc-7.png" src="../_images/pcap_doc-7.png" />
-</div>
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 27%" />
-<col style="width: 36%" />
-<col style="width: 36%" />
-</colgroup>
+<p>(<a class="reference download internal" download="" href="../_downloads/639dbd5630e86ec9e83a3e79207d1ef8/pcap_doc-7.py"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">code</span></code></a>, <a class="reference download internal" download="" href="../_downloads/3397f7138a858616220035ada8435776/pcap_doc-7.png"><code class="xref download docutils literal notranslate"><span class="pre">png</span></code></a>, <a class="reference download internal" download="" href="../_downloads/5a849ff4a7efadc00679f9de02bc26ab/pcap_doc-7.hires.png"><code class="xref download docutils literal notranslate"><span class="pre">hires.png</span></code></a>, <a class="reference download internal" download="" href="../_downloads/06f078d87018be78a2ea18f5d69ebed2/pcap_doc-7.pdf"><code class="xref download docutils literal notranslate"><span class="pre">pdf</span></code></a>)</p>
+<figure class="align-default">
+<img alt="../_images/pcap_doc-7.png" class="plot-directive" src="../_images/pcap_doc-7.png" />
+</figure>
+<table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Row</p></th>
 <th class="head"><p>0x22</p></th>
@@ -530,16 +722,11 @@ values on the pos_bus:</p>
 can be used to shift both the sum and SAMPLES field by up to 8-bits to
 accomodate up to 125 hour frames. This example demonstrates the effect with
 smaller numbers:</p>
-<p>(<a class="reference external" href="../build/pcap_doc-8.py">Source code</a>, <a class="reference external" href="../build/pcap_doc-8.png">png</a>, <a class="reference external" href="../build/pcap_doc-8.hires.png">hires.png</a>, <a class="reference external" href="../build/pcap_doc-8.pdf">pdf</a>)</p>
-<div class="figure align-default">
-<img alt="../_images/pcap_doc-8.png" src="../_images/pcap_doc-8.png" />
-</div>
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 25%" />
-<col style="width: 33%" />
-<col style="width: 42%" />
-</colgroup>
+<p>(<a class="reference download internal" download="" href="../_downloads/8546d7146fe90b81dca1f2baac2cfa47/pcap_doc-8.py"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">code</span></code></a>, <a class="reference download internal" download="" href="../_downloads/379b8ad9a3a0471a8c505ba2d26ef20b/pcap_doc-8.png"><code class="xref download docutils literal notranslate"><span class="pre">png</span></code></a>, <a class="reference download internal" download="" href="../_downloads/e13c923a584ff1cc5d8dbecf26a764ae/pcap_doc-8.hires.png"><code class="xref download docutils literal notranslate"><span class="pre">hires.png</span></code></a>, <a class="reference download internal" download="" href="../_downloads/76b85e31a9007f8548ee609329c0a075/pcap_doc-8.pdf"><code class="xref download docutils literal notranslate"><span class="pre">pdf</span></code></a>)</p>
+<figure class="align-default">
+<img alt="../_images/pcap_doc-8.png" class="plot-directive" src="../_images/pcap_doc-8.png" />
+</figure>
+<table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Row</p></th>
 <th class="head"><p>0x92</p></th>
@@ -565,21 +752,17 @@ smaller numbers:</p>
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="mode-4-5-min-max">
-<h3>Mode 4/5 - Min/Max<a class="headerlink" href="#mode-4-5-min-max" title="Permalink to this heading"></a></h3>
+</section>
+<section id="mode-4-5-min-max">
+<h3>Mode 4/5 - Min/Max<a class="headerlink" href="#mode-4-5-min-max" title="Link to this heading">#</a></h3>
 <p>Both of these modes calculate statistics on the value while GATE is high.</p>
 <p>Mode 4 produces the min of all values or zero if the gate was low for all of the
 current capture:</p>
-<p>(<a class="reference external" href="../build/pcap_doc-9.py">Source code</a>, <a class="reference external" href="../build/pcap_doc-9.png">png</a>, <a class="reference external" href="../build/pcap_doc-9.hires.png">hires.png</a>, <a class="reference external" href="../build/pcap_doc-9.pdf">pdf</a>)</p>
-<div class="figure align-default">
-<img alt="../_images/pcap_doc-9.png" src="../_images/pcap_doc-9.png" />
-</div>
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 43%" />
-<col style="width: 57%" />
-</colgroup>
+<p>(<a class="reference download internal" download="" href="../_downloads/b1350a2db72ac33fc3ce1a8129eb8f9e/pcap_doc-9.py"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">code</span></code></a>, <a class="reference download internal" download="" href="../_downloads/13aab8e06fe234fbf72050ec0dc6552e/pcap_doc-9.png"><code class="xref download docutils literal notranslate"><span class="pre">png</span></code></a>, <a class="reference download internal" download="" href="../_downloads/19e72514e383948e7f47dc725a9f798e/pcap_doc-9.hires.png"><code class="xref download docutils literal notranslate"><span class="pre">hires.png</span></code></a>, <a class="reference download internal" download="" href="../_downloads/48f1a28c0435024a3a1c0b2491e1a156/pcap_doc-9.pdf"><code class="xref download docutils literal notranslate"><span class="pre">pdf</span></code></a>)</p>
+<figure class="align-default">
+<img alt="../_images/pcap_doc-9.png" class="plot-directive" src="../_images/pcap_doc-9.png" />
+</figure>
+<table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Row</p></th>
 <th class="head"><p>0x84</p></th>
@@ -601,15 +784,11 @@ current capture:</p>
 </tbody>
 </table>
 <p>Mode 5 produces the max of all values in a similar way:</p>
-<p>(<a class="reference external" href="../build/pcap_doc-10.py">Source code</a>, <a class="reference external" href="../build/pcap_doc-10.png">png</a>, <a class="reference external" href="../build/pcap_doc-10.hires.png">hires.png</a>, <a class="reference external" href="../build/pcap_doc-10.pdf">pdf</a>)</p>
-<div class="figure align-default">
-<img alt="../_images/pcap_doc-10.png" src="../_images/pcap_doc-10.png" />
-</div>
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 43%" />
-<col style="width: 57%" />
-</colgroup>
+<p>(<a class="reference download internal" download="" href="../_downloads/7d1ef2911aa3006eccec92b482036db5/pcap_doc-10.py"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">code</span></code></a>, <a class="reference download internal" download="" href="../_downloads/9df16253b8fb329aa3360be4acc464f4/pcap_doc-10.png"><code class="xref download docutils literal notranslate"><span class="pre">png</span></code></a>, <a class="reference download internal" download="" href="../_downloads/b05ecab740848f6532123f3528128ccf/pcap_doc-10.hires.png"><code class="xref download docutils literal notranslate"><span class="pre">hires.png</span></code></a>, <a class="reference download internal" download="" href="../_downloads/aba9b4d25f5842c308b59304984b20b8/pcap_doc-10.pdf"><code class="xref download docutils literal notranslate"><span class="pre">pdf</span></code></a>)</p>
+<figure class="align-default">
+<img alt="../_images/pcap_doc-10.png" class="plot-directive" src="../_images/pcap_doc-10.png" />
+</figure>
+<table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Row</p></th>
 <th class="head"><p>0x45</p></th>
@@ -630,25 +809,19 @@ current capture:</p>
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="mode-6-7-8-sum-of-squared-values-lo-mid-hi">
-<h3>Mode 6/7/8 - Sum of Squared values Lo/Mid/Hi<a class="headerlink" href="#mode-6-7-8-sum-of-squared-values-lo-mid-hi" title="Permalink to this heading"></a></h3>
+</section>
+<section id="mode-6-7-8-sum-of-squared-values-lo-mid-hi">
+<h3>Mode 6/7/8 - Sum of Squared values Lo/Mid/Hi<a class="headerlink" href="#mode-6-7-8-sum-of-squared-values-lo-mid-hi" title="Link to this heading">#</a></h3>
 <p>Mode 6/7/8 is only implemented when target supports pcap_std_dev fpga option.</p>
 <p>Mode 6, 7 and 8 together gives the full 96-bits of sum of squared values
 needed for any sizeable values on the pos_bus.</p>
 <p>Mode 6 is the lower 32-bits while GATE was high, Mode 7 is the middle 32-bits,
 and Mode 8 is the higher 32-bits:</p>
-<p>(<a class="reference external" href="../build/pcap_doc-11.py">Source code</a>, <a class="reference external" href="../build/pcap_doc-11.png">png</a>, <a class="reference external" href="../build/pcap_doc-11.hires.png">hires.png</a>, <a class="reference external" href="../build/pcap_doc-11.pdf">pdf</a>)</p>
-<div class="figure align-default">
-<img alt="../_images/pcap_doc-111.png" src="../_images/pcap_doc-111.png" />
-</div>
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 20%" />
-<col style="width: 27%" />
-<col style="width: 27%" />
-<col style="width: 27%" />
-</colgroup>
+<p>(<a class="reference download internal" download="" href="../_downloads/77c6fb801c86b182087d5e09d5d51e6e/pcap_doc-11.py"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">code</span></code></a>, <a class="reference download internal" download="" href="../_downloads/02e046441fe2295d73d988b401e8d23e/pcap_doc-11.png"><code class="xref download docutils literal notranslate"><span class="pre">png</span></code></a>, <a class="reference download internal" download="" href="../_downloads/12a65299386eca5f54d1d9576662f77f/pcap_doc-11.hires.png"><code class="xref download docutils literal notranslate"><span class="pre">hires.png</span></code></a>, <a class="reference download internal" download="" href="../_downloads/16fb5937c3387059e9a9103a21845556/pcap_doc-11.pdf"><code class="xref download docutils literal notranslate"><span class="pre">pdf</span></code></a>)</p>
+<figure class="align-default">
+<img alt="../_images/pcap_doc-11.png" class="plot-directive" src="../_images/pcap_doc-11.png" />
+</figure>
+<table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Row</p></th>
 <th class="head"><p>0x26</p></th>
@@ -677,18 +850,11 @@ and Mode 8 is the higher 32-bits:</p>
 <p>If long frame times (&gt; 2**32 SAMPLES, &gt; 30s), are to be used, then SHIFT_SUM
 can be used to shift both the sum of squared values and SAMPLES field
 by up to 8-bits to accomodate up to 125 hour frames:</p>
-<p>(<a class="reference external" href="../build/pcap_doc-12.py">Source code</a>, <a class="reference external" href="../build/pcap_doc-12.png">png</a>, <a class="reference external" href="../build/pcap_doc-12.hires.png">hires.png</a>, <a class="reference external" href="../build/pcap_doc-12.pdf">pdf</a>)</p>
-<div class="figure align-default">
-<img alt="../_images/pcap_doc-12.png" src="../_images/pcap_doc-12.png" />
-</div>
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 15%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 25%" />
-</colgroup>
+<p>(<a class="reference download internal" download="" href="../_downloads/c64d895ecbeb29e9143887066f208964/pcap_doc-12.py"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">code</span></code></a>, <a class="reference download internal" download="" href="../_downloads/40d7259704de43419daf0140861c0fc1/pcap_doc-12.png"><code class="xref download docutils literal notranslate"><span class="pre">png</span></code></a>, <a class="reference download internal" download="" href="../_downloads/73079eacb58df893a27c8187930e225d/pcap_doc-12.hires.png"><code class="xref download docutils literal notranslate"><span class="pre">hires.png</span></code></a>, <a class="reference download internal" download="" href="../_downloads/31a81615c5e1e906b0da4c9ead2a0aad/pcap_doc-12.pdf"><code class="xref download docutils literal notranslate"><span class="pre">pdf</span></code></a>)</p>
+<figure class="align-default">
+<img alt="../_images/pcap_doc-12.png" class="plot-directive" src="../_images/pcap_doc-12.png" />
+</figure>
+<table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Row</p></th>
 <th class="head"><p>0x26</p></th>
@@ -718,24 +884,20 @@ by up to 8-bits to accomodate up to 125 hour frames:</p>
 </tr>
 </tbody>
 </table>
-</div>
-</div>
-<div class="section" id="number-of-samples">
-<h2>Number of samples<a class="headerlink" href="#number-of-samples" title="Permalink to this heading"></a></h2>
+</section>
+</section>
+<section id="number-of-samples">
+<h2>Number of samples<a class="headerlink" href="#number-of-samples" title="Link to this heading">#</a></h2>
 <p>There is a SAMPLES field that can be captured that will give the number of clock
 ticks that GATE was high during a single CAPTURE. This field allows the TCP
 server to offer “Mean” as a capture option, dividing “Sum” by SAMPLES to get
 the mean value of the field during the capture period. It can also be captured
 separately to give the gate length:</p>
-<p>(<a class="reference external" href="../build/pcap_doc-13.py">Source code</a>, <a class="reference external" href="../build/pcap_doc-13.png">png</a>, <a class="reference external" href="../build/pcap_doc-13.hires.png">hires.png</a>, <a class="reference external" href="../build/pcap_doc-13.pdf">pdf</a>)</p>
-<div class="figure align-default">
-<img alt="../_images/pcap_doc-13.png" src="../_images/pcap_doc-13.png" />
-</div>
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 38%" />
-<col style="width: 63%" />
-</colgroup>
+<p>(<a class="reference download internal" download="" href="../_downloads/a7d1d9a8f541df7251f0e1be0a422de3/pcap_doc-13.py"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">code</span></code></a>, <a class="reference download internal" download="" href="../_downloads/b2774ec82b8a85ec2b76ebcdea702594/pcap_doc-13.png"><code class="xref download docutils literal notranslate"><span class="pre">png</span></code></a>, <a class="reference download internal" download="" href="../_downloads/a39e0752e1c658094d78d45a222a329e/pcap_doc-13.hires.png"><code class="xref download docutils literal notranslate"><span class="pre">hires.png</span></code></a>, <a class="reference download internal" download="" href="../_downloads/d2b18c2e6e06899263a14714e4c2cc02/pcap_doc-13.pdf"><code class="xref download docutils literal notranslate"><span class="pre">pdf</span></code></a>)</p>
+<figure class="align-default">
+<img alt="../_images/pcap_doc-13.png" class="plot-directive" src="../_images/pcap_doc-13.png" />
+</figure>
+<table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Row</p></th>
 <th class="head"><p>0x260</p></th>
@@ -756,26 +918,20 @@ separately to give the gate length:</p>
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="timestamps">
-<h2>Timestamps<a class="headerlink" href="#timestamps" title="Permalink to this heading"></a></h2>
+</section>
+<section id="timestamps">
+<h2>Timestamps<a class="headerlink" href="#timestamps" title="Link to this heading">#</a></h2>
 <p>As well as the timestamp of the capture signal, timestamps can also be generated
 for the start of each capture period (first gate high signal) and end (the tick
 after the last gate high). These are again split into two 32-bit segments so
 only the lower bits need to be captured for short captures. In the following
 example we capture TS_START (0x20), TS_END (0x22) and TS_CAPTURE (0x24) lower
 bits:</p>
-<p>(<a class="reference external" href="../build/pcap_doc-14.py">Source code</a>, <a class="reference external" href="../build/pcap_doc-14.png">png</a>, <a class="reference external" href="../build/pcap_doc-14.hires.png">hires.png</a>, <a class="reference external" href="../build/pcap_doc-14.pdf">pdf</a>)</p>
-<div class="figure align-default">
-<img alt="../_images/pcap_doc-14.png" src="../_images/pcap_doc-14.png" />
-</div>
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 17%" />
-<col style="width: 28%" />
-<col style="width: 28%" />
-<col style="width: 28%" />
-</colgroup>
+<p>(<a class="reference download internal" download="" href="../_downloads/3993de377c0d744fda913d4d851ac09e/pcap_doc-14.py"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">code</span></code></a>, <a class="reference download internal" download="" href="../_downloads/c4106466b991a83f15b32a3a3b9ae843/pcap_doc-14.png"><code class="xref download docutils literal notranslate"><span class="pre">png</span></code></a>, <a class="reference download internal" download="" href="../_downloads/e22557f41b02c1698696903095812eee/pcap_doc-14.hires.png"><code class="xref download docutils literal notranslate"><span class="pre">hires.png</span></code></a>, <a class="reference download internal" download="" href="../_downloads/112577682ef0f7c2dc5d20d21c8e2856/pcap_doc-14.pdf"><code class="xref download docutils literal notranslate"><span class="pre">pdf</span></code></a>)</p>
+<figure class="align-default">
+<img alt="../_images/pcap_doc-14.png" class="plot-directive" src="../_images/pcap_doc-14.png" />
+</figure>
+<table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Row</p></th>
 <th class="head"><p>0x200</p></th>
@@ -806,21 +962,17 @@ bits:</p>
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="bit-bus-capture">
-<h2>Bit bus capture<a class="headerlink" href="#bit-bus-capture" title="Permalink to this heading"></a></h2>
+</section>
+<section id="bit-bus-capture">
+<h2>Bit bus capture<a class="headerlink" href="#bit-bus-capture" title="Link to this heading">#</a></h2>
 <p>The state of the bit bus at capture can also be captured. It is split into 4
 quadrants of 32-bits each. For example, to capture signals 0..31 on the bit bus
 we would use BITS0 (0x27):</p>
-<p>(<a class="reference external" href="../build/pcap_doc-15.py">Source code</a>, <a class="reference external" href="../build/pcap_doc-15.png">png</a>, <a class="reference external" href="../build/pcap_doc-15.hires.png">hires.png</a>, <a class="reference external" href="../build/pcap_doc-15.pdf">pdf</a>)</p>
-<div class="figure align-default">
-<img alt="../_images/pcap_doc-15.png" src="../_images/pcap_doc-15.png" />
-</div>
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 38%" />
-<col style="width: 63%" />
-</colgroup>
+<p>(<a class="reference download internal" download="" href="../_downloads/0cead1da752067d2292e30dce6fc20f9/pcap_doc-15.py"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">code</span></code></a>, <a class="reference download internal" download="" href="../_downloads/4789c5a62729fcfe180586cac1749c80/pcap_doc-15.png"><code class="xref download docutils literal notranslate"><span class="pre">png</span></code></a>, <a class="reference download internal" download="" href="../_downloads/4ce70ddc162baa2800b13b7fec58ce1b/pcap_doc-15.hires.png"><code class="xref download docutils literal notranslate"><span class="pre">hires.png</span></code></a>, <a class="reference download internal" download="" href="../_downloads/51a8e8cc8a21365a34a84d8be6d46cb3/pcap_doc-15.pdf"><code class="xref download docutils literal notranslate"><span class="pre">pdf</span></code></a>)</p>
+<figure class="align-default">
+<img alt="../_images/pcap_doc-15.png" class="plot-directive" src="../_images/pcap_doc-15.png" />
+</figure>
+<table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Row</p></th>
 <th class="head"><p>0x270</p></th>
@@ -842,18 +994,11 @@ we would use BITS0 (0x27):</p>
 </tbody>
 </table>
 <p>By capturing all 4 quadrants (0x27..0x2A) we get the whole bit bus:</p>
-<p>(<a class="reference external" href="../build/pcap_doc-16.py">Source code</a>, <a class="reference external" href="../build/pcap_doc-16.png">png</a>, <a class="reference external" href="../build/pcap_doc-16.hires.png">hires.png</a>, <a class="reference external" href="../build/pcap_doc-16.pdf">pdf</a>)</p>
-<div class="figure align-default">
-<img alt="../_images/pcap_doc-16.png" src="../_images/pcap_doc-16.png" />
-</div>
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 13%" />
-<col style="width: 22%" />
-<col style="width: 22%" />
-<col style="width: 22%" />
-<col style="width: 22%" />
-</colgroup>
+<p>(<a class="reference download internal" download="" href="../_downloads/ec158df6b762d4cde43e316103377434/pcap_doc-16.py"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">code</span></code></a>, <a class="reference download internal" download="" href="../_downloads/40fb319e107cdcd9ddc68c0964b3f962/pcap_doc-16.png"><code class="xref download docutils literal notranslate"><span class="pre">png</span></code></a>, <a class="reference download internal" download="" href="../_downloads/eaa7f945eda4259eb81016162b8fbb31/pcap_doc-16.hires.png"><code class="xref download docutils literal notranslate"><span class="pre">hires.png</span></code></a>, <a class="reference download internal" download="" href="../_downloads/c1e6761d0a231bf655243d89cc4a07d4/pcap_doc-16.pdf"><code class="xref download docutils literal notranslate"><span class="pre">pdf</span></code></a>)</p>
+<figure class="align-default">
+<img alt="../_images/pcap_doc-16.png" class="plot-directive" src="../_images/pcap_doc-16.png" />
+</figure>
+<table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Row</p></th>
 <th class="head"><p>0x270</p></th>
@@ -889,9 +1034,9 @@ we would use BITS0 (0x27):</p>
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="triggering-options">
-<h2>Triggering options<a class="headerlink" href="#triggering-options" title="Permalink to this heading"></a></h2>
+</section>
+<section id="triggering-options">
+<h2>Triggering options<a class="headerlink" href="#triggering-options" title="Link to this heading">#</a></h2>
 <p>ENABLE and GATE are level triggered, with ENABLE used for marking the start and
 end of the entire acquisition, and GATE used to accept or reject samples within
 a single capture from the acquisition. CAPTURE is edge triggered with an option
@@ -901,15 +1046,11 @@ Triggering on falling edge would be used if you have a gate signal that
 marks the capture boundaries and want sum or difference data within. For
 example, to capture the amount POS[1] changes in each capture gate we could
 connect GATE and CAPTURE to the same signal:</p>
-<p>(<a class="reference external" href="../build/pcap_doc-17.py">Source code</a>, <a class="reference external" href="../build/pcap_doc-17.png">png</a>, <a class="reference external" href="../build/pcap_doc-17.hires.png">hires.png</a>, <a class="reference external" href="../build/pcap_doc-17.pdf">pdf</a>)</p>
-<div class="figure align-default">
-<img alt="../_images/pcap_doc-17.png" src="../_images/pcap_doc-17.png" />
-</div>
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 43%" />
-<col style="width: 57%" />
-</colgroup>
+<p>(<a class="reference download internal" download="" href="../_downloads/3ae13fd7c778916d335b6d144fa04fd4/pcap_doc-17.py"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">code</span></code></a>, <a class="reference download internal" download="" href="../_downloads/a3195b0f8ef43354a3f06ae7d62dcfad/pcap_doc-17.png"><code class="xref download docutils literal notranslate"><span class="pre">png</span></code></a>, <a class="reference download internal" download="" href="../_downloads/44e7764cbd6e0254377c0717c25f97b1/pcap_doc-17.hires.png"><code class="xref download docutils literal notranslate"><span class="pre">hires.png</span></code></a>, <a class="reference download internal" download="" href="../_downloads/d9dbe13766dc22cbdde95599df7fcb39/pcap_doc-17.pdf"><code class="xref download docutils literal notranslate"><span class="pre">pdf</span></code></a>)</p>
+<figure class="align-default">
+<img alt="../_images/pcap_doc-17.png" class="plot-directive" src="../_images/pcap_doc-17.png" />
+</figure>
+<table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Row</p></th>
 <th class="head"><p>0x11</p></th>
@@ -926,15 +1067,11 @@ connect GATE and CAPTURE to the same signal:</p>
 </table>
 <p>Another option would be a gap-less acquisition of sum while gate is high
 with capture boundaries marked with a toggle of CAPTURE:</p>
-<p>(<a class="reference external" href="../build/pcap_doc-18.py">Source code</a>, <a class="reference external" href="../build/pcap_doc-18.png">png</a>, <a class="reference external" href="../build/pcap_doc-18.hires.png">hires.png</a>, <a class="reference external" href="../build/pcap_doc-18.pdf">pdf</a>)</p>
-<div class="figure align-default">
-<img alt="../_images/pcap_doc-18.png" src="../_images/pcap_doc-18.png" />
-</div>
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 43%" />
-<col style="width: 57%" />
-</colgroup>
+<p>(<a class="reference download internal" download="" href="../_downloads/8b9f2067b2ddfb829c04790be5182b17/pcap_doc-18.py"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">code</span></code></a>, <a class="reference download internal" download="" href="../_downloads/89537524d11ae496bc0ed970ba34a408/pcap_doc-18.png"><code class="xref download docutils literal notranslate"><span class="pre">png</span></code></a>, <a class="reference download internal" download="" href="../_downloads/11151176a553d23b541a00396a4a7ba6/pcap_doc-18.hires.png"><code class="xref download docutils literal notranslate"><span class="pre">hires.png</span></code></a>, <a class="reference download internal" download="" href="../_downloads/a2a662dca12938b8dd0be45717ecec32/pcap_doc-18.pdf"><code class="xref download docutils literal notranslate"><span class="pre">pdf</span></code></a>)</p>
+<figure class="align-default">
+<img alt="../_images/pcap_doc-18.png" class="plot-directive" src="../_images/pcap_doc-18.png" />
+</figure>
+<table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Row</p></th>
 <th class="head"><p>0x12</p></th>
@@ -955,25 +1092,19 @@ with capture boundaries marked with a toggle of CAPTURE:</p>
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="error-conditions">
-<h2>Error conditions<a class="headerlink" href="#error-conditions" title="Permalink to this heading"></a></h2>
+</section>
+<section id="error-conditions">
+<h2>Error conditions<a class="headerlink" href="#error-conditions" title="Link to this heading">#</a></h2>
 <p>The distance between capture signals must be at least the number of 32-bit
 capture fields. If 2 capture signals are too close together HEALTH will be
 set to 1 (Capture events too close together).</p>
 <p>In this example there are 3 fields captured (TS_CAPTURE_L, TS_CAPTURE_H,
 SAMPLES), but only 2 clock ticks between the 2nd and 3rd capture signals:</p>
-<p>(<a class="reference external" href="../build/pcap_doc-19.py">Source code</a>, <a class="reference external" href="../build/pcap_doc-19.png">png</a>, <a class="reference external" href="../build/pcap_doc-19.hires.png">hires.png</a>, <a class="reference external" href="../build/pcap_doc-19.pdf">pdf</a>)</p>
-<div class="figure align-default">
-<img alt="../_images/pcap_doc-19.png" src="../_images/pcap_doc-19.png" />
-</div>
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 17%" />
-<col style="width: 28%" />
-<col style="width: 28%" />
-<col style="width: 28%" />
-</colgroup>
+<p>(<a class="reference download internal" download="" href="../_downloads/9c4462909ed281d253fa901117283236/pcap_doc-19.py"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">code</span></code></a>, <a class="reference download internal" download="" href="../_downloads/0aac8babb1102a08e03b29f3c6f79d14/pcap_doc-19.png"><code class="xref download docutils literal notranslate"><span class="pre">png</span></code></a>, <a class="reference download internal" download="" href="../_downloads/c5642c5df85cf4c6d672026b0aa995ed/pcap_doc-19.hires.png"><code class="xref download docutils literal notranslate"><span class="pre">hires.png</span></code></a>, <a class="reference download internal" download="" href="../_downloads/5db6142f3a26d19b4067b1349d5aae61/pcap_doc-19.pdf"><code class="xref download docutils literal notranslate"><span class="pre">pdf</span></code></a>)</p>
+<figure class="align-default">
+<img alt="../_images/pcap_doc-19.png" class="plot-directive" src="../_images/pcap_doc-19.png" />
+</figure>
+<table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Row</p></th>
 <th class="head"><p>0x240</p></th>
@@ -994,35 +1125,113 @@ SAMPLES), but only 2 clock ticks between the 2nd and 3rd capture signals:</p>
 </tr>
 </tbody>
 </table>
-</div>
-</div>
+</section>
+</section>
 
 
-           </div>
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fields">Fields</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arming">Arming</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#capturing-fields">Capturing fields</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pos-bus-capture">Pos bus capture</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mode-0-value">Mode 0 - Value</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mode-1-difference">Mode 1 - Difference</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mode-2-3-sum-lo-hi">Mode 2/3 - Sum Lo/Hi</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mode-4-5-min-max">Mode 4/5 - Min/Max</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mode-6-7-8-sum-of-squared-values-lo-mid-hi">Mode 6/7/8 - Sum of Squared values Lo/Mid/Hi</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#number-of-samples">Number of samples</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#timestamps">Timestamps</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bit-bus-capture">Bit bus capture</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#triggering-options">Triggering options</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#error-conditions">Error conditions</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/PandABlocks/PandABlocks-FPGA/edit/master/docs/build/pcap_doc.rst">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../_sources/build/pcap_doc.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
           </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="outenc_doc.html" class="btn btn-neutral float-left" title="OUTENC - Output encoder" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="pcomp_doc.html" class="btn btn-neutral float-right" title="PCOMP - Position Compare" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
     </div>
-
-  <hr/>
-
-  <div role="contentinfo">
-    <p>&#169; Copyright 2015, Diamond Light Source.</p>
   </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
-   
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.15.2.
+</p></div>
+      
+    </div>
+  
+</div>
 
-</footer>
-        </div>
-      </div>
-    </section>
-  </div>
-  <script>
-      jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
-      });
-  </script> 
-
-</body>
+  </footer>
+  </body>
 </html>
