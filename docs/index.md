@@ -48,7 +48,6 @@ Explanations of how it works and why it works that way.
 ```{toctree}
 :maxdepth: 2
 reference
-blocks.rst
 ```
 +++
 Technical reference material including APIs and release notes.
