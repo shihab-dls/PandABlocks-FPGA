@@ -1,1110 +1,630 @@
+
 <!DOCTYPE html>
-<html class="writer-html5" lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>What can PandABlocks do? &mdash; PandABlocks-FPGA 3f59bb6
- documentation</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-      <link rel="stylesheet" type="text/css" href="_static/css/theme.css" />
-      <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
-      <link rel="stylesheet" type="text/css" href="_static/theme_overrides.css" />
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>pandablocks &#8212; PandABlocks-FPGA 0.1.dev2594+ge47ff0e documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-    <link rel="shortcut icon" href="_static/PandA-logo.ico"/>
-  <!--[if lt IE 9]>
-    <script src="_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=fd3f3429" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/plot_directive.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/sphinx_highlight.js"></script>
-    <script src="_static/js/theme.js"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="_static/documentation_options.js?v=95e09165"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=30646c52"></script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'index';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.15.2';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://PandABlocks.github.io/PandABlocks-FPGA/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'master';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner = false;
+        </script>
+    <link rel="icon" href="_static/dls-logo.svg"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Blinking LEDs Tutorial" href="tutorials/tutorial1_blinking_leds.html" /> 
-</head>
-
-<body class="wy-body-for-nav"> 
-  <div class="wy-grid-for-nav">
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-scroll">
-        <div class="wy-side-nav-search"  style="background: black" >
-
-          
-          
-          <a href="#" class="icon icon-home">
-            PandABlocks-FPGA
-              <img src="_static/PandA-logo-for-black-background.svg" class="logo" alt="Logo"/>
-          </a>
-              <div class="version">
-                3f59bb6
-
-              </div>
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
-    <input type="hidden" name="check_keywords" value="yes" />
-    <input type="hidden" name="area" value="default" />
-  </form>
-</div>
-        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-  <style>
-    /* style mobile top nav to look like main nav */
-    .wy-nav-top {
-        background: black
-    }
-  </style>
+    <link rel="next" title="Tutorials" href="tutorials.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
   
-              <p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
-<ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">What can PandABlocks do?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#how-is-the-documentation-structured">How is the documentation structured?</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#using-an-existing-pandablocks-device">Using an existing PandABlocks device</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#generating-a-new-set-of-blocks-for-a-pandablocks-device">Generating a new set of Blocks for a PandABlocks device</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#extending-the-functionality-of-a-pandablocks-device">Extending the functionality of a PandABlocks device</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#working-on-the-core-autogeneration-framework">Working on the core autogeneration framework</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="tutorials/tutorial1_blinking_leds.html">Blinking LEDs Tutorial</a></li>
-<li class="toctree-l3"><a class="reference internal" href="tutorials/tutorial2_position_capture.html">Position Capture Tutorial</a></li>
-<li class="toctree-l3"><a class="reference internal" href="tutorials/tutorial3_position_compare.html">Position Compare Tutorial</a></li>
-<li class="toctree-l3"><a class="reference internal" href="tutorials/tutorial4_snake_scan.html">Snake Scan Tutorial</a></li>
-<li class="toctree-l3"><a class="reference internal" href="blocks.html">Available Blocks</a></li>
-<li class="toctree-l3"><a class="reference internal" href="reference/contributing.html">Contributing</a></li>
-<li class="toctree-l3"><a class="reference internal" href="reference/app.html">Assembling Blocks into an App</a></li>
-<li class="toctree-l3"><a class="reference internal" href="reference/block.html">Writing a Block</a></li>
-<li class="toctree-l3"><a class="reference internal" href="reference/framework.html">Autogeneration framework architecture</a></li>
-<li class="toctree-l3"><a class="reference internal" href="reference/changelog.html">Changelog</a></li>
-<li class="toctree-l3"><a class="reference internal" href="reference/glossary.html">Glossary</a></li>
-<li class="toctree-l3"><a class="reference internal" href="reference/testing.html">Running the tests</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="tutorials/tutorial1_blinking_leds.html">Blinking LEDs Tutorial</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tutorials/tutorial2_position_capture.html">Position Capture Tutorial</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tutorials/tutorial3_position_compare.html">Position Compare Tutorial</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tutorials/tutorial4_snake_scan.html">Snake Scan Tutorial</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="blocks.html">Available Blocks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="reference/contributing.html">Contributing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="reference/app.html">Assembling Blocks into an App</a></li>
-<li class="toctree-l1"><a class="reference internal" href="reference/block.html">Writing a Block</a></li>
-<li class="toctree-l1"><a class="reference internal" href="reference/framework.html">Autogeneration framework architecture</a></li>
-<li class="toctree-l1"><a class="reference internal" href="reference/changelog.html">Changelog</a></li>
-<li class="toctree-l1"><a class="reference internal" href="reference/glossary.html">Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="reference/testing.html">Running the tests</a></li>
-</ul>
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-  <!-- Include link to changelog -->
-  <a href="https://github.com/PandABlocks/PandABlocks-FPGA/blob/master/CHANGELOG.rst">Changelog</a>
-  <!-- Add versions for selected branches + tags -->
-  <p class="caption"><span class="caption-text">Versions</span></p>
-  <ul id="versions"/>
-  <script>
-    // Add any branches to appear in the side pane here, tags will be added below
-    // Will only appear if docs are built and pushed in gh-pages
-    var versions = ['master', 'main'];
-    var dirs = new Set();
-    function addVersion(name) {
-      if (dirs.has(name)) {
-        var li = document.createElement("li");
-        var a = document.createElement("a");
-        a.href = 'https://PandABlocks.github.io/PandABlocks-FPGA/' + name;
-        a.innerText = name;
-        li.appendChild(a)
-        document.getElementById('versions').appendChild(li);
-      }
-    }
-    Promise.all([
-      // Find gh-pages directories and populate `dirs`
-      fetch("https://api.github.com/repos/PandABlocks/PandABlocks-FPGA/contents?ref=gh-pages")
-      .then(response => response.json())
-      .then(data => data.forEach(function(e) {
-        if (e.type == "dir") dirs.add(e.name);
-      })),
-      // Add tags to `versions`
-      fetch('https://api.github.com/repos/PandABlocks/PandABlocks-FPGA/tags')
-        .then(response => response.json())
-        .then(data => data.forEach(function(e) {
-          versions.push(e.name);
-        }))
-      ]).then(_ => versions.forEach(addVersion))
-  </script>
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
 
-        </div>
-      </div>
-    </nav>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: black" >
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="#">PandABlocks-FPGA</a>
-      </nav>
+  
 
-      <div class="wy-nav-content">
-        <div class="rst-content">
-          <div role="navigation" aria-label="Page navigation">
-  <ul class="wy-breadcrumbs">
-      <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">What can PandABlocks do?</li>
-      <li class="wy-breadcrumbs-aside">
-            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
-      </li>
+<a class="navbar-brand logo" href="#">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/dls-logo.svg" class="logo__image only-light" alt=""/>
+    <script>document.write(`<img src="_static/dls-logo.svg" class="logo__image only-dark" alt=""/>`);</script>
+  
+  
+    <p class="title logo__title">PandABlocks-FPGA</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav class="navbar-nav">
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="tutorials.html">
+                        Tutorials
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="how-to.html">
+                        How-to Guides
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="explanations.html">
+                        Explanations
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="reference.html">
+                        Reference
+                      </a>
+                    </li>
+                
   </ul>
-  <hr/>
-</div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody">
-             
-  <div class="section" id="what-can-pandablocks-do">
-<h1>What can PandABlocks do?<a class="headerlink" href="#what-can-pandablocks-do" title="Permalink to this heading"></a></h1>
-<p>PandABlocks is a framework enabling a number of functional <a class="reference internal" href="reference/glossary.html#block"><span class="std std-ref">Block</span></a> instances to
-be written and loaded to an FPGA, with their parameters (including their
-connections to other Blocks) changed at runtime. It allows flexible triggering
-and processing systems to be created, by users who are unfamiliar with writing
-FPGA firmware.</p>
-<img alt="_images/fpga_arch.png" src="_images/fpga_arch.png" />
-</div>
-<div class="section" id="how-is-the-documentation-structured">
-<h1>How is the documentation structured?<a class="headerlink" href="#how-is-the-documentation-structured" title="Permalink to this heading"></a></h1>
-<p>The documentation is structured into a series of <a class="reference internal" href="#tutorials-doc"><span class="std std-ref">Tutorials</span></a> and some
-general <a class="reference internal" href="#reference-doc"><span class="std std-ref">Reference</span></a> documentation. End users and developers need different
-documentation, so links for various categories of user are listed below:</p>
-<div class="section" id="using-an-existing-pandablocks-device">
-<h2>Using an existing PandABlocks device<a class="headerlink" href="#using-an-existing-pandablocks-device" title="Permalink to this heading"></a></h2>
-<p>Work through the <a class="reference internal" href="#tutorials-doc"><span class="std std-ref">Tutorials</span></a>.</p>
-</div>
-<div class="section" id="generating-a-new-set-of-blocks-for-a-pandablocks-device">
-<h2>Generating a new set of Blocks for a PandABlocks device<a class="headerlink" href="#generating-a-new-set-of-blocks-for-a-pandablocks-device" title="Permalink to this heading"></a></h2>
-<p>Read <a class="reference internal" href="blocks.html#blocks-doc"><span class="std std-ref">Available Blocks</span></a> to find out what already exists, then read
-<a class="reference internal" href="reference/app.html#app-reference"><span class="std std-ref">Assembling Blocks into an App</span></a> to see how to make an <a class="reference internal" href="reference/glossary.html#app"><span class="std std-ref">App</span></a> of these Blocks that can be loaded
-to a PandABlocks device.</p>
-</div>
-<div class="section" id="extending-the-functionality-of-a-pandablocks-device">
-<h2>Extending the functionality of a PandABlocks device<a class="headerlink" href="#extending-the-functionality-of-a-pandablocks-device" title="Permalink to this heading"></a></h2>
-<p>Read <a class="reference internal" href="blocks.html#blocks-doc"><span class="std std-ref">Available Blocks</span></a> to see if you need to create a new Block or add to
-an existing one. Read <a class="reference internal" href="reference/block.html#block-reference"><span class="std std-ref">Writing a Block</span></a> to find out how to specify the
-interface to a Block, VHDL entity, timing tests and docs.</p>
-</div>
-<div class="section" id="working-on-the-core-autogeneration-framework">
-<h2>Working on the core autogeneration framework<a class="headerlink" href="#working-on-the-core-autogeneration-framework" title="Permalink to this heading"></a></h2>
-<p>Read <a class="reference internal" href="reference/block.html#block-reference"><span class="std std-ref">Writing a Block</span></a> to find out how the process works, then
-<a class="reference internal" href="reference/framework.html#framework-reference"><span class="std std-ref">Autogeneration framework architecture</span></a> for more details on specific parts of the autogeneration
-framework</p>
-<div class="toctree-wrapper compound">
-<p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
-<ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">What can PandABlocks do?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#how-is-the-documentation-structured">How is the documentation structured?</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#using-an-existing-pandablocks-device">Using an existing PandABlocks device</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#generating-a-new-set-of-blocks-for-a-pandablocks-device">Generating a new set of Blocks for a PandABlocks device</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#extending-the-functionality-of-a-pandablocks-device">Extending the functionality of a PandABlocks device</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#working-on-the-core-autogeneration-framework">Working on the core autogeneration framework</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="tutorials/tutorial1_blinking_leds.html">Blinking LEDs Tutorial</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="tutorials/tutorial1_blinking_leds.html#opening-the-gui">Opening the GUI</a></li>
-<li class="toctree-l4"><a class="reference internal" href="tutorials/tutorial1_blinking_leds.html#loading-the-tutorial-design">Loading the tutorial design</a></li>
-<li class="toctree-l4"><a class="reference internal" href="tutorials/tutorial1_blinking_leds.html#how-the-design-works">How the design works</a></li>
-<li class="toctree-l4"><a class="reference internal" href="tutorials/tutorial1_blinking_leds.html#the-bit-bus">The Bit Bus</a></li>
-<li class="toctree-l4"><a class="reference internal" href="tutorials/tutorial1_blinking_leds.html#conclusion">Conclusion</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="tutorials/tutorial2_position_capture.html">Position Capture Tutorial</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="tutorials/tutorial2_position_capture.html#loading-the-tutorial-design">Loading the tutorial design</a></li>
-<li class="toctree-l4"><a class="reference internal" href="tutorials/tutorial2_position_capture.html#how-the-design-works">How the design works</a></li>
-<li class="toctree-l4"><a class="reference internal" href="tutorials/tutorial2_position_capture.html#conclusion">Conclusion</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="tutorials/tutorial3_position_compare.html">Position Compare Tutorial</a></li>
-<li class="toctree-l3"><a class="reference internal" href="tutorials/tutorial4_snake_scan.html">Snake Scan Tutorial</a></li>
-<li class="toctree-l3"><a class="reference internal" href="blocks.html">Available Blocks</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="build/bits_doc.html">BITS - Soft inputs and constant bits</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="build/bits_doc.html#fields">Fields</a></li>
-<li class="toctree-l5"><a class="reference internal" href="build/bits_doc.html#outputs-follow-parameters">Outputs follow parameters</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="build/calc_doc.html">CALC - Position Calc</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="build/calc_doc.html#fields">Fields</a></li>
-<li class="toctree-l5"><a class="reference internal" href="build/calc_doc.html#adding-inputs">Adding inputs</a></li>
-<li class="toctree-l5"><a class="reference internal" href="build/calc_doc.html#scaling">Scaling</a></li>
-<li class="toctree-l5"><a class="reference internal" href="build/calc_doc.html#inverting">Inverting</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="build/clock_doc.html">CLOCK - Configurable clock</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="build/clock_doc.html#fields">Fields</a></li>
-<li class="toctree-l5"><a class="reference internal" href="build/clock_doc.html#setting-clock-period-parameters">Setting clock period parameters</a></li>
-<li class="toctree-l5"><a class="reference internal" href="build/clock_doc.html#clock-settings-while-disabled">Clock settings while disabled</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="build/counter_doc.html">COUNTER - Up/Down pulse counter</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="build/counter_doc.html#fields">Fields</a></li>
-<li class="toctree-l5"><a class="reference internal" href="build/counter_doc.html#counting-pulses">Counting pulses</a></li>
-<li class="toctree-l5"><a class="reference internal" href="build/counter_doc.html#rollover">Rollover</a></li>
-<li class="toctree-l5"><a class="reference internal" href="build/counter_doc.html#edge-cases">Edge cases</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="build/div_doc.html">DIV - Pulse divider</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="build/div_doc.html#fields">Fields</a></li>
-<li class="toctree-l5"><a class="reference internal" href="build/div_doc.html#which-output-do-pulses-go-to">Which output do pulses go to</a></li>
-<li class="toctree-l5"><a class="reference internal" href="build/div_doc.html#reset-conditions">Reset conditions</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="build/filter_doc.html">FILTER - Filter</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="build/filter_doc.html#fields">Fields</a></li>
-<li class="toctree-l5"><a class="reference internal" href="build/filter_doc.html#difference">Difference</a></li>
-<li class="toctree-l5"><a class="reference internal" href="build/filter_doc.html#average">Average</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="build/fmc_24v_doc.html">FMC_24V - FMC 24V IO Module</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="build/fmc_24v_doc.html#fields">Fields</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="build/fmc_acq427_doc.html">FMC_ACQ427 - FMC ACQ427 Module</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="build/fmc_acq427_doc.html#fields">Fields</a></li>
-<li class="toctree-l5"><a class="reference internal" href="build/fmc_acq427_doc.html#clock-note">Clock note</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="build/fmc_acq430_doc.html">FMC_ACQ430 - FMC ACQ430 Module</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="build/fmc_acq430_doc.html#fields">Fields</a></li>
-<li class="toctree-l5"><a class="reference internal" href="build/fmc_acq430_doc.html#clock-note">Clock note</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="build/fmc_loopback_doc.html">FMC_LOOPBACK - FMC Loopback Module</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="build/fmc_loopback_doc.html#fields">Fields</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="build/inenc_doc.html">INENC - Input encoder</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="build/inenc_doc.html#fields">Fields</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="build/lut_doc.html">LUT - 5 Input lookup table</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="build/lut_doc.html#fields">Fields</a></li>
-<li class="toctree-l5"><a class="reference internal" href="build/lut_doc.html#testing-function-output">Testing Function Output</a></li>
-<li class="toctree-l5"><a class="reference internal" href="build/lut_doc.html#changing-the-function-in-a-test">Changing the function in a test</a></li>
-<li class="toctree-l5"><a class="reference internal" href="build/lut_doc.html#edge-triggered-inputs">Edge triggered inputs</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="build/lvdsin_doc.html">LVDSIN - LVDS Input</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="build/lvdsin_doc.html#fields">Fields</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="build/lvdsout_doc.html">LVDSOUT - LVDS Output</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="build/lvdsout_doc.html#fields">Fields</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="build/outenc_doc.html">OUTENC - Output encoder</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="build/outenc_doc.html#fields">Fields</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="build/pcap_doc.html">PCAP - Position Capture</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="build/pcap_doc.html#fields">Fields</a></li>
-<li class="toctree-l5"><a class="reference internal" href="build/pcap_doc.html#arming">Arming</a></li>
-<li class="toctree-l5"><a class="reference internal" href="build/pcap_doc.html#capturing-fields">Capturing fields</a></li>
-<li class="toctree-l5"><a class="reference internal" href="build/pcap_doc.html#pos-bus-capture">Pos bus capture</a><ul>
-<li class="toctree-l6"><a class="reference internal" href="build/pcap_doc.html#mode-0-value">Mode 0 - Value</a></li>
-<li class="toctree-l6"><a class="reference internal" href="build/pcap_doc.html#mode-1-difference">Mode 1 - Difference</a></li>
-<li class="toctree-l6"><a class="reference internal" href="build/pcap_doc.html#mode-2-3-sum-lo-hi">Mode 2/3 - Sum Lo/Hi</a></li>
-<li class="toctree-l6"><a class="reference internal" href="build/pcap_doc.html#mode-4-5-min-max">Mode 4/5 - Min/Max</a></li>
-<li class="toctree-l6"><a class="reference internal" href="build/pcap_doc.html#mode-6-7-8-sum-of-squared-values-lo-mid-hi">Mode 6/7/8 - Sum of Squared values Lo/Mid/Hi</a></li>
-</ul>
-</li>
-<li class="toctree-l5"><a class="reference internal" href="build/pcap_doc.html#number-of-samples">Number of samples</a></li>
-<li class="toctree-l5"><a class="reference internal" href="build/pcap_doc.html#timestamps">Timestamps</a></li>
-<li class="toctree-l5"><a class="reference internal" href="build/pcap_doc.html#bit-bus-capture">Bit bus capture</a></li>
-<li class="toctree-l5"><a class="reference internal" href="build/pcap_doc.html#triggering-options">Triggering options</a></li>
-<li class="toctree-l5"><a class="reference internal" href="build/pcap_doc.html#error-conditions">Error conditions</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="build/pcomp_doc.html">PCOMP - Position Compare</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="build/pcomp_doc.html#fields">Fields</a></li>
-<li class="toctree-l5"><a class="reference internal" href="build/pcomp_doc.html#position-compare-is-directional">Position compare is directional</a></li>
-<li class="toctree-l5"><a class="reference internal" href="build/pcomp_doc.html#internal-statemachine">Internal statemachine</a></li>
-<li class="toctree-l5"><a class="reference internal" href="build/pcomp_doc.html#not-generating-a-pulse-more-than-once">Not generating a pulse more than once</a></li>
-<li class="toctree-l5"><a class="reference internal" href="build/pcomp_doc.html#guessing-the-direction">Guessing the direction</a></li>
-<li class="toctree-l5"><a class="reference internal" href="build/pcomp_doc.html#interrupting-a-scan">Interrupting a scan</a></li>
-<li class="toctree-l5"><a class="reference internal" href="build/pcomp_doc.html#position-compare-on-absolute-values">Position compare on absolute values</a></li>
-<li class="toctree-l5"><a class="reference internal" href="build/pcomp_doc.html#relative-position-compare">Relative position compare</a></li>
-<li class="toctree-l5"><a class="reference internal" href="build/pcomp_doc.html#use-as-a-schmitt-trigger">Use as a Schmitt trigger</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="build/pgen_doc.html">PGEN - Position Generator</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="build/pgen_doc.html#fields">Fields</a></li>
-<li class="toctree-l5"><a class="reference internal" href="build/pgen_doc.html#normal-operation">Normal operation</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="build/posenc_doc.html">POSENC - Quadrature and step/direction encoder</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="build/posenc_doc.html#fields">Fields</a></li>
-<li class="toctree-l5"><a class="reference internal" href="build/posenc_doc.html#quadrature">Quadrature</a></li>
-<li class="toctree-l5"><a class="reference internal" href="build/posenc_doc.html#step-direction">Step/Direction</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="build/pulse_doc.html">PULSE - One-shot pulse delay and stretch</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="build/pulse_doc.html#fields">Fields</a></li>
-<li class="toctree-l5"><a class="reference internal" href="build/pulse_doc.html#delay-line">Delay line</a></li>
-<li class="toctree-l5"><a class="reference internal" href="build/pulse_doc.html#pulse-train-generation">Pulse train generation</a></li>
-<li class="toctree-l5"><a class="reference internal" href="build/pulse_doc.html#pulse-period-error">Pulse period error</a></li>
-<li class="toctree-l5"><a class="reference internal" href="build/pulse_doc.html#enabling-the-block">Enabling the Block</a></li>
-<li class="toctree-l5"><a class="reference internal" href="build/pulse_doc.html#changing-parameters-while-enabled">Changing parameters while Enabled</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="build/qdec_doc.html">QDEC - Quadrature Decoder</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="build/qdec_doc.html#fields">Fields</a></li>
-<li class="toctree-l5"><a class="reference internal" href="build/qdec_doc.html#counting">Counting</a></li>
-<li class="toctree-l5"><a class="reference internal" href="build/qdec_doc.html#resetting">Resetting</a></li>
-<li class="toctree-l5"><a class="reference internal" href="build/qdec_doc.html#limitations">Limitations</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="build/seq_doc.html">SEQ - Sequencer</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="build/seq_doc.html#fields">Fields</a></li>
-<li class="toctree-l5"><a class="reference internal" href="build/seq_doc.html#sequencer-table-line-composition">Sequencer Table Line Composition</a></li>
-<li class="toctree-l5"><a class="reference internal" href="build/seq_doc.html#generating-fixed-pulse-trains">Generating fixed pulse trains</a></li>
-<li class="toctree-l5"><a class="reference internal" href="build/seq_doc.html#statemachine">Statemachine</a></li>
-<li class="toctree-l5"><a class="reference internal" href="build/seq_doc.html#external-trigger-sources">External trigger sources</a></li>
-<li class="toctree-l5"><a class="reference internal" href="build/seq_doc.html#prescaler">Prescaler</a></li>
-<li class="toctree-l5"><a class="reference internal" href="build/seq_doc.html#interrupting-a-sequence">Interrupting a sequence</a></li>
-<li class="toctree-l5"><a class="reference internal" href="build/seq_doc.html#table-rewriting">Table rewriting</a></li>
-<li class="toctree-l5"><a class="reference internal" href="build/seq_doc.html#double-table-mode">Double table mode</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="build/sfp_dls_eventr_doc.html">SFP_DLS_EVENTR - SFP Event Receiver Module</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="build/sfp_dls_eventr_doc.html#fields">Fields</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="build/sfp_loopback_doc.html">SFP_LOOPBACK- SFP Loopback Module</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="build/sfp_loopback_doc.html#fields">Fields</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="build/sfp_panda_sync_doc.html">SFP_PANDA_SYNC - Synchronize data between 2 PandAs</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="build/sfp_panda_sync_doc.html#fields">Fields</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="build/sfp_udpontrig_doc.html">SFP_UDPONTRIG - SFP UDP on trig Module</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="build/sfp_udpontrig_doc.html#fields">Fields</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="build/srgate_doc.html">SRGATE - Set Reset Gate</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="build/srgate_doc.html#fields">Fields</a></li>
-<li class="toctree-l5"><a class="reference internal" href="build/srgate_doc.html#normal-conditions">Normal conditions</a></li>
-<li class="toctree-l5"><a class="reference internal" href="build/srgate_doc.html#disabling-the-block">Disabling the block</a></li>
-<li class="toctree-l5"><a class="reference internal" href="build/srgate_doc.html#active-edge-configure-conditions">Active edge configure conditions</a></li>
-<li class="toctree-l5"><a class="reference internal" href="build/srgate_doc.html#set-reset-conditions">Set-reset conditions</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="build/system_doc.html">SYSTEM - System control FPGA</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="build/system_doc.html#fields">Fields</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="build/ttlin_doc.html">TTLIN - TTL Input</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="build/ttlin_doc.html#fields">Fields</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="build/ttlout_doc.html">TTLOUT - TTL Output</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="build/ttlout_doc.html#fields">Fields</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="reference/contributing.html">Contributing</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="reference/contributing.html#running-the-tests">Running the tests</a></li>
-<li class="toctree-l4"><a class="reference internal" href="reference/contributing.html#writing-vhdl">Writing VHDL</a></li>
-<li class="toctree-l4"><a class="reference internal" href="reference/contributing.html#writing-python">Writing Python</a></li>
-<li class="toctree-l4"><a class="reference internal" href="reference/contributing.html#documentation">Documentation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="reference/contributing.html#release-checklist">Release Checklist</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="reference/app.html">Assembling Blocks into an App</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="reference/app.html#app-ini-file">App ini file</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="reference/app.html#the-section">The [.] section</a></li>
-<li class="toctree-l5"><a class="reference internal" href="reference/app.html#block-sections">[BLOCK] sections</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="reference/app.html#app-build-process">App build process</a></li>
-<li class="toctree-l4"><a class="reference internal" href="reference/app.html#querying-the-app-at-runtime">Querying the App at runtime</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="reference/block.html">Writing a Block</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="reference/block.html#architecture">Architecture</a></li>
-<li class="toctree-l4"><a class="reference internal" href="reference/block.html#modules">Modules</a></li>
-<li class="toctree-l4"><a class="reference internal" href="reference/block.html#block-ini">Block ini</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="reference/block.html#the-section">The [.] section</a></li>
-<li class="toctree-l5"><a class="reference internal" href="reference/block.html#field-sections">[FIELD] sections</a></li>
-<li class="toctree-l5"><a class="reference internal" href="reference/block.html#extra-field-keys">Extra Field Keys</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="reference/block.html#block-simulation">Block Simulation</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="reference/block.html#common.python.simulations.BlockSimulation"><code class="docutils literal notranslate"><span class="pre">BlockSimulation</span></code></a><ul>
-<li class="toctree-l6"><a class="reference internal" href="reference/block.html#common.python.simulations.BlockSimulation.changes"><code class="docutils literal notranslate"><span class="pre">BlockSimulation.changes</span></code></a></li>
-<li class="toctree-l6"><a class="reference internal" href="reference/block.html#common.python.simulations.BlockSimulation.bits_to_int"><code class="docutils literal notranslate"><span class="pre">BlockSimulation.bits_to_int()</span></code></a></li>
-<li class="toctree-l6"><a class="reference internal" href="reference/block.html#common.python.simulations.BlockSimulation.on_changes"><code class="docutils literal notranslate"><span class="pre">BlockSimulation.on_changes()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="reference/block.html#timing-ini">Timing ini</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="reference/block.html#id2">The [.] section</a></li>
-<li class="toctree-l5"><a class="reference internal" href="reference/block.html#test-sections">[TEST] sections</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="reference/block.html#target-ini">Target ini</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="reference/block.html#id3">The [.] section</a></li>
-<li class="toctree-l5"><a class="reference internal" href="reference/block.html#block-sections">[BLOCK] sections</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="reference/block.html#writing-docs">Writing docs</a></li>
-<li class="toctree-l4"><a class="reference internal" href="reference/block.html#block-vhdl-entity">Block VHDL entity</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="reference/framework.html">Autogeneration framework architecture</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="reference/framework.html#softblocks">Softblocks</a></li>
-<li class="toctree-l4"><a class="reference internal" href="reference/framework.html#wrappers">Wrappers</a></li>
-<li class="toctree-l4"><a class="reference internal" href="reference/framework.html#module-common.python.configs">Config_d entries</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="reference/framework.html#common.python.configs.pad"><code class="docutils literal notranslate"><span class="pre">pad()</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="reference/framework.html#common.python.configs.all_subclasses"><code class="docutils literal notranslate"><span class="pre">all_subclasses()</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="reference/framework.html#common.python.configs.BlockConfig"><code class="docutils literal notranslate"><span class="pre">BlockConfig</span></code></a><ul>
-<li class="toctree-l6"><a class="reference internal" href="reference/framework.html#common.python.configs.BlockConfig.name"><code class="docutils literal notranslate"><span class="pre">BlockConfig.name</span></code></a></li>
-<li class="toctree-l6"><a class="reference internal" href="reference/framework.html#common.python.configs.BlockConfig.number"><code class="docutils literal notranslate"><span class="pre">BlockConfig.number</span></code></a></li>
-<li class="toctree-l6"><a class="reference internal" href="reference/framework.html#common.python.configs.BlockConfig.module_path"><code class="docutils literal notranslate"><span class="pre">BlockConfig.module_path</span></code></a></li>
-<li class="toctree-l6"><a class="reference internal" href="reference/framework.html#common.python.configs.BlockConfig.ini_path"><code class="docutils literal notranslate"><span class="pre">BlockConfig.ini_path</span></code></a></li>
-<li class="toctree-l6"><a class="reference internal" href="reference/framework.html#common.python.configs.BlockConfig.block_address"><code class="docutils literal notranslate"><span class="pre">BlockConfig.block_address</span></code></a></li>
-<li class="toctree-l6"><a class="reference internal" href="reference/framework.html#common.python.configs.BlockConfig.site"><code class="docutils literal notranslate"><span class="pre">BlockConfig.site</span></code></a></li>
-<li class="toctree-l6"><a class="reference internal" href="reference/framework.html#common.python.configs.BlockConfig.entity"><code class="docutils literal notranslate"><span class="pre">BlockConfig.entity</span></code></a></li>
-<li class="toctree-l6"><a class="reference internal" href="reference/framework.html#common.python.configs.BlockConfig.type"><code class="docutils literal notranslate"><span class="pre">BlockConfig.type</span></code></a></li>
-<li class="toctree-l6"><a class="reference internal" href="reference/framework.html#common.python.configs.BlockConfig.constraints"><code class="docutils literal notranslate"><span class="pre">BlockConfig.constraints</span></code></a></li>
-<li class="toctree-l6"><a class="reference internal" href="reference/framework.html#common.python.configs.BlockConfig.ip"><code class="docutils literal notranslate"><span class="pre">BlockConfig.ip</span></code></a></li>
-<li class="toctree-l6"><a class="reference internal" href="reference/framework.html#common.python.configs.BlockConfig.description"><code class="docutils literal notranslate"><span class="pre">BlockConfig.description</span></code></a></li>
-<li class="toctree-l6"><a class="reference internal" href="reference/framework.html#common.python.configs.BlockConfig.fields"><code class="docutils literal notranslate"><span class="pre">BlockConfig.fields</span></code></a></li>
-<li class="toctree-l6"><a class="reference internal" href="reference/framework.html#common.python.configs.BlockConfig.calc_extensions"><code class="docutils literal notranslate"><span class="pre">BlockConfig.calc_extensions</span></code></a></li>
-<li class="toctree-l6"><a class="reference internal" href="reference/framework.html#common.python.configs.BlockConfig.block_suffixes"><code class="docutils literal notranslate"><span class="pre">BlockConfig.block_suffixes</span></code></a></li>
-<li class="toctree-l6"><a class="reference internal" href="reference/framework.html#common.python.configs.BlockConfig.register_addresses"><code class="docutils literal notranslate"><span class="pre">BlockConfig.register_addresses()</span></code></a></li>
-<li class="toctree-l6"><a class="reference internal" href="reference/framework.html#common.python.configs.BlockConfig.filter_fields"><code class="docutils literal notranslate"><span class="pre">BlockConfig.filter_fields()</span></code></a></li>
-<li class="toctree-l6"><a class="reference internal" href="reference/framework.html#common.python.configs.BlockConfig.generateInterfaceConstraints"><code class="docutils literal notranslate"><span class="pre">BlockConfig.generateInterfaceConstraints()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l5"><a class="reference internal" href="reference/framework.html#common.python.configs.RegisterConfig"><code class="docutils literal notranslate"><span class="pre">RegisterConfig</span></code></a><ul>
-<li class="toctree-l6"><a class="reference internal" href="reference/framework.html#common.python.configs.RegisterConfig.name"><code class="docutils literal notranslate"><span class="pre">RegisterConfig.name</span></code></a></li>
-<li class="toctree-l6"><a class="reference internal" href="reference/framework.html#common.python.configs.RegisterConfig.number"><code class="docutils literal notranslate"><span class="pre">RegisterConfig.number</span></code></a></li>
-<li class="toctree-l6"><a class="reference internal" href="reference/framework.html#common.python.configs.RegisterConfig.extension"><code class="docutils literal notranslate"><span class="pre">RegisterConfig.extension</span></code></a></li>
-<li class="toctree-l6"><a class="reference internal" href="reference/framework.html#common.python.configs.RegisterConfig.write_extension"><code class="docutils literal notranslate"><span class="pre">RegisterConfig.write_extension</span></code></a></li>
-<li class="toctree-l6"><a class="reference internal" href="reference/framework.html#common.python.configs.RegisterConfig.read_extension"><code class="docutils literal notranslate"><span class="pre">RegisterConfig.read_extension</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l5"><a class="reference internal" href="reference/framework.html#common.python.configs.BusEntryConfig"><code class="docutils literal notranslate"><span class="pre">BusEntryConfig</span></code></a><ul>
-<li class="toctree-l6"><a class="reference internal" href="reference/framework.html#common.python.configs.BusEntryConfig.name"><code class="docutils literal notranslate"><span class="pre">BusEntryConfig.name</span></code></a></li>
-<li class="toctree-l6"><a class="reference internal" href="reference/framework.html#common.python.configs.BusEntryConfig.bus"><code class="docutils literal notranslate"><span class="pre">BusEntryConfig.bus</span></code></a></li>
-<li class="toctree-l6"><a class="reference internal" href="reference/framework.html#common.python.configs.BusEntryConfig.index"><code class="docutils literal notranslate"><span class="pre">BusEntryConfig.index</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l5"><a class="reference internal" href="reference/framework.html#common.python.configs.FieldConfig"><code class="docutils literal notranslate"><span class="pre">FieldConfig</span></code></a><ul>
-<li class="toctree-l6"><a class="reference internal" href="reference/framework.html#common.python.configs.FieldConfig.type_regex"><code class="docutils literal notranslate"><span class="pre">FieldConfig.type_regex</span></code></a></li>
-<li class="toctree-l6"><a class="reference internal" href="reference/framework.html#common.python.configs.FieldConfig.name"><code class="docutils literal notranslate"><span class="pre">FieldConfig.name</span></code></a></li>
-<li class="toctree-l6"><a class="reference internal" href="reference/framework.html#common.python.configs.FieldConfig.number"><code class="docutils literal notranslate"><span class="pre">FieldConfig.number</span></code></a></li>
-<li class="toctree-l6"><a class="reference internal" href="reference/framework.html#common.python.configs.FieldConfig.type"><code class="docutils literal notranslate"><span class="pre">FieldConfig.type</span></code></a></li>
-<li class="toctree-l6"><a class="reference internal" href="reference/framework.html#common.python.configs.FieldConfig.description"><code class="docutils literal notranslate"><span class="pre">FieldConfig.description</span></code></a></li>
-<li class="toctree-l6"><a class="reference internal" href="reference/framework.html#common.python.configs.FieldConfig.registers"><code class="docutils literal notranslate"><span class="pre">FieldConfig.registers</span></code></a></li>
-<li class="toctree-l6"><a class="reference internal" href="reference/framework.html#common.python.configs.FieldConfig.bus_entries"><code class="docutils literal notranslate"><span class="pre">FieldConfig.bus_entries</span></code></a></li>
-<li class="toctree-l6"><a class="reference internal" href="reference/framework.html#common.python.configs.FieldConfig.wstb"><code class="docutils literal notranslate"><span class="pre">FieldConfig.wstb</span></code></a></li>
-<li class="toctree-l6"><a class="reference internal" href="reference/framework.html#common.python.configs.FieldConfig.option_filter"><code class="docutils literal notranslate"><span class="pre">FieldConfig.option_filter</span></code></a></li>
-<li class="toctree-l6"><a class="reference internal" href="reference/framework.html#common.python.configs.FieldConfig.initial_value"><code class="docutils literal notranslate"><span class="pre">FieldConfig.initial_value</span></code></a></li>
-<li class="toctree-l6"><a class="reference internal" href="reference/framework.html#common.python.configs.FieldConfig.extension"><code class="docutils literal notranslate"><span class="pre">FieldConfig.extension</span></code></a></li>
-<li class="toctree-l6"><a class="reference internal" href="reference/framework.html#common.python.configs.FieldConfig.extra_config_lines"><code class="docutils literal notranslate"><span class="pre">FieldConfig.extra_config_lines</span></code></a></li>
-<li class="toctree-l6"><a class="reference internal" href="reference/framework.html#common.python.configs.FieldConfig.parse_extra_config"><code class="docutils literal notranslate"><span class="pre">FieldConfig.parse_extra_config()</span></code></a></li>
-<li class="toctree-l6"><a class="reference internal" href="reference/framework.html#common.python.configs.FieldConfig.register_addresses"><code class="docutils literal notranslate"><span class="pre">FieldConfig.register_addresses()</span></code></a></li>
-<li class="toctree-l6"><a class="reference internal" href="reference/framework.html#common.python.configs.FieldConfig.address_line"><code class="docutils literal notranslate"><span class="pre">FieldConfig.address_line()</span></code></a></li>
-<li class="toctree-l6"><a class="reference internal" href="reference/framework.html#common.python.configs.FieldConfig.config_line"><code class="docutils literal notranslate"><span class="pre">FieldConfig.config_line()</span></code></a></li>
-<li class="toctree-l6"><a class="reference internal" href="reference/framework.html#common.python.configs.FieldConfig.numbered_registers"><code class="docutils literal notranslate"><span class="pre">FieldConfig.numbered_registers()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l5"><a class="reference internal" href="reference/framework.html#common.python.configs.BitOutFieldConfig"><code class="docutils literal notranslate"><span class="pre">BitOutFieldConfig</span></code></a><ul>
-<li class="toctree-l6"><a class="reference internal" href="reference/framework.html#common.python.configs.BitOutFieldConfig.type_regex"><code class="docutils literal notranslate"><span class="pre">BitOutFieldConfig.type_regex</span></code></a></li>
-<li class="toctree-l6"><a class="reference internal" href="reference/framework.html#common.python.configs.BitOutFieldConfig.register_addresses"><code class="docutils literal notranslate"><span class="pre">BitOutFieldConfig.register_addresses()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l5"><a class="reference internal" href="reference/framework.html#common.python.configs.PosOutFieldConfig"><code class="docutils literal notranslate"><span class="pre">PosOutFieldConfig</span></code></a><ul>
-<li class="toctree-l6"><a class="reference internal" href="reference/framework.html#common.python.configs.PosOutFieldConfig.type_regex"><code class="docutils literal notranslate"><span class="pre">PosOutFieldConfig.type_regex</span></code></a></li>
-<li class="toctree-l6"><a class="reference internal" href="reference/framework.html#common.python.configs.PosOutFieldConfig.register_addresses"><code class="docutils literal notranslate"><span class="pre">PosOutFieldConfig.register_addresses()</span></code></a></li>
-<li class="toctree-l6"><a class="reference internal" href="reference/framework.html#common.python.configs.PosOutFieldConfig.parse_extra_config"><code class="docutils literal notranslate"><span class="pre">PosOutFieldConfig.parse_extra_config()</span></code></a></li>
-<li class="toctree-l6"><a class="reference internal" href="reference/framework.html#common.python.configs.PosOutFieldConfig.config_line"><code class="docutils literal notranslate"><span class="pre">PosOutFieldConfig.config_line()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l5"><a class="reference internal" href="reference/framework.html#common.python.configs.ExtOutFieldConfig"><code class="docutils literal notranslate"><span class="pre">ExtOutFieldConfig</span></code></a><ul>
-<li class="toctree-l6"><a class="reference internal" href="reference/framework.html#common.python.configs.ExtOutFieldConfig.type_regex"><code class="docutils literal notranslate"><span class="pre">ExtOutFieldConfig.type_regex</span></code></a></li>
-<li class="toctree-l6"><a class="reference internal" href="reference/framework.html#common.python.configs.ExtOutFieldConfig.register_addresses"><code class="docutils literal notranslate"><span class="pre">ExtOutFieldConfig.register_addresses()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l5"><a class="reference internal" href="reference/framework.html#common.python.configs.ExtOutTimeFieldConfig"><code class="docutils literal notranslate"><span class="pre">ExtOutTimeFieldConfig</span></code></a><ul>
-<li class="toctree-l6"><a class="reference internal" href="reference/framework.html#common.python.configs.ExtOutTimeFieldConfig.type_regex"><code class="docutils literal notranslate"><span class="pre">ExtOutTimeFieldConfig.type_regex</span></code></a></li>
-<li class="toctree-l6"><a class="reference internal" href="reference/framework.html#common.python.configs.ExtOutTimeFieldConfig.register_addresses"><code class="docutils literal notranslate"><span class="pre">ExtOutTimeFieldConfig.register_addresses()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l5"><a class="reference internal" href="reference/framework.html#common.python.configs.TableFieldConfig"><code class="docutils literal notranslate"><span class="pre">TableFieldConfig</span></code></a><ul>
-<li class="toctree-l6"><a class="reference internal" href="reference/framework.html#common.python.configs.TableFieldConfig.type_regex"><code class="docutils literal notranslate"><span class="pre">TableFieldConfig.type_regex</span></code></a></li>
-<li class="toctree-l6"><a class="reference internal" href="reference/framework.html#common.python.configs.TableFieldConfig.words"><code class="docutils literal notranslate"><span class="pre">TableFieldConfig.words</span></code></a></li>
-<li class="toctree-l6"><a class="reference internal" href="reference/framework.html#common.python.configs.TableFieldConfig.register_addresses"><code class="docutils literal notranslate"><span class="pre">TableFieldConfig.register_addresses()</span></code></a></li>
-<li class="toctree-l6"><a class="reference internal" href="reference/framework.html#common.python.configs.TableFieldConfig.config_line"><code class="docutils literal notranslate"><span class="pre">TableFieldConfig.config_line()</span></code></a></li>
-<li class="toctree-l6"><a class="reference internal" href="reference/framework.html#common.python.configs.TableFieldConfig.parse_extra_config"><code class="docutils literal notranslate"><span class="pre">TableFieldConfig.parse_extra_config()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l5"><a class="reference internal" href="reference/framework.html#common.python.configs.TableShortFieldConfig"><code class="docutils literal notranslate"><span class="pre">TableShortFieldConfig</span></code></a><ul>
-<li class="toctree-l6"><a class="reference internal" href="reference/framework.html#common.python.configs.TableShortFieldConfig.type_regex"><code class="docutils literal notranslate"><span class="pre">TableShortFieldConfig.type_regex</span></code></a></li>
-<li class="toctree-l6"><a class="reference internal" href="reference/framework.html#common.python.configs.TableShortFieldConfig.lines"><code class="docutils literal notranslate"><span class="pre">TableShortFieldConfig.lines</span></code></a></li>
-<li class="toctree-l6"><a class="reference internal" href="reference/framework.html#common.python.configs.TableShortFieldConfig.parse_extra_config"><code class="docutils literal notranslate"><span class="pre">TableShortFieldConfig.parse_extra_config()</span></code></a></li>
-<li class="toctree-l6"><a class="reference internal" href="reference/framework.html#common.python.configs.TableShortFieldConfig.register_addresses"><code class="docutils literal notranslate"><span class="pre">TableShortFieldConfig.register_addresses()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l5"><a class="reference internal" href="reference/framework.html#common.python.configs.ParamFieldConfig"><code class="docutils literal notranslate"><span class="pre">ParamFieldConfig</span></code></a><ul>
-<li class="toctree-l6"><a class="reference internal" href="reference/framework.html#common.python.configs.ParamFieldConfig.type_regex"><code class="docutils literal notranslate"><span class="pre">ParamFieldConfig.type_regex</span></code></a></li>
-<li class="toctree-l6"><a class="reference internal" href="reference/framework.html#common.python.configs.ParamFieldConfig.register_addresses"><code class="docutils literal notranslate"><span class="pre">ParamFieldConfig.register_addresses()</span></code></a></li>
-<li class="toctree-l6"><a class="reference internal" href="reference/framework.html#common.python.configs.ParamFieldConfig.config_line"><code class="docutils literal notranslate"><span class="pre">ParamFieldConfig.config_line()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l5"><a class="reference internal" href="reference/framework.html#common.python.configs.CalcExtensionFieldConfig"><code class="docutils literal notranslate"><span class="pre">CalcExtensionFieldConfig</span></code></a><ul>
-<li class="toctree-l6"><a class="reference internal" href="reference/framework.html#common.python.configs.CalcExtensionFieldConfig.type_regex"><code class="docutils literal notranslate"><span class="pre">CalcExtensionFieldConfig.type_regex</span></code></a></li>
-<li class="toctree-l6"><a class="reference internal" href="reference/framework.html#common.python.configs.CalcExtensionFieldConfig.register_addresses"><code class="docutils literal notranslate"><span class="pre">CalcExtensionFieldConfig.register_addresses()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l5"><a class="reference internal" href="reference/framework.html#common.python.configs.EnumParamFieldConfig"><code class="docutils literal notranslate"><span class="pre">EnumParamFieldConfig</span></code></a><ul>
-<li class="toctree-l6"><a class="reference internal" href="reference/framework.html#common.python.configs.EnumParamFieldConfig.type_regex"><code class="docutils literal notranslate"><span class="pre">EnumParamFieldConfig.type_regex</span></code></a></li>
-<li class="toctree-l6"><a class="reference internal" href="reference/framework.html#common.python.configs.EnumParamFieldConfig.parse_extra_config"><code class="docutils literal notranslate"><span class="pre">EnumParamFieldConfig.parse_extra_config()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l5"><a class="reference internal" href="reference/framework.html#common.python.configs.UintParamFieldConfig"><code class="docutils literal notranslate"><span class="pre">UintParamFieldConfig</span></code></a><ul>
-<li class="toctree-l6"><a class="reference internal" href="reference/framework.html#common.python.configs.UintParamFieldConfig.type_regex"><code class="docutils literal notranslate"><span class="pre">UintParamFieldConfig.type_regex</span></code></a></li>
-<li class="toctree-l6"><a class="reference internal" href="reference/framework.html#common.python.configs.UintParamFieldConfig.parse_extra_config"><code class="docutils literal notranslate"><span class="pre">UintParamFieldConfig.parse_extra_config()</span></code></a></li>
-<li class="toctree-l6"><a class="reference internal" href="reference/framework.html#common.python.configs.UintParamFieldConfig.config_line"><code class="docutils literal notranslate"><span class="pre">UintParamFieldConfig.config_line()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l5"><a class="reference internal" href="reference/framework.html#common.python.configs.ScalarParamFieldConfig"><code class="docutils literal notranslate"><span class="pre">ScalarParamFieldConfig</span></code></a><ul>
-<li class="toctree-l6"><a class="reference internal" href="reference/framework.html#common.python.configs.ScalarParamFieldConfig.type_regex"><code class="docutils literal notranslate"><span class="pre">ScalarParamFieldConfig.type_regex</span></code></a></li>
-<li class="toctree-l6"><a class="reference internal" href="reference/framework.html#common.python.configs.ScalarParamFieldConfig.parse_extra_config"><code class="docutils literal notranslate"><span class="pre">ScalarParamFieldConfig.parse_extra_config()</span></code></a></li>
-<li class="toctree-l6"><a class="reference internal" href="reference/framework.html#common.python.configs.ScalarParamFieldConfig.config_line"><code class="docutils literal notranslate"><span class="pre">ScalarParamFieldConfig.config_line()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l5"><a class="reference internal" href="reference/framework.html#common.python.configs.BitMuxFieldConfig"><code class="docutils literal notranslate"><span class="pre">BitMuxFieldConfig</span></code></a><ul>
-<li class="toctree-l6"><a class="reference internal" href="reference/framework.html#common.python.configs.BitMuxFieldConfig.type_regex"><code class="docutils literal notranslate"><span class="pre">BitMuxFieldConfig.type_regex</span></code></a></li>
-<li class="toctree-l6"><a class="reference internal" href="reference/framework.html#common.python.configs.BitMuxFieldConfig.register_addresses"><code class="docutils literal notranslate"><span class="pre">BitMuxFieldConfig.register_addresses()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l5"><a class="reference internal" href="reference/framework.html#common.python.configs.PosMuxFieldConfig"><code class="docutils literal notranslate"><span class="pre">PosMuxFieldConfig</span></code></a><ul>
-<li class="toctree-l6"><a class="reference internal" href="reference/framework.html#common.python.configs.PosMuxFieldConfig.type_regex"><code class="docutils literal notranslate"><span class="pre">PosMuxFieldConfig.type_regex</span></code></a></li>
-<li class="toctree-l6"><a class="reference internal" href="reference/framework.html#common.python.configs.PosMuxFieldConfig.register_addresses"><code class="docutils literal notranslate"><span class="pre">PosMuxFieldConfig.register_addresses()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l5"><a class="reference internal" href="reference/framework.html#common.python.configs.TimeFieldConfig"><code class="docutils literal notranslate"><span class="pre">TimeFieldConfig</span></code></a><ul>
-<li class="toctree-l6"><a class="reference internal" href="reference/framework.html#common.python.configs.TimeFieldConfig.type_regex"><code class="docutils literal notranslate"><span class="pre">TimeFieldConfig.type_regex</span></code></a></li>
-<li class="toctree-l6"><a class="reference internal" href="reference/framework.html#common.python.configs.TimeFieldConfig.register_addresses"><code class="docutils literal notranslate"><span class="pre">TimeFieldConfig.register_addresses()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l5"><a class="reference internal" href="reference/framework.html#common.python.configs.TargetSiteConfig"><code class="docutils literal notranslate"><span class="pre">TargetSiteConfig</span></code></a><ul>
-<li class="toctree-l6"><a class="reference internal" href="reference/framework.html#common.python.configs.TargetSiteConfig.type_regex"><code class="docutils literal notranslate"><span class="pre">TargetSiteConfig.type_regex</span></code></a></li>
-<li class="toctree-l6"><a class="reference internal" href="reference/framework.html#common.python.configs.TargetSiteConfig.name"><code class="docutils literal notranslate"><span class="pre">TargetSiteConfig.name</span></code></a></li>
-<li class="toctree-l6"><a class="reference internal" href="reference/framework.html#common.python.configs.TargetSiteConfig.number"><code class="docutils literal notranslate"><span class="pre">TargetSiteConfig.number</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="reference/framework.html#test-benches">Test benches</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="reference/framework.html#required-signals-in-the-block">Required signals in the block</a></li>
-<li class="toctree-l5"><a class="reference internal" href="reference/framework.html#read-expected-csv">Read expected.csv</a></li>
-<li class="toctree-l5"><a class="reference internal" href="reference/framework.html#assign-signals">Assign signals</a></li>
-<li class="toctree-l5"><a class="reference internal" href="reference/framework.html#compare-output-signals">Compare output signals</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="reference/changelog.html">Changelog</a></li>
-<li class="toctree-l3"><a class="reference internal" href="reference/glossary.html">Glossary</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="reference/glossary.html#app">App</a></li>
-<li class="toctree-l4"><a class="reference internal" href="reference/glossary.html#block">Block</a></li>
-<li class="toctree-l4"><a class="reference internal" href="reference/glossary.html#field">Field</a></li>
-<li class="toctree-l4"><a class="reference internal" href="reference/glossary.html#module">Module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="reference/glossary.html#pandabox">PandABox</a></li>
-<li class="toctree-l4"><a class="reference internal" href="reference/glossary.html#pandablocks-device">PandABlocks Device</a></li>
-<li class="toctree-l4"><a class="reference internal" href="reference/glossary.html#target-platform">Target Platform</a></li>
-<li class="toctree-l4"><a class="reference internal" href="reference/glossary.html#zpkg">Zpkg</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="reference/testing.html">Running the tests</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="reference/testing.html#python-tests">Python tests</a></li>
-<li class="toctree-l4"><a class="reference internal" href="reference/testing.html#hdl-tests">HDL tests</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</div>
-<div class="toctree-wrapper compound" id="tutorials-doc">
-<p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="tutorials/tutorial1_blinking_leds.html">Blinking LEDs Tutorial</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="tutorials/tutorial1_blinking_leds.html#opening-the-gui">Opening the GUI</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorials/tutorial1_blinking_leds.html#loading-the-tutorial-design">Loading the tutorial design</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorials/tutorial1_blinking_leds.html#how-the-design-works">How the design works</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorials/tutorial1_blinking_leds.html#the-bit-bus">The Bit Bus</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorials/tutorial1_blinking_leds.html#conclusion">Conclusion</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="tutorials/tutorial2_position_capture.html">Position Capture Tutorial</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="tutorials/tutorial2_position_capture.html#loading-the-tutorial-design">Loading the tutorial design</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorials/tutorial2_position_capture.html#how-the-design-works">How the design works</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorials/tutorial2_position_capture.html#conclusion">Conclusion</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="tutorials/tutorial3_position_compare.html">Position Compare Tutorial</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tutorials/tutorial4_snake_scan.html">Snake Scan Tutorial</a></li>
-</ul>
-</div>
-<div class="toctree-wrapper compound" id="reference-doc">
-<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="blocks.html">Available Blocks</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="build/bits_doc.html">BITS - Soft inputs and constant bits</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="build/bits_doc.html#fields">Fields</a></li>
-<li class="toctree-l3"><a class="reference internal" href="build/bits_doc.html#outputs-follow-parameters">Outputs follow parameters</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="build/calc_doc.html">CALC - Position Calc</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="build/calc_doc.html#fields">Fields</a></li>
-<li class="toctree-l3"><a class="reference internal" href="build/calc_doc.html#adding-inputs">Adding inputs</a></li>
-<li class="toctree-l3"><a class="reference internal" href="build/calc_doc.html#scaling">Scaling</a></li>
-<li class="toctree-l3"><a class="reference internal" href="build/calc_doc.html#inverting">Inverting</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="build/clock_doc.html">CLOCK - Configurable clock</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="build/clock_doc.html#fields">Fields</a></li>
-<li class="toctree-l3"><a class="reference internal" href="build/clock_doc.html#setting-clock-period-parameters">Setting clock period parameters</a></li>
-<li class="toctree-l3"><a class="reference internal" href="build/clock_doc.html#clock-settings-while-disabled">Clock settings while disabled</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="build/counter_doc.html">COUNTER - Up/Down pulse counter</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="build/counter_doc.html#fields">Fields</a></li>
-<li class="toctree-l3"><a class="reference internal" href="build/counter_doc.html#counting-pulses">Counting pulses</a></li>
-<li class="toctree-l3"><a class="reference internal" href="build/counter_doc.html#rollover">Rollover</a></li>
-<li class="toctree-l3"><a class="reference internal" href="build/counter_doc.html#edge-cases">Edge cases</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="build/div_doc.html">DIV - Pulse divider</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="build/div_doc.html#fields">Fields</a></li>
-<li class="toctree-l3"><a class="reference internal" href="build/div_doc.html#which-output-do-pulses-go-to">Which output do pulses go to</a></li>
-<li class="toctree-l3"><a class="reference internal" href="build/div_doc.html#reset-conditions">Reset conditions</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="build/filter_doc.html">FILTER - Filter</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="build/filter_doc.html#fields">Fields</a></li>
-<li class="toctree-l3"><a class="reference internal" href="build/filter_doc.html#difference">Difference</a></li>
-<li class="toctree-l3"><a class="reference internal" href="build/filter_doc.html#average">Average</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="build/fmc_24v_doc.html">FMC_24V - FMC 24V IO Module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="build/fmc_24v_doc.html#fields">Fields</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="build/fmc_acq427_doc.html">FMC_ACQ427 - FMC ACQ427 Module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="build/fmc_acq427_doc.html#fields">Fields</a></li>
-<li class="toctree-l3"><a class="reference internal" href="build/fmc_acq427_doc.html#clock-note">Clock note</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="build/fmc_acq430_doc.html">FMC_ACQ430 - FMC ACQ430 Module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="build/fmc_acq430_doc.html#fields">Fields</a></li>
-<li class="toctree-l3"><a class="reference internal" href="build/fmc_acq430_doc.html#clock-note">Clock note</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="build/fmc_loopback_doc.html">FMC_LOOPBACK - FMC Loopback Module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="build/fmc_loopback_doc.html#fields">Fields</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="build/inenc_doc.html">INENC - Input encoder</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="build/inenc_doc.html#fields">Fields</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="build/lut_doc.html">LUT - 5 Input lookup table</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="build/lut_doc.html#fields">Fields</a></li>
-<li class="toctree-l3"><a class="reference internal" href="build/lut_doc.html#testing-function-output">Testing Function Output</a></li>
-<li class="toctree-l3"><a class="reference internal" href="build/lut_doc.html#changing-the-function-in-a-test">Changing the function in a test</a></li>
-<li class="toctree-l3"><a class="reference internal" href="build/lut_doc.html#edge-triggered-inputs">Edge triggered inputs</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="build/lvdsin_doc.html">LVDSIN - LVDS Input</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="build/lvdsin_doc.html#fields">Fields</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="build/lvdsout_doc.html">LVDSOUT - LVDS Output</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="build/lvdsout_doc.html#fields">Fields</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="build/outenc_doc.html">OUTENC - Output encoder</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="build/outenc_doc.html#fields">Fields</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="build/pcap_doc.html">PCAP - Position Capture</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="build/pcap_doc.html#fields">Fields</a></li>
-<li class="toctree-l3"><a class="reference internal" href="build/pcap_doc.html#arming">Arming</a></li>
-<li class="toctree-l3"><a class="reference internal" href="build/pcap_doc.html#capturing-fields">Capturing fields</a></li>
-<li class="toctree-l3"><a class="reference internal" href="build/pcap_doc.html#pos-bus-capture">Pos bus capture</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="build/pcap_doc.html#mode-0-value">Mode 0 - Value</a></li>
-<li class="toctree-l4"><a class="reference internal" href="build/pcap_doc.html#mode-1-difference">Mode 1 - Difference</a></li>
-<li class="toctree-l4"><a class="reference internal" href="build/pcap_doc.html#mode-2-3-sum-lo-hi">Mode 2/3 - Sum Lo/Hi</a></li>
-<li class="toctree-l4"><a class="reference internal" href="build/pcap_doc.html#mode-4-5-min-max">Mode 4/5 - Min/Max</a></li>
-<li class="toctree-l4"><a class="reference internal" href="build/pcap_doc.html#mode-6-7-8-sum-of-squared-values-lo-mid-hi">Mode 6/7/8 - Sum of Squared values Lo/Mid/Hi</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="build/pcap_doc.html#number-of-samples">Number of samples</a></li>
-<li class="toctree-l3"><a class="reference internal" href="build/pcap_doc.html#timestamps">Timestamps</a></li>
-<li class="toctree-l3"><a class="reference internal" href="build/pcap_doc.html#bit-bus-capture">Bit bus capture</a></li>
-<li class="toctree-l3"><a class="reference internal" href="build/pcap_doc.html#triggering-options">Triggering options</a></li>
-<li class="toctree-l3"><a class="reference internal" href="build/pcap_doc.html#error-conditions">Error conditions</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="build/pcomp_doc.html">PCOMP - Position Compare</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="build/pcomp_doc.html#fields">Fields</a></li>
-<li class="toctree-l3"><a class="reference internal" href="build/pcomp_doc.html#position-compare-is-directional">Position compare is directional</a></li>
-<li class="toctree-l3"><a class="reference internal" href="build/pcomp_doc.html#internal-statemachine">Internal statemachine</a></li>
-<li class="toctree-l3"><a class="reference internal" href="build/pcomp_doc.html#not-generating-a-pulse-more-than-once">Not generating a pulse more than once</a></li>
-<li class="toctree-l3"><a class="reference internal" href="build/pcomp_doc.html#guessing-the-direction">Guessing the direction</a></li>
-<li class="toctree-l3"><a class="reference internal" href="build/pcomp_doc.html#interrupting-a-scan">Interrupting a scan</a></li>
-<li class="toctree-l3"><a class="reference internal" href="build/pcomp_doc.html#position-compare-on-absolute-values">Position compare on absolute values</a></li>
-<li class="toctree-l3"><a class="reference internal" href="build/pcomp_doc.html#relative-position-compare">Relative position compare</a></li>
-<li class="toctree-l3"><a class="reference internal" href="build/pcomp_doc.html#use-as-a-schmitt-trigger">Use as a Schmitt trigger</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="build/pgen_doc.html">PGEN - Position Generator</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="build/pgen_doc.html#fields">Fields</a></li>
-<li class="toctree-l3"><a class="reference internal" href="build/pgen_doc.html#normal-operation">Normal operation</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="build/posenc_doc.html">POSENC - Quadrature and step/direction encoder</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="build/posenc_doc.html#fields">Fields</a></li>
-<li class="toctree-l3"><a class="reference internal" href="build/posenc_doc.html#quadrature">Quadrature</a></li>
-<li class="toctree-l3"><a class="reference internal" href="build/posenc_doc.html#step-direction">Step/Direction</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="build/pulse_doc.html">PULSE - One-shot pulse delay and stretch</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="build/pulse_doc.html#fields">Fields</a></li>
-<li class="toctree-l3"><a class="reference internal" href="build/pulse_doc.html#delay-line">Delay line</a></li>
-<li class="toctree-l3"><a class="reference internal" href="build/pulse_doc.html#pulse-train-generation">Pulse train generation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="build/pulse_doc.html#pulse-period-error">Pulse period error</a></li>
-<li class="toctree-l3"><a class="reference internal" href="build/pulse_doc.html#enabling-the-block">Enabling the Block</a></li>
-<li class="toctree-l3"><a class="reference internal" href="build/pulse_doc.html#changing-parameters-while-enabled">Changing parameters while Enabled</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="build/qdec_doc.html">QDEC - Quadrature Decoder</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="build/qdec_doc.html#fields">Fields</a></li>
-<li class="toctree-l3"><a class="reference internal" href="build/qdec_doc.html#counting">Counting</a></li>
-<li class="toctree-l3"><a class="reference internal" href="build/qdec_doc.html#resetting">Resetting</a></li>
-<li class="toctree-l3"><a class="reference internal" href="build/qdec_doc.html#limitations">Limitations</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="build/seq_doc.html">SEQ - Sequencer</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="build/seq_doc.html#fields">Fields</a></li>
-<li class="toctree-l3"><a class="reference internal" href="build/seq_doc.html#sequencer-table-line-composition">Sequencer Table Line Composition</a></li>
-<li class="toctree-l3"><a class="reference internal" href="build/seq_doc.html#generating-fixed-pulse-trains">Generating fixed pulse trains</a></li>
-<li class="toctree-l3"><a class="reference internal" href="build/seq_doc.html#statemachine">Statemachine</a></li>
-<li class="toctree-l3"><a class="reference internal" href="build/seq_doc.html#external-trigger-sources">External trigger sources</a></li>
-<li class="toctree-l3"><a class="reference internal" href="build/seq_doc.html#prescaler">Prescaler</a></li>
-<li class="toctree-l3"><a class="reference internal" href="build/seq_doc.html#interrupting-a-sequence">Interrupting a sequence</a></li>
-<li class="toctree-l3"><a class="reference internal" href="build/seq_doc.html#table-rewriting">Table rewriting</a></li>
-<li class="toctree-l3"><a class="reference internal" href="build/seq_doc.html#double-table-mode">Double table mode</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="build/sfp_dls_eventr_doc.html">SFP_DLS_EVENTR - SFP Event Receiver Module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="build/sfp_dls_eventr_doc.html#fields">Fields</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="build/sfp_loopback_doc.html">SFP_LOOPBACK- SFP Loopback Module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="build/sfp_loopback_doc.html#fields">Fields</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="build/sfp_panda_sync_doc.html">SFP_PANDA_SYNC - Synchronize data between 2 PandAs</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="build/sfp_panda_sync_doc.html#fields">Fields</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="build/sfp_udpontrig_doc.html">SFP_UDPONTRIG - SFP UDP on trig Module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="build/sfp_udpontrig_doc.html#fields">Fields</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="build/srgate_doc.html">SRGATE - Set Reset Gate</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="build/srgate_doc.html#fields">Fields</a></li>
-<li class="toctree-l3"><a class="reference internal" href="build/srgate_doc.html#normal-conditions">Normal conditions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="build/srgate_doc.html#disabling-the-block">Disabling the block</a></li>
-<li class="toctree-l3"><a class="reference internal" href="build/srgate_doc.html#active-edge-configure-conditions">Active edge configure conditions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="build/srgate_doc.html#set-reset-conditions">Set-reset conditions</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="build/system_doc.html">SYSTEM - System control FPGA</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="build/system_doc.html#fields">Fields</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="build/ttlin_doc.html">TTLIN - TTL Input</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="build/ttlin_doc.html#fields">Fields</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="build/ttlout_doc.html">TTLOUT - TTL Output</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="build/ttlout_doc.html#fields">Fields</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="reference/contributing.html">Contributing</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="reference/contributing.html#running-the-tests">Running the tests</a></li>
-<li class="toctree-l2"><a class="reference internal" href="reference/contributing.html#writing-vhdl">Writing VHDL</a></li>
-<li class="toctree-l2"><a class="reference internal" href="reference/contributing.html#writing-python">Writing Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="reference/contributing.html#documentation">Documentation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="reference/contributing.html#release-checklist">Release Checklist</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="reference/app.html">Assembling Blocks into an App</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="reference/app.html#app-ini-file">App ini file</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="reference/app.html#the-section">The [.] section</a></li>
-<li class="toctree-l3"><a class="reference internal" href="reference/app.html#block-sections">[BLOCK] sections</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="reference/app.html#app-build-process">App build process</a></li>
-<li class="toctree-l2"><a class="reference internal" href="reference/app.html#querying-the-app-at-runtime">Querying the App at runtime</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="reference/block.html">Writing a Block</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="reference/block.html#architecture">Architecture</a></li>
-<li class="toctree-l2"><a class="reference internal" href="reference/block.html#modules">Modules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="reference/block.html#block-ini">Block ini</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="reference/block.html#the-section">The [.] section</a></li>
-<li class="toctree-l3"><a class="reference internal" href="reference/block.html#field-sections">[FIELD] sections</a></li>
-<li class="toctree-l3"><a class="reference internal" href="reference/block.html#extra-field-keys">Extra Field Keys</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="reference/block.html#block-simulation">Block Simulation</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="reference/block.html#common.python.simulations.BlockSimulation"><code class="docutils literal notranslate"><span class="pre">BlockSimulation</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="reference/block.html#common.python.simulations.BlockSimulation.changes"><code class="docutils literal notranslate"><span class="pre">BlockSimulation.changes</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="reference/block.html#common.python.simulations.BlockSimulation.bits_to_int"><code class="docutils literal notranslate"><span class="pre">BlockSimulation.bits_to_int()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="reference/block.html#common.python.simulations.BlockSimulation.on_changes"><code class="docutils literal notranslate"><span class="pre">BlockSimulation.on_changes()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="reference/block.html#timing-ini">Timing ini</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="reference/block.html#id2">The [.] section</a></li>
-<li class="toctree-l3"><a class="reference internal" href="reference/block.html#test-sections">[TEST] sections</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="reference/block.html#target-ini">Target ini</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="reference/block.html#id3">The [.] section</a></li>
-<li class="toctree-l3"><a class="reference internal" href="reference/block.html#block-sections">[BLOCK] sections</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="reference/block.html#writing-docs">Writing docs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="reference/block.html#block-vhdl-entity">Block VHDL entity</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="reference/framework.html">Autogeneration framework architecture</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="reference/framework.html#softblocks">Softblocks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="reference/framework.html#wrappers">Wrappers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="reference/framework.html#module-common.python.configs">Config_d entries</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="reference/framework.html#common.python.configs.pad"><code class="docutils literal notranslate"><span class="pre">pad()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="reference/framework.html#common.python.configs.all_subclasses"><code class="docutils literal notranslate"><span class="pre">all_subclasses()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="reference/framework.html#common.python.configs.BlockConfig"><code class="docutils literal notranslate"><span class="pre">BlockConfig</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="reference/framework.html#common.python.configs.BlockConfig.name"><code class="docutils literal notranslate"><span class="pre">BlockConfig.name</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="reference/framework.html#common.python.configs.BlockConfig.number"><code class="docutils literal notranslate"><span class="pre">BlockConfig.number</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="reference/framework.html#common.python.configs.BlockConfig.module_path"><code class="docutils literal notranslate"><span class="pre">BlockConfig.module_path</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="reference/framework.html#common.python.configs.BlockConfig.ini_path"><code class="docutils literal notranslate"><span class="pre">BlockConfig.ini_path</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="reference/framework.html#common.python.configs.BlockConfig.block_address"><code class="docutils literal notranslate"><span class="pre">BlockConfig.block_address</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="reference/framework.html#common.python.configs.BlockConfig.site"><code class="docutils literal notranslate"><span class="pre">BlockConfig.site</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="reference/framework.html#common.python.configs.BlockConfig.entity"><code class="docutils literal notranslate"><span class="pre">BlockConfig.entity</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="reference/framework.html#common.python.configs.BlockConfig.type"><code class="docutils literal notranslate"><span class="pre">BlockConfig.type</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="reference/framework.html#common.python.configs.BlockConfig.constraints"><code class="docutils literal notranslate"><span class="pre">BlockConfig.constraints</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="reference/framework.html#common.python.configs.BlockConfig.ip"><code class="docutils literal notranslate"><span class="pre">BlockConfig.ip</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="reference/framework.html#common.python.configs.BlockConfig.description"><code class="docutils literal notranslate"><span class="pre">BlockConfig.description</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="reference/framework.html#common.python.configs.BlockConfig.fields"><code class="docutils literal notranslate"><span class="pre">BlockConfig.fields</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="reference/framework.html#common.python.configs.BlockConfig.calc_extensions"><code class="docutils literal notranslate"><span class="pre">BlockConfig.calc_extensions</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="reference/framework.html#common.python.configs.BlockConfig.block_suffixes"><code class="docutils literal notranslate"><span class="pre">BlockConfig.block_suffixes</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="reference/framework.html#common.python.configs.BlockConfig.register_addresses"><code class="docutils literal notranslate"><span class="pre">BlockConfig.register_addresses()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="reference/framework.html#common.python.configs.BlockConfig.filter_fields"><code class="docutils literal notranslate"><span class="pre">BlockConfig.filter_fields()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="reference/framework.html#common.python.configs.BlockConfig.generateInterfaceConstraints"><code class="docutils literal notranslate"><span class="pre">BlockConfig.generateInterfaceConstraints()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="reference/framework.html#common.python.configs.RegisterConfig"><code class="docutils literal notranslate"><span class="pre">RegisterConfig</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="reference/framework.html#common.python.configs.RegisterConfig.name"><code class="docutils literal notranslate"><span class="pre">RegisterConfig.name</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="reference/framework.html#common.python.configs.RegisterConfig.number"><code class="docutils literal notranslate"><span class="pre">RegisterConfig.number</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="reference/framework.html#common.python.configs.RegisterConfig.extension"><code class="docutils literal notranslate"><span class="pre">RegisterConfig.extension</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="reference/framework.html#common.python.configs.RegisterConfig.write_extension"><code class="docutils literal notranslate"><span class="pre">RegisterConfig.write_extension</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="reference/framework.html#common.python.configs.RegisterConfig.read_extension"><code class="docutils literal notranslate"><span class="pre">RegisterConfig.read_extension</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="reference/framework.html#common.python.configs.BusEntryConfig"><code class="docutils literal notranslate"><span class="pre">BusEntryConfig</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="reference/framework.html#common.python.configs.BusEntryConfig.name"><code class="docutils literal notranslate"><span class="pre">BusEntryConfig.name</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="reference/framework.html#common.python.configs.BusEntryConfig.bus"><code class="docutils literal notranslate"><span class="pre">BusEntryConfig.bus</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="reference/framework.html#common.python.configs.BusEntryConfig.index"><code class="docutils literal notranslate"><span class="pre">BusEntryConfig.index</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="reference/framework.html#common.python.configs.FieldConfig"><code class="docutils literal notranslate"><span class="pre">FieldConfig</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="reference/framework.html#common.python.configs.FieldConfig.type_regex"><code class="docutils literal notranslate"><span class="pre">FieldConfig.type_regex</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="reference/framework.html#common.python.configs.FieldConfig.name"><code class="docutils literal notranslate"><span class="pre">FieldConfig.name</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="reference/framework.html#common.python.configs.FieldConfig.number"><code class="docutils literal notranslate"><span class="pre">FieldConfig.number</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="reference/framework.html#common.python.configs.FieldConfig.type"><code class="docutils literal notranslate"><span class="pre">FieldConfig.type</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="reference/framework.html#common.python.configs.FieldConfig.description"><code class="docutils literal notranslate"><span class="pre">FieldConfig.description</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="reference/framework.html#common.python.configs.FieldConfig.registers"><code class="docutils literal notranslate"><span class="pre">FieldConfig.registers</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="reference/framework.html#common.python.configs.FieldConfig.bus_entries"><code class="docutils literal notranslate"><span class="pre">FieldConfig.bus_entries</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="reference/framework.html#common.python.configs.FieldConfig.wstb"><code class="docutils literal notranslate"><span class="pre">FieldConfig.wstb</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="reference/framework.html#common.python.configs.FieldConfig.option_filter"><code class="docutils literal notranslate"><span class="pre">FieldConfig.option_filter</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="reference/framework.html#common.python.configs.FieldConfig.initial_value"><code class="docutils literal notranslate"><span class="pre">FieldConfig.initial_value</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="reference/framework.html#common.python.configs.FieldConfig.extension"><code class="docutils literal notranslate"><span class="pre">FieldConfig.extension</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="reference/framework.html#common.python.configs.FieldConfig.extra_config_lines"><code class="docutils literal notranslate"><span class="pre">FieldConfig.extra_config_lines</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="reference/framework.html#common.python.configs.FieldConfig.parse_extra_config"><code class="docutils literal notranslate"><span class="pre">FieldConfig.parse_extra_config()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="reference/framework.html#common.python.configs.FieldConfig.register_addresses"><code class="docutils literal notranslate"><span class="pre">FieldConfig.register_addresses()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="reference/framework.html#common.python.configs.FieldConfig.address_line"><code class="docutils literal notranslate"><span class="pre">FieldConfig.address_line()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="reference/framework.html#common.python.configs.FieldConfig.config_line"><code class="docutils literal notranslate"><span class="pre">FieldConfig.config_line()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="reference/framework.html#common.python.configs.FieldConfig.numbered_registers"><code class="docutils literal notranslate"><span class="pre">FieldConfig.numbered_registers()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="reference/framework.html#common.python.configs.BitOutFieldConfig"><code class="docutils literal notranslate"><span class="pre">BitOutFieldConfig</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="reference/framework.html#common.python.configs.BitOutFieldConfig.type_regex"><code class="docutils literal notranslate"><span class="pre">BitOutFieldConfig.type_regex</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="reference/framework.html#common.python.configs.BitOutFieldConfig.register_addresses"><code class="docutils literal notranslate"><span class="pre">BitOutFieldConfig.register_addresses()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="reference/framework.html#common.python.configs.PosOutFieldConfig"><code class="docutils literal notranslate"><span class="pre">PosOutFieldConfig</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="reference/framework.html#common.python.configs.PosOutFieldConfig.type_regex"><code class="docutils literal notranslate"><span class="pre">PosOutFieldConfig.type_regex</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="reference/framework.html#common.python.configs.PosOutFieldConfig.register_addresses"><code class="docutils literal notranslate"><span class="pre">PosOutFieldConfig.register_addresses()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="reference/framework.html#common.python.configs.PosOutFieldConfig.parse_extra_config"><code class="docutils literal notranslate"><span class="pre">PosOutFieldConfig.parse_extra_config()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="reference/framework.html#common.python.configs.PosOutFieldConfig.config_line"><code class="docutils literal notranslate"><span class="pre">PosOutFieldConfig.config_line()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="reference/framework.html#common.python.configs.ExtOutFieldConfig"><code class="docutils literal notranslate"><span class="pre">ExtOutFieldConfig</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="reference/framework.html#common.python.configs.ExtOutFieldConfig.type_regex"><code class="docutils literal notranslate"><span class="pre">ExtOutFieldConfig.type_regex</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="reference/framework.html#common.python.configs.ExtOutFieldConfig.register_addresses"><code class="docutils literal notranslate"><span class="pre">ExtOutFieldConfig.register_addresses()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="reference/framework.html#common.python.configs.ExtOutTimeFieldConfig"><code class="docutils literal notranslate"><span class="pre">ExtOutTimeFieldConfig</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="reference/framework.html#common.python.configs.ExtOutTimeFieldConfig.type_regex"><code class="docutils literal notranslate"><span class="pre">ExtOutTimeFieldConfig.type_regex</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="reference/framework.html#common.python.configs.ExtOutTimeFieldConfig.register_addresses"><code class="docutils literal notranslate"><span class="pre">ExtOutTimeFieldConfig.register_addresses()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="reference/framework.html#common.python.configs.TableFieldConfig"><code class="docutils literal notranslate"><span class="pre">TableFieldConfig</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="reference/framework.html#common.python.configs.TableFieldConfig.type_regex"><code class="docutils literal notranslate"><span class="pre">TableFieldConfig.type_regex</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="reference/framework.html#common.python.configs.TableFieldConfig.words"><code class="docutils literal notranslate"><span class="pre">TableFieldConfig.words</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="reference/framework.html#common.python.configs.TableFieldConfig.register_addresses"><code class="docutils literal notranslate"><span class="pre">TableFieldConfig.register_addresses()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="reference/framework.html#common.python.configs.TableFieldConfig.config_line"><code class="docutils literal notranslate"><span class="pre">TableFieldConfig.config_line()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="reference/framework.html#common.python.configs.TableFieldConfig.parse_extra_config"><code class="docutils literal notranslate"><span class="pre">TableFieldConfig.parse_extra_config()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="reference/framework.html#common.python.configs.TableShortFieldConfig"><code class="docutils literal notranslate"><span class="pre">TableShortFieldConfig</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="reference/framework.html#common.python.configs.TableShortFieldConfig.type_regex"><code class="docutils literal notranslate"><span class="pre">TableShortFieldConfig.type_regex</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="reference/framework.html#common.python.configs.TableShortFieldConfig.lines"><code class="docutils literal notranslate"><span class="pre">TableShortFieldConfig.lines</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="reference/framework.html#common.python.configs.TableShortFieldConfig.parse_extra_config"><code class="docutils literal notranslate"><span class="pre">TableShortFieldConfig.parse_extra_config()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="reference/framework.html#common.python.configs.TableShortFieldConfig.register_addresses"><code class="docutils literal notranslate"><span class="pre">TableShortFieldConfig.register_addresses()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="reference/framework.html#common.python.configs.ParamFieldConfig"><code class="docutils literal notranslate"><span class="pre">ParamFieldConfig</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="reference/framework.html#common.python.configs.ParamFieldConfig.type_regex"><code class="docutils literal notranslate"><span class="pre">ParamFieldConfig.type_regex</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="reference/framework.html#common.python.configs.ParamFieldConfig.register_addresses"><code class="docutils literal notranslate"><span class="pre">ParamFieldConfig.register_addresses()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="reference/framework.html#common.python.configs.ParamFieldConfig.config_line"><code class="docutils literal notranslate"><span class="pre">ParamFieldConfig.config_line()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="reference/framework.html#common.python.configs.CalcExtensionFieldConfig"><code class="docutils literal notranslate"><span class="pre">CalcExtensionFieldConfig</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="reference/framework.html#common.python.configs.CalcExtensionFieldConfig.type_regex"><code class="docutils literal notranslate"><span class="pre">CalcExtensionFieldConfig.type_regex</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="reference/framework.html#common.python.configs.CalcExtensionFieldConfig.register_addresses"><code class="docutils literal notranslate"><span class="pre">CalcExtensionFieldConfig.register_addresses()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="reference/framework.html#common.python.configs.EnumParamFieldConfig"><code class="docutils literal notranslate"><span class="pre">EnumParamFieldConfig</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="reference/framework.html#common.python.configs.EnumParamFieldConfig.type_regex"><code class="docutils literal notranslate"><span class="pre">EnumParamFieldConfig.type_regex</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="reference/framework.html#common.python.configs.EnumParamFieldConfig.parse_extra_config"><code class="docutils literal notranslate"><span class="pre">EnumParamFieldConfig.parse_extra_config()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="reference/framework.html#common.python.configs.UintParamFieldConfig"><code class="docutils literal notranslate"><span class="pre">UintParamFieldConfig</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="reference/framework.html#common.python.configs.UintParamFieldConfig.type_regex"><code class="docutils literal notranslate"><span class="pre">UintParamFieldConfig.type_regex</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="reference/framework.html#common.python.configs.UintParamFieldConfig.parse_extra_config"><code class="docutils literal notranslate"><span class="pre">UintParamFieldConfig.parse_extra_config()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="reference/framework.html#common.python.configs.UintParamFieldConfig.config_line"><code class="docutils literal notranslate"><span class="pre">UintParamFieldConfig.config_line()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="reference/framework.html#common.python.configs.ScalarParamFieldConfig"><code class="docutils literal notranslate"><span class="pre">ScalarParamFieldConfig</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="reference/framework.html#common.python.configs.ScalarParamFieldConfig.type_regex"><code class="docutils literal notranslate"><span class="pre">ScalarParamFieldConfig.type_regex</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="reference/framework.html#common.python.configs.ScalarParamFieldConfig.parse_extra_config"><code class="docutils literal notranslate"><span class="pre">ScalarParamFieldConfig.parse_extra_config()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="reference/framework.html#common.python.configs.ScalarParamFieldConfig.config_line"><code class="docutils literal notranslate"><span class="pre">ScalarParamFieldConfig.config_line()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="reference/framework.html#common.python.configs.BitMuxFieldConfig"><code class="docutils literal notranslate"><span class="pre">BitMuxFieldConfig</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="reference/framework.html#common.python.configs.BitMuxFieldConfig.type_regex"><code class="docutils literal notranslate"><span class="pre">BitMuxFieldConfig.type_regex</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="reference/framework.html#common.python.configs.BitMuxFieldConfig.register_addresses"><code class="docutils literal notranslate"><span class="pre">BitMuxFieldConfig.register_addresses()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="reference/framework.html#common.python.configs.PosMuxFieldConfig"><code class="docutils literal notranslate"><span class="pre">PosMuxFieldConfig</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="reference/framework.html#common.python.configs.PosMuxFieldConfig.type_regex"><code class="docutils literal notranslate"><span class="pre">PosMuxFieldConfig.type_regex</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="reference/framework.html#common.python.configs.PosMuxFieldConfig.register_addresses"><code class="docutils literal notranslate"><span class="pre">PosMuxFieldConfig.register_addresses()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="reference/framework.html#common.python.configs.TimeFieldConfig"><code class="docutils literal notranslate"><span class="pre">TimeFieldConfig</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="reference/framework.html#common.python.configs.TimeFieldConfig.type_regex"><code class="docutils literal notranslate"><span class="pre">TimeFieldConfig.type_regex</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="reference/framework.html#common.python.configs.TimeFieldConfig.register_addresses"><code class="docutils literal notranslate"><span class="pre">TimeFieldConfig.register_addresses()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="reference/framework.html#common.python.configs.TargetSiteConfig"><code class="docutils literal notranslate"><span class="pre">TargetSiteConfig</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="reference/framework.html#common.python.configs.TargetSiteConfig.type_regex"><code class="docutils literal notranslate"><span class="pre">TargetSiteConfig.type_regex</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="reference/framework.html#common.python.configs.TargetSiteConfig.name"><code class="docutils literal notranslate"><span class="pre">TargetSiteConfig.name</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="reference/framework.html#common.python.configs.TargetSiteConfig.number"><code class="docutils literal notranslate"><span class="pre">TargetSiteConfig.number</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="reference/framework.html#test-benches">Test benches</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="reference/framework.html#required-signals-in-the-block">Required signals in the block</a></li>
-<li class="toctree-l3"><a class="reference internal" href="reference/framework.html#read-expected-csv">Read expected.csv</a></li>
-<li class="toctree-l3"><a class="reference internal" href="reference/framework.html#assign-signals">Assign signals</a></li>
-<li class="toctree-l3"><a class="reference internal" href="reference/framework.html#compare-output-signals">Compare output signals</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="reference/changelog.html">Changelog</a></li>
-<li class="toctree-l1"><a class="reference internal" href="reference/glossary.html">Glossary</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="reference/glossary.html#app">App</a></li>
-<li class="toctree-l2"><a class="reference internal" href="reference/glossary.html#block">Block</a></li>
-<li class="toctree-l2"><a class="reference internal" href="reference/glossary.html#field">Field</a></li>
-<li class="toctree-l2"><a class="reference internal" href="reference/glossary.html#module">Module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="reference/glossary.html#pandabox">PandABox</a></li>
-<li class="toctree-l2"><a class="reference internal" href="reference/glossary.html#pandablocks-device">PandABlocks Device</a></li>
-<li class="toctree-l2"><a class="reference internal" href="reference/glossary.html#target-platform">Target Platform</a></li>
-<li class="toctree-l2"><a class="reference internal" href="reference/glossary.html#zpkg">Zpkg</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="reference/testing.html">Running the tests</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="reference/testing.html#python-tests">Python tests</a></li>
-<li class="toctree-l2"><a class="reference internal" href="reference/testing.html#hdl-tests">HDL tests</a></li>
-</ul>
-</li>
-</ul>
-</div>
-</div>
-</div>
-
-
-           </div>
-          </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="tutorials/tutorial1_blinking_leds.html" class="btn btn-neutral float-right" title="Blinking LEDs Tutorial" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+</nav></div>
+      
     </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
 
-  <hr/>
-
-  <div role="contentinfo">
-    <p>&#169; Copyright 2015, Diamond Light Source.</p>
-  </div>
-
-   
-
-</footer>
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
         </div>
-      </div>
-    </section>
-  </div>
-  <script>
-      jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
-      });
-  </script> 
+      
+      
+        <div class="navbar-item">
 
-</body>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/PandABlocks/PandABlocks-FPGA" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/PandABlocks-FPGA" title="PyPI" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fas fa-cube fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">PyPI</span></a>
+        </li>
+</ul></div>
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-2"
+      type="button"
+      class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-2"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-2"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-2">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item">
+<nav class="navbar-nav">
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="tutorials.html">
+                        Tutorials
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="how-to.html">
+                        How-to Guides
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="explanations.html">
+                        Explanations
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="reference.html">
+                        Reference
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/PandABlocks/PandABlocks-FPGA" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/PandABlocks-FPGA" title="PyPI" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fas fa-cube fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">PyPI</span></a>
+        </li>
+</ul></div>
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-3"
+      type="button"
+      class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-3"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-3"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-3">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article"></div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <p><a class="reference external" href="https://github.com/PandABlocks/PandABlocks-FPGA/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/PandABlocks/PandABlocks-FPGA/actions/workflows/ci.yml/badge.svg" /></a>
+<a class="reference external" href="https://codecov.io/gh/PandABlocks/PandABlocks-FPGA"><img alt="Coverage" src="https://codecov.io/gh/PandABlocks/PandABlocks-FPGA/branch/main/graph/badge.svg" /></a></p>
+<p><a class="reference external" href="https://opensource.org/licenses/Apache-2.0"><img alt="License" src="https://img.shields.io/badge/License-Apache%202.0-blue.svg" /></a></p>
+<section id="pandablocks">
+<h1>pandablocks<a class="headerlink" href="#pandablocks" title="Link to this heading">#</a></h1>
+<p>VHDL for PandA</p>
+<p>This is where you should write a short paragraph that describes what your module does,
+how it does it, and why people should use it.</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Source</p></th>
+<th class="head text-center"><p><a class="github reference external" href="https://github.com/PandABlocks/PandABlocks-FPGA">PandABlocks/PandABlocks-FPGA</a></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>Documentation</p></td>
+<td class="text-center"><p><a class="reference external" href="https://pandablocks.github.io/PandABlocks-FPGA">https://pandablocks.github.io/PandABlocks-FPGA</a></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>Releases</p></td>
+<td class="text-center"><p><a class="github reference external" href="https://github.com/PandABlocks/PandABlocks-FPGA/releases">PandABlocks/PandABlocks-FPGA</a></p></td>
+</tr>
+</tbody>
+</table>
+<p>This is where you should put some images or code snippets that illustrate
+some relevant examples. If it is a library then you might put some
+introductory code here:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pandablocks</span> <span class="kn">import</span> <span class="n">__version__</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Hello pandablocks </span><span class="si">{</span><span class="n">__version__</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Or if it is a commandline tool then you might put some example commands here:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">pandablocks</span> <span class="o">--</span><span class="n">version</span>
+</pre></div>
+</div>
+<section id="how-the-documentation-is-structured">
+<h2>How the documentation is structured<a class="headerlink" href="#how-the-documentation-is-structured" title="Link to this heading">#</a></h2>
+<p>Documentation is split into <a class="reference external" href="https://diataxis.fr">four categories</a>, also accessible from links in the top bar.</p>
+<!-- https://sphinx-design.readthedocs.io/en/latest/grids.html -->
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-2 sd-g-4 sd-g-xs-4 sd-g-sm-4 sd-g-md-4 sd-g-lg-4 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+<svg version="4.0.0.63c5cb3" width="2.0em" height="2.0em" class="sd-material-icon sd-material-icon-directions_walk" viewBox="0 0 24 24" aria-hidden="true"><path d="M0 0h24v24H0z" fill="none"></path><path d="M13.5 5.5c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zM9.8 8.9L7 23h2.1l1.8-8 2.1 2v6h2v-7.5l-2.1-2 .6-3C14.8 12 16.8 13 19 13v-2c-1.9 0-3.5-1-4.3-2.4l-1-1.6c-.4-.6-1-1-1.7-1-.3 0-.5.1-.8.1L6 8.3V13h2V9.6l1.8-.7"></path></svg></div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/installation.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/tutorial1_blinking_leds.html">Blinking LEDs Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/tutorial2_position_capture.html">Position Capture Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/tutorial3_position_compare.html">Position Compare Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/tutorial4_snake_scan.html">Snake Scan Tutorial</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text">Tutorials for installation and typical usage. New users start here.</p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+<svg version="4.0.0.63c5cb3" width="2.0em" height="2.0em" class="sd-material-icon sd-material-icon-directions" viewBox="0 0 24 24" aria-hidden="true"><path d="M0 0h24v24H0z" fill="none"></path><path d="M21.71 11.29l-9-9c-.39-.39-1.02-.39-1.41 0l-9 9c-.39.39-.39 1.02 0 1.41l9 9c.39.39 1.02.39 1.41 0l9-9c.39-.38.39-1.01 0-1.41zM14 14.5V12h-4v3H8v-4c0-.55.45-1 1-1h5V7.5l3.5 3.5-3.5 3.5z"></path></svg></div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="how-to.html">How-to Guides</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="how-to/contribute.html">Contribute to the project</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text">Practical step-by-step guides for the more experienced user.</p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+<svg version="4.0.0.63c5cb3" width="2.0em" height="2.0em" class="sd-material-icon sd-material-icon-info" viewBox="0 0 24 24" aria-hidden="true"><path d="M0 0h24v24H0z" fill="none"></path><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"></path></svg></div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="explanations.html">Explanations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="explanations/decisions.html">Architectural Decision Records</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text">Explanations of how it works and why it works that way.</p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+<svg version="4.0.0.63c5cb3" width="2.0em" height="2.0em" class="sd-material-icon sd-material-icon-menu_book" viewBox="0 0 24 24" aria-hidden="true"><g><rect fill="none" height="24" width="24"></rect></g><g><g></rect><g><path d="M21,5c-1.11-0.35-2.33-0.5-3.5-0.5c-1.95,0-4.05,0.4-5.5,1.5c-1.45-1.1-3.55-1.5-5.5-1.5S2.45,4.9,1,6v14.65 c0,0.25,0.25,0.5,0.5,0.5c0.1,0,0.15-0.05,0.25-0.05C3.1,20.45,5.05,20,6.5,20c1.95,0,4.05,0.4,5.5,1.5c1.35-0.85,3.8-1.5,5.5-1.5 c1.65,0,3.35,0.3,4.75,1.05c0.1,0.05,0.15,0.05,0.25,0.05c0.25,0,0.5-0.25,0.5-0.5V6C22.4,5.55,21.75,5.25,21,5z M21,18.5 c-1.1-0.35-2.3-0.5-3.5-0.5c-1.7,0-4.15,0.65-5.5,1.5V8c1.35-0.85,3.8-1.5,5.5-1.5c1.2,0,2.4,0.15,3.5,0.5V18.5z"></path><g><path d="M17.5,10.5c0.88,0,1.73,0.09,2.5,0.26V9.24C19.21,9.09,18.36,9,17.5,9c-1.7,0-3.24,0.29-4.5,0.83v1.66 C14.13,10.85,15.7,10.5,17.5,10.5z"></path><path d="M13,12.49v1.66c1.13-0.64,2.7-0.99,4.5-0.99c0.88,0,1.73,0.09,2.5,0.26V11.9c-0.79-0.15-1.64-0.24-2.5-0.24 C15.8,11.66,14.26,11.96,13,12.49z"></path><path d="M17.5,14.33c-1.7,0-3.24,0.29-4.5,0.83v1.66c1.13-0.64,2.7-0.99,4.5-0.99c0.88,0,1.73,0.09,2.5,0.26v-1.52 C19.21,14.41,18.36,14.33,17.5,14.33z"></path></g></g></g></svg></div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="reference.html">Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="reference/api.html">API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference/changelog.html">Changelog</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference/contributing.html">Contributing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference/framework.html">Autogeneration framework architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference/glossary.html">Glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference/testing.html">Running the tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="genindex.html">Index</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://github.com/PandABlocks/PandABlocks-FPGA/releases">Release Notes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text">Technical reference material including APIs and release notes.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="right-next"
+       href="tutorials.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Tutorials</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.15.2.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
 </html>

@@ -1,147 +1,468 @@
+
 <!DOCTYPE html>
-<html class="writer-html5" lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>common.python.configs &mdash; PandABlocks-FPGA 3f59bb6
- documentation</title>
-      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/theme_overrides.css" />
 
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>common.python.configs &#8212; PandABlocks-FPGA 0.1.dev2594+ge47ff0e documentation</title>
   
-    <link rel="shortcut icon" href="../../../_static/PandA-logo.ico"/>
-  <!--[if lt IE 9]>
-    <script src="../../../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
   
-        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-        <script src="../../../_static/jquery.js"></script>
-        <script src="../../../_static/underscore.js"></script>
-        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../../../_static/doctools.js"></script>
-        <script src="../../../_static/sphinx_highlight.js"></script>
-    <script src="../../../_static/js/theme.js"></script>
-    <link rel="index" title="Index" href="../../../genindex.html" />
-    <link rel="search" title="Search" href="../../../search.html" /> 
-</head>
-
-<body class="wy-body-for-nav"> 
-  <div class="wy-grid-for-nav">
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-scroll">
-        <div class="wy-side-nav-search"  style="background: black" >
-
-          
-          
-          <a href="../../../index.html" class="icon icon-home">
-            PandABlocks-FPGA
-              <img src="../../../_static/PandA-logo-for-black-background.svg" class="logo" alt="Logo"/>
-          </a>
-              <div class="version">
-                3f59bb6
-
-              </div>
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
-    <input type="hidden" name="check_keywords" value="yes" />
-    <input type="hidden" name="area" value="default" />
-  </form>
-</div>
-        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-  <style>
-    /* style mobile top nav to look like main nav */
-    .wy-nav-top {
-        background: black
-    }
-  </style>
   
-              <p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../index.html">What can PandABlocks do?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../index.html#how-is-the-documentation-structured">How is the documentation structured?</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../tutorials/tutorial1_blinking_leds.html">Blinking LEDs Tutorial</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../tutorials/tutorial2_position_capture.html">Position Capture Tutorial</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../tutorials/tutorial3_position_compare.html">Position Compare Tutorial</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../tutorials/tutorial4_snake_scan.html">Snake Scan Tutorial</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../blocks.html">Available Blocks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../reference/contributing.html">Contributing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../reference/app.html">Assembling Blocks into an App</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../reference/block.html">Writing a Block</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../reference/framework.html">Autogeneration framework architecture</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../reference/changelog.html">Changelog</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../reference/glossary.html">Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../reference/testing.html">Running the tests</a></li>
-</ul>
-
-  <!-- Include link to changelog -->
-  <a href="https://github.com/PandABlocks/PandABlocks-FPGA/blob/master/CHANGELOG.rst">Changelog</a>
-  <!-- Add versions for selected branches + tags -->
-  <p class="caption"><span class="caption-text">Versions</span></p>
-  <ul id="versions"/>
-  <script>
-    // Add any branches to appear in the side pane here, tags will be added below
-    // Will only appear if docs are built and pushed in gh-pages
-    var versions = ['master', 'main'];
-    var dirs = new Set();
-    function addVersion(name) {
-      if (dirs.has(name)) {
-        var li = document.createElement("li");
-        var a = document.createElement("a");
-        a.href = 'https://PandABlocks.github.io/PandABlocks-FPGA/' + name;
-        a.innerText = name;
-        li.appendChild(a)
-        document.getElementById('versions').appendChild(li);
-      }
-    }
-    Promise.all([
-      // Find gh-pages directories and populate `dirs`
-      fetch("https://api.github.com/repos/PandABlocks/PandABlocks-FPGA/contents?ref=gh-pages")
-      .then(response => response.json())
-      .then(data => data.forEach(function(e) {
-        if (e.type == "dir") dirs.add(e.name);
-      })),
-      // Add tags to `versions`
-      fetch('https://api.github.com/repos/PandABlocks/PandABlocks-FPGA/tags')
-        .then(response => response.json())
-        .then(data => data.forEach(function(e) {
-          versions.push(e.name);
-        }))
-      ]).then(_ => versions.forEach(addVersion))
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
   </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
-        </div>
-      </div>
-    </nav>
+  
+  <link href="../../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: black" >
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../../index.html">PandABlocks-FPGA</a>
-      </nav>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=fd3f3429" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/plot_directive.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-      <div class="wy-nav-content">
-        <div class="rst-content">
-          <div role="navigation" aria-label="Page navigation">
-  <ul class="wy-breadcrumbs">
-      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
-          <li class="breadcrumb-item"><a href="../../index.html">Module code</a></li>
-      <li class="breadcrumb-item active">common.python.configs</li>
-      <li class="wy-breadcrumbs-aside">
-      </li>
+    <script src="../../../_static/documentation_options.js?v=95e09165"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=30646c52"></script>
+    <script src="../../../_static/design-tabs.js?v=36754332"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/common/python/configs';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.15.2';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://PandABlocks.github.io/PandABlocks-FPGA/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'master';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner = false;
+        </script>
+    <link rel="icon" href="../../../_static/dls-logo.svg"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/dls-logo.svg" class="logo__image only-light" alt=""/>
+    <script>document.write(`<img src="../../../_static/dls-logo.svg" class="logo__image only-dark" alt=""/>`);</script>
+  
+  
+    <p class="title logo__title">PandABlocks-FPGA</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav class="navbar-nav">
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../tutorials.html">
+                        Tutorials
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../how-to.html">
+                        How-to Guides
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../explanations.html">
+                        Explanations
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../reference.html">
+                        Reference
+                      </a>
+                    </li>
+                
   </ul>
-  <hr/>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/PandABlocks/PandABlocks-FPGA" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/PandABlocks-FPGA" title="PyPI" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fas fa-cube fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">PyPI</span></a>
+        </li>
+</ul></div>
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-2"
+      type="button"
+      class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-2"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-2"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-2">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
 </div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody">
-             
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item">
+<nav class="navbar-nav">
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../tutorials.html">
+                        Tutorials
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../how-to.html">
+                        How-to Guides
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../explanations.html">
+                        Explanations
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../reference.html">
+                        Reference
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/PandABlocks/PandABlocks-FPGA" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/PandABlocks-FPGA" title="PyPI" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fas fa-cube fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">PyPI</span></a>
+        </li>
+</ul></div>
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-3"
+      type="button"
+      class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-3"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-3"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-3">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">common.pytho...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
   <h1>Source code for common.python.configs</h1><div class="highlight"><pre>
 <span></span><span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">re</span>
@@ -157,18 +478,24 @@
 <span class="n">ROOT</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="vm">__file__</span><span class="p">),</span> <span class="s2">&quot;..&quot;</span><span class="p">,</span> <span class="s2">&quot;..&quot;</span><span class="p">)</span>
 
 
-<div class="viewcode-block" id="pad"><a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.pad">[docs]</a><span class="k">def</span> <span class="nf">pad</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">spaces</span><span class="o">=</span><span class="mi">19</span><span class="p">):</span>
+<div class="viewcode-block" id="pad">
+<a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.pad">[docs]</a>
+<span class="k">def</span> <span class="nf">pad</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">spaces</span><span class="o">=</span><span class="mi">19</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Pad the right of a name with spaces until it is at least spaces long&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">name</span><span class="o">.</span><span class="n">ljust</span><span class="p">(</span><span class="n">spaces</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="all_subclasses"><a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.all_subclasses">[docs]</a><span class="k">def</span> <span class="nf">all_subclasses</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+
+<div class="viewcode-block" id="all_subclasses">
+<a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.all_subclasses">[docs]</a>
+<span class="k">def</span> <span class="nf">all_subclasses</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Recursively find all the subclasses of cls&quot;&quot;&quot;</span>
     <span class="n">ret</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">subclass</span> <span class="ow">in</span> <span class="bp">cls</span><span class="o">.</span><span class="n">__subclasses__</span><span class="p">():</span>
         <span class="n">ret</span> <span class="o">+=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="p">[</span><span class="n">subclass</span><span class="p">]</span> <span class="o">+</span> <span class="n">all_subclasses</span><span class="p">(</span><span class="n">subclass</span><span class="p">)</span>
                 <span class="k">if</span> <span class="n">x</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">ret</span><span class="p">]</span>
     <span class="k">return</span> <span class="n">ret</span></div>
+
 
 
 <span class="k">def</span> <span class="nf">allocate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">counter</span><span class="p">,</span> <span class="n">limit</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
@@ -228,7 +555,9 @@
         <span class="k">return</span> <span class="n">allocate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;field_count&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">MAX_FIELDS</span><span class="p">,</span> <span class="s1">&#39;number of fields&#39;</span><span class="p">)</span>
 
 
-<div class="viewcode-block" id="BlockConfig"><a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.BlockConfig">[docs]</a><span class="k">class</span> <span class="nc">BlockConfig</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<div class="viewcode-block" id="BlockConfig">
+<a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.BlockConfig">[docs]</a>
+<span class="k">class</span> <span class="nc">BlockConfig</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;The config for a single Block&quot;&quot;&quot;</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">number</span><span class="p">,</span> <span class="n">ini_path</span><span class="p">,</span> <span class="n">site</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="c1"># type: (str, str, int, str, Optional[int]) -&gt; None</span>
@@ -277,7 +606,9 @@
         <span class="c1">#: Are there any suffixes?</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">block_suffixes</span> <span class="o">=</span> <span class="n">ini_get</span><span class="p">(</span><span class="n">ini</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="s1">&#39;block_suffixes&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
 
-<div class="viewcode-block" id="BlockConfig.register_addresses"><a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.BlockConfig.register_addresses">[docs]</a>    <span class="k">def</span> <span class="nf">register_addresses</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">block_counters</span><span class="p">):</span>
+<div class="viewcode-block" id="BlockConfig.register_addresses">
+<a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.BlockConfig.register_addresses">[docs]</a>
+    <span class="k">def</span> <span class="nf">register_addresses</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">block_counters</span><span class="p">):</span>
         <span class="c1"># type: (RegisterCounter) -&gt; None</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Register this block in the address space&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">block_address</span> <span class="o">=</span> <span class="n">block_counters</span><span class="o">.</span><span class="n">new_block</span><span class="p">()</span>
@@ -285,7 +616,10 @@
         <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">fields</span><span class="p">:</span>
             <span class="n">field</span><span class="o">.</span><span class="n">register_addresses</span><span class="p">(</span><span class="n">counters</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="BlockConfig.filter_fields"><a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.BlockConfig.filter_fields">[docs]</a>    <span class="k">def</span> <span class="nf">filter_fields</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">regex</span><span class="p">,</span> <span class="n">matching</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+
+<div class="viewcode-block" id="BlockConfig.filter_fields">
+<a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.BlockConfig.filter_fields">[docs]</a>
+    <span class="k">def</span> <span class="nf">filter_fields</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">regex</span><span class="p">,</span> <span class="n">matching</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
         <span class="c1"># type: (str, bool) -&gt; Iterable[FieldConfig]</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Filter our child fields by typ. If not matching return those</span>
 <span class="sd">        that don&#39;t match&quot;&quot;&quot;</span>
@@ -296,6 +630,7 @@
             <span class="c1"># return the field</span>
             <span class="k">if</span> <span class="n">matching</span> <span class="o">==</span> <span class="n">is_a_match</span><span class="p">:</span>
                 <span class="k">yield</span> <span class="n">field</span></div>
+
 
     <span class="k">def</span> <span class="nf">combineSiteInterfaces</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">interfaces</span><span class="p">):</span>
         <span class="c1"># type: (List(str)) -&gt; list[tuple]</span>
@@ -311,13 +646,16 @@
             <span class="n">combinedInterfaces</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">combinedInterface</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">combinedInterfaces</span>
 
-<div class="viewcode-block" id="BlockConfig.generateInterfaceConstraints"><a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.BlockConfig.generateInterfaceConstraints">[docs]</a>    <span class="k">def</span> <span class="nf">generateInterfaceConstraints</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="BlockConfig.generateInterfaceConstraints">
+<a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.BlockConfig.generateInterfaceConstraints">[docs]</a>
+    <span class="k">def</span> <span class="nf">generateInterfaceConstraints</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Generate MGT Pints constraints&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">interfaceConstraints</span><span class="o">=</span><span class="p">[]</span>
         <span class="k">for</span> <span class="n">interface</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">interfaces</span><span class="p">:</span>
             <span class="n">constraint</span> <span class="o">=</span> <span class="n">interface</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot;_MGT_pins.xdc&quot;</span>
             <span class="k">if</span> <span class="n">constraint</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">interfaceConstraints</span><span class="p">:</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">interfaceConstraints</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">constraint</span><span class="p">)</span></div>
+
 
     <span class="k">def</span> <span class="nf">generate_calc_extensions</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="c1"># Iterate through the fields and add any with writeExtension type to the list</span>
@@ -337,6 +675,7 @@
                     <span class="k">if</span> <span class="n">calc_extension</span> <span class="o">==</span> <span class="n">extension</span><span class="p">:</span>
                         <span class="n">field</span><span class="o">.</span><span class="n">extension_nums</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">num</span><span class="p">,</span> <span class="s2">&quot;read&quot;</span><span class="p">])</span></div>
 
+
 <span class="k">def</span> <span class="nf">make_getter_setter</span><span class="p">(</span><span class="n">config</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">getter</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;_&quot;</span> <span class="o">+</span> <span class="n">config</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
@@ -353,7 +692,9 @@
     <span class="k">return</span> <span class="n">getter</span><span class="p">,</span> <span class="n">setter</span>
 
 
-<div class="viewcode-block" id="RegisterConfig"><a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.RegisterConfig">[docs]</a><span class="k">class</span> <span class="nc">RegisterConfig</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<div class="viewcode-block" id="RegisterConfig">
+<a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.RegisterConfig">[docs]</a>
+<span class="k">class</span> <span class="nc">RegisterConfig</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;A low level register name and number backing this field&quot;&quot;&quot;</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">number</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">prefix</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">extension</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">write_extension</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">read_extension</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">):</span>
         <span class="c1"># type: (str, int, str, str, str, str) -&gt; None</span>
@@ -371,7 +712,10 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">read_extension</span> <span class="o">=</span> <span class="n">read_extension</span></div>
 
 
-<div class="viewcode-block" id="BusEntryConfig"><a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.BusEntryConfig">[docs]</a><span class="k">class</span> <span class="nc">BusEntryConfig</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+<div class="viewcode-block" id="BusEntryConfig">
+<a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.BusEntryConfig">[docs]</a>
+<span class="k">class</span> <span class="nc">BusEntryConfig</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;A bus entry belonging to a field&quot;&quot;&quot;</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">bus</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
         <span class="c1"># type: (str, str, int) -&gt; None</span>
@@ -383,7 +727,10 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">index</span></div>
 
 
-<div class="viewcode-block" id="FieldConfig"><a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.FieldConfig">[docs]</a><span class="k">class</span> <span class="nc">FieldConfig</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+<div class="viewcode-block" id="FieldConfig">
+<a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.FieldConfig">[docs]</a>
+<span class="k">class</span> <span class="nc">FieldConfig</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;The config for a single Field of a Block&quot;&quot;&quot;</span>
     <span class="c1">#: Regex for matching a type string to this field</span>
     <span class="n">type_regex</span> <span class="o">=</span> <span class="kc">None</span>
@@ -423,19 +770,27 @@
         <span class="c1">#: All the other extra config items</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">extra_config_lines</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">parse_extra_config</span><span class="p">(</span><span class="n">extra_config</span><span class="p">))</span>
 
-<div class="viewcode-block" id="FieldConfig.parse_extra_config"><a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.FieldConfig.parse_extra_config">[docs]</a>    <span class="k">def</span> <span class="nf">parse_extra_config</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">extra_config</span><span class="p">):</span>
+<div class="viewcode-block" id="FieldConfig.parse_extra_config">
+<a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.FieldConfig.parse_extra_config">[docs]</a>
+    <span class="k">def</span> <span class="nf">parse_extra_config</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">extra_config</span><span class="p">):</span>
         <span class="c1"># type: (Dict[str, Any]) -&gt; Iterable[str]</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Produce any extra config lines from self.kwargs&quot;&quot;&quot;</span>
         <span class="k">assert</span> <span class="ow">not</span> <span class="n">extra_config</span><span class="p">,</span> \
             <span class="s2">&quot;Can&#39;t handle extra config items </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">extra_config</span>
         <span class="k">return</span> <span class="nb">iter</span><span class="p">(())</span></div>
 
-<div class="viewcode-block" id="FieldConfig.register_addresses"><a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.FieldConfig.register_addresses">[docs]</a>    <span class="k">def</span> <span class="nf">register_addresses</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">counters</span><span class="p">):</span>
+
+<div class="viewcode-block" id="FieldConfig.register_addresses">
+<a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.FieldConfig.register_addresses">[docs]</a>
+    <span class="k">def</span> <span class="nf">register_addresses</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">counters</span><span class="p">):</span>
         <span class="c1"># type: (FieldCounter) -&gt; None</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Create registers using the FieldCounter object&quot;&quot;&quot;</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="FieldConfig.address_line"><a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.FieldConfig.address_line">[docs]</a>    <span class="k">def</span> <span class="nf">address_line</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="FieldConfig.address_line">
+<a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.FieldConfig.address_line">[docs]</a>
+    <span class="k">def</span> <span class="nf">address_line</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="c1"># type: () -&gt; str</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Produce the line that should go in the registers file after name&quot;&quot;&quot;</span>
         <span class="k">def</span> <span class="nf">make_reg_name</span><span class="p">(</span><span class="n">r</span><span class="p">):</span>
@@ -469,16 +824,23 @@
             <span class="n">registers_str</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">index</span><span class="p">)</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">bus_entries</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">registers_str</span></div>
 
-<div class="viewcode-block" id="FieldConfig.config_line"><a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.FieldConfig.config_line">[docs]</a>    <span class="k">def</span> <span class="nf">config_line</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="FieldConfig.config_line">
+<a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.FieldConfig.config_line">[docs]</a>
+    <span class="k">def</span> <span class="nf">config_line</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="c1"># type: () -&gt; str</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Produce the line that should go in the config file after name&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">type</span></div>
 
-<div class="viewcode-block" id="FieldConfig.numbered_registers"><a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.FieldConfig.numbered_registers">[docs]</a>    <span class="k">def</span> <span class="nf">numbered_registers</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="FieldConfig.numbered_registers">
+<a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.FieldConfig.numbered_registers">[docs]</a>
+    <span class="k">def</span> <span class="nf">numbered_registers</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="c1"># type: () -&gt; List[RegisterConfig]</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Filter self.registers, only producing registers with a number</span>
 <span class="sd">        (not those that are purely extension registers)&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="p">[</span><span class="n">r</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">registers</span> <span class="k">if</span> <span class="n">r</span><span class="o">.</span><span class="n">number</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span></div>
+
 
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">lookup_subclass</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
@@ -507,92 +869,113 @@
         <span class="k">return</span> <span class="n">ret</span></div>
 
 
-<div class="viewcode-block" id="BitOutFieldConfig"><a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.BitOutFieldConfig">[docs]</a><span class="k">class</span> <span class="nc">BitOutFieldConfig</span><span class="p">(</span><span class="n">FieldConfig</span><span class="p">):</span>
+
+<div class="viewcode-block" id="BitOutFieldConfig">
+<a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.BitOutFieldConfig">[docs]</a>
+<span class="k">class</span> <span class="nc">BitOutFieldConfig</span><span class="p">(</span><span class="n">FieldConfig</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;These fields represent a single entry on the bit bus&quot;&quot;&quot;</span>
     <span class="n">type_regex</span> <span class="o">=</span> <span class="s2">&quot;bit_out&quot;</span>
 
-<div class="viewcode-block" id="BitOutFieldConfig.register_addresses"><a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.BitOutFieldConfig.register_addresses">[docs]</a>    <span class="k">def</span> <span class="nf">register_addresses</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">counters</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">register_addresses</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">counters</span><span class="p">):</span>
         <span class="c1"># type: (FieldCounter) -&gt; None</span>
         <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">number</span><span class="p">):</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">bus_entries</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
-                <span class="n">BusEntryConfig</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="s2">&quot;bit&quot;</span><span class="p">,</span> <span class="n">counters</span><span class="o">.</span><span class="n">new_bit</span><span class="p">()))</span></div></div>
+                <span class="n">BusEntryConfig</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="s2">&quot;bit&quot;</span><span class="p">,</span> <span class="n">counters</span><span class="o">.</span><span class="n">new_bit</span><span class="p">()))</span></div>
 
 
-<div class="viewcode-block" id="PosOutFieldConfig"><a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.PosOutFieldConfig">[docs]</a><span class="k">class</span> <span class="nc">PosOutFieldConfig</span><span class="p">(</span><span class="n">FieldConfig</span><span class="p">):</span>
+
+<div class="viewcode-block" id="PosOutFieldConfig">
+<a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.PosOutFieldConfig">[docs]</a>
+<span class="k">class</span> <span class="nc">PosOutFieldConfig</span><span class="p">(</span><span class="n">FieldConfig</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;These fields represent a position output&quot;&quot;&quot;</span>
     <span class="n">type_regex</span> <span class="o">=</span> <span class="s2">&quot;pos_out&quot;</span>
     <span class="n">scale</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="n">offset</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="n">units</span> <span class="o">=</span> <span class="kc">None</span>
 
-<div class="viewcode-block" id="PosOutFieldConfig.register_addresses"><a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.PosOutFieldConfig.register_addresses">[docs]</a>    <span class="k">def</span> <span class="nf">register_addresses</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">counters</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">register_addresses</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">counters</span><span class="p">):</span>
         <span class="c1"># type: (FieldCounter) -&gt; None</span>
         <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">number</span><span class="p">):</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">bus_entries</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
-                <span class="n">BusEntryConfig</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="s2">&quot;pos&quot;</span><span class="p">,</span> <span class="n">counters</span><span class="o">.</span><span class="n">new_pos</span><span class="p">()))</span></div>
+                <span class="n">BusEntryConfig</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="s2">&quot;pos&quot;</span><span class="p">,</span> <span class="n">counters</span><span class="o">.</span><span class="n">new_pos</span><span class="p">()))</span>
 
-<div class="viewcode-block" id="PosOutFieldConfig.parse_extra_config"><a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.PosOutFieldConfig.parse_extra_config">[docs]</a>    <span class="k">def</span> <span class="nf">parse_extra_config</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">extra_config</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">parse_extra_config</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">extra_config</span><span class="p">):</span>
         <span class="c1"># type: (Dict[str, Any]) -&gt; iter[str]</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">scale</span> <span class="o">=</span> <span class="n">extra_config</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;scale&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">offset</span> <span class="o">=</span> <span class="n">extra_config</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;offset&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">units</span> <span class="o">=</span> <span class="n">extra_config</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;units&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="nb">iter</span><span class="p">(())</span></div>
+        <span class="k">return</span> <span class="nb">iter</span><span class="p">(())</span>
 
-<div class="viewcode-block" id="PosOutFieldConfig.config_line"><a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.PosOutFieldConfig.config_line">[docs]</a>    <span class="k">def</span> <span class="nf">config_line</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="PosOutFieldConfig.config_line">
+<a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.PosOutFieldConfig.config_line">[docs]</a>
+    <span class="k">def</span> <span class="nf">config_line</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="c1"># type: () -&gt; str</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Produce the line that should go in the config file after name&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">units</span><span class="p">:</span>
             <span class="k">return</span> <span class="s2">&quot;pos_out </span><span class="si">%s</span><span class="s2"> </span><span class="si">%s</span><span class="s2"> </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">scale</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">offset</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">units</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="c1"># In case no units are declared, this removes trailing whitespace</span>
-            <span class="k">return</span> <span class="s2">&quot;pos_out </span><span class="si">%s</span><span class="s2"> </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">scale</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">offset</span><span class="p">)</span></div></div>
+            <span class="k">return</span> <span class="s2">&quot;pos_out </span><span class="si">%s</span><span class="s2"> </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">scale</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">offset</span><span class="p">)</span></div>
+</div>
 
 
-<div class="viewcode-block" id="ExtOutFieldConfig"><a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.ExtOutFieldConfig">[docs]</a><span class="k">class</span> <span class="nc">ExtOutFieldConfig</span><span class="p">(</span><span class="n">FieldConfig</span><span class="p">):</span>
+
+<div class="viewcode-block" id="ExtOutFieldConfig">
+<a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.ExtOutFieldConfig">[docs]</a>
+<span class="k">class</span> <span class="nc">ExtOutFieldConfig</span><span class="p">(</span><span class="n">FieldConfig</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;These fields represent a ext output&quot;&quot;&quot;</span>
     <span class="n">type_regex</span> <span class="o">=</span> <span class="s2">&quot;ext_out&quot;</span>
 
-<div class="viewcode-block" id="ExtOutFieldConfig.register_addresses"><a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.ExtOutFieldConfig.register_addresses">[docs]</a>    <span class="k">def</span> <span class="nf">register_addresses</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">counters</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">register_addresses</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">counters</span><span class="p">):</span>
         <span class="c1"># type: (FieldCounter) -&gt; None</span>
         <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">number</span><span class="p">):</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">bus_entries</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
-                <span class="n">BusEntryConfig</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="s2">&quot;ext&quot;</span><span class="p">,</span> <span class="n">counters</span><span class="o">.</span><span class="n">new_ext</span><span class="p">()))</span></div></div>
+                <span class="n">BusEntryConfig</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="s2">&quot;ext&quot;</span><span class="p">,</span> <span class="n">counters</span><span class="o">.</span><span class="n">new_ext</span><span class="p">()))</span></div>
 
 
-<div class="viewcode-block" id="ExtOutTimeFieldConfig"><a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.ExtOutTimeFieldConfig">[docs]</a><span class="k">class</span> <span class="nc">ExtOutTimeFieldConfig</span><span class="p">(</span><span class="n">ExtOutFieldConfig</span><span class="p">):</span>
+
+<div class="viewcode-block" id="ExtOutTimeFieldConfig">
+<a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.ExtOutTimeFieldConfig">[docs]</a>
+<span class="k">class</span> <span class="nc">ExtOutTimeFieldConfig</span><span class="p">(</span><span class="n">ExtOutFieldConfig</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;These fields represent a ext output timestamp, which requires two</span>
 <span class="sd">    registers&quot;&quot;&quot;</span>
     <span class="n">type_regex</span> <span class="o">=</span> <span class="s2">&quot;ext_out timestamp&quot;</span>
 
-<div class="viewcode-block" id="ExtOutTimeFieldConfig.register_addresses"><a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.ExtOutTimeFieldConfig.register_addresses">[docs]</a>    <span class="k">def</span> <span class="nf">register_addresses</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">counters</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">register_addresses</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">counters</span><span class="p">):</span>
         <span class="c1"># type: (FieldCounter) -&gt; None</span>
         <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">number</span><span class="p">):</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">bus_entries</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span>
                 <span class="n">BusEntryConfig</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s2">&quot;_L&quot;</span><span class="p">,</span> <span class="s2">&quot;ext&quot;</span><span class="p">,</span> <span class="n">counters</span><span class="o">.</span><span class="n">new_ext</span><span class="p">()),</span>
-                <span class="n">BusEntryConfig</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s2">&quot;_H&quot;</span><span class="p">,</span> <span class="s2">&quot;ext&quot;</span><span class="p">,</span> <span class="n">counters</span><span class="o">.</span><span class="n">new_ext</span><span class="p">())])</span></div></div>
+                <span class="n">BusEntryConfig</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s2">&quot;_H&quot;</span><span class="p">,</span> <span class="s2">&quot;ext&quot;</span><span class="p">,</span> <span class="n">counters</span><span class="o">.</span><span class="n">new_ext</span><span class="p">())])</span></div>
 
 
-<div class="viewcode-block" id="TableFieldConfig"><a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.TableFieldConfig">[docs]</a><span class="k">class</span> <span class="nc">TableFieldConfig</span><span class="p">(</span><span class="n">FieldConfig</span><span class="p">):</span>
+
+<div class="viewcode-block" id="TableFieldConfig">
+<a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.TableFieldConfig">[docs]</a>
+<span class="k">class</span> <span class="nc">TableFieldConfig</span><span class="p">(</span><span class="n">FieldConfig</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;These fields represent a table field&quot;&quot;&quot;</span>
     <span class="n">type_regex</span> <span class="o">=</span> <span class="s2">&quot;table&quot;</span>
     <span class="c1">#: How many 32-bit words per line?</span>
     <span class="n">words</span> <span class="o">=</span> <span class="kc">None</span>
 
-<div class="viewcode-block" id="TableFieldConfig.register_addresses"><a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.TableFieldConfig.register_addresses">[docs]</a>    <span class="k">def</span> <span class="nf">register_addresses</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">counters</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">register_addresses</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">counters</span><span class="p">):</span>
         <span class="c1"># type: (FieldCounter) -&gt; None</span>
         <span class="c1"># Hardcode to 2^8 = 256 pages</span>
         <span class="c1"># Each page is 1024 words = 4096 bytes</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">registers</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span>
             <span class="n">RegisterConfig</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">prefix</span><span class="o">=</span><span class="s1">&#39;long 2^8&#39;</span><span class="p">),</span>
             <span class="n">RegisterConfig</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s2">&quot;_ADDRESS&quot;</span><span class="p">,</span> <span class="n">counters</span><span class="o">.</span><span class="n">new_field</span><span class="p">()),</span>
-            <span class="n">RegisterConfig</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s2">&quot;_LENGTH&quot;</span><span class="p">,</span> <span class="n">counters</span><span class="o">.</span><span class="n">new_field</span><span class="p">())])</span></div>
+            <span class="n">RegisterConfig</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s2">&quot;_LENGTH&quot;</span><span class="p">,</span> <span class="n">counters</span><span class="o">.</span><span class="n">new_field</span><span class="p">())])</span>
 
-<div class="viewcode-block" id="TableFieldConfig.config_line"><a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.TableFieldConfig.config_line">[docs]</a>    <span class="k">def</span> <span class="nf">config_line</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="TableFieldConfig.config_line">
+<a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.TableFieldConfig.config_line">[docs]</a>
+    <span class="k">def</span> <span class="nf">config_line</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="c1"># type: () -&gt; str</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Produce the line that should go in the config file after name&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="s2">&quot;table </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">words</span></div>
 
-<div class="viewcode-block" id="TableFieldConfig.parse_extra_config"><a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.TableFieldConfig.parse_extra_config">[docs]</a>    <span class="k">def</span> <span class="nf">parse_extra_config</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">extra_config</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">parse_extra_config</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">extra_config</span><span class="p">):</span>
         <span class="c1"># type: (Dict[str, Any]) -&gt; Iterable[str]</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">words</span> <span class="o">=</span> <span class="n">extra_config</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;words&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
         <span class="k">for</span> <span class="n">hibit</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">extra_config</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
@@ -614,38 +997,44 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">description</span> <span class="o">+=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">        </span><span class="si">%s</span><span class="s2"> </span><span class="si">%s</span><span class="s2"> &quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">pad</span><span class="p">(</span><span class="n">name</span><span class="p">),</span> <span class="n">desc</span><span class="p">)</span>
             <span class="c1"># Enums have more lines</span>
             <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">[</span><span class="mi">2</span><span class="p">:]:</span>
-                <span class="k">yield</span> <span class="s2">&quot;    </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">line</span></div></div>
+                <span class="k">yield</span> <span class="s2">&quot;    </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">line</span></div>
 
 
-<div class="viewcode-block" id="TableShortFieldConfig"><a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.TableShortFieldConfig">[docs]</a><span class="k">class</span> <span class="nc">TableShortFieldConfig</span><span class="p">(</span><span class="n">TableFieldConfig</span><span class="p">):</span>
+
+<div class="viewcode-block" id="TableShortFieldConfig">
+<a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.TableShortFieldConfig">[docs]</a>
+<span class="k">class</span> <span class="nc">TableShortFieldConfig</span><span class="p">(</span><span class="n">TableFieldConfig</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;These fields represent a table field&quot;&quot;&quot;</span>
     <span class="n">type_regex</span> <span class="o">=</span> <span class="s2">&quot;table short&quot;</span>
 
     <span class="c1">#: How many lines in the table?</span>
     <span class="n">lines</span> <span class="o">=</span> <span class="kc">None</span>
 
-<div class="viewcode-block" id="TableShortFieldConfig.parse_extra_config"><a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.TableShortFieldConfig.parse_extra_config">[docs]</a>    <span class="k">def</span> <span class="nf">parse_extra_config</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">extra_config</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">parse_extra_config</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">extra_config</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">lines</span> <span class="o">=</span> <span class="n">extra_config</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;lines&quot;</span><span class="p">)</span>
         <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">super</span><span class="p">(</span><span class="n">TableShortFieldConfig</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">parse_extra_config</span><span class="p">(</span>
                 <span class="n">extra_config</span><span class="p">):</span>
-            <span class="k">yield</span> <span class="n">x</span></div>
+            <span class="k">yield</span> <span class="n">x</span>
 
-<div class="viewcode-block" id="TableShortFieldConfig.register_addresses"><a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.TableShortFieldConfig.register_addresses">[docs]</a>    <span class="k">def</span> <span class="nf">register_addresses</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">counters</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">register_addresses</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">counters</span><span class="p">):</span>
         <span class="c1"># type: (FieldCounter) -&gt; None</span>
         <span class="n">length</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">words</span><span class="p">)</span> <span class="o">*</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">lines</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">registers</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span>
             <span class="n">RegisterConfig</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">prefix</span><span class="o">=</span><span class="s1">&#39;short </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">length</span><span class="p">),</span>
             <span class="n">RegisterConfig</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s2">&quot;_START&quot;</span><span class="p">,</span> <span class="n">counters</span><span class="o">.</span><span class="n">new_field</span><span class="p">()),</span>
             <span class="n">RegisterConfig</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s2">&quot;_DATA&quot;</span><span class="p">,</span> <span class="n">counters</span><span class="o">.</span><span class="n">new_field</span><span class="p">()),</span>
-            <span class="n">RegisterConfig</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s2">&quot;_LENGTH&quot;</span><span class="p">,</span> <span class="n">counters</span><span class="o">.</span><span class="n">new_field</span><span class="p">())])</span></div></div>
+            <span class="n">RegisterConfig</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s2">&quot;_LENGTH&quot;</span><span class="p">,</span> <span class="n">counters</span><span class="o">.</span><span class="n">new_field</span><span class="p">())])</span></div>
 
 
-<div class="viewcode-block" id="ParamFieldConfig"><a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.ParamFieldConfig">[docs]</a><span class="k">class</span> <span class="nc">ParamFieldConfig</span><span class="p">(</span><span class="n">FieldConfig</span><span class="p">):</span>
+
+<div class="viewcode-block" id="ParamFieldConfig">
+<a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.ParamFieldConfig">[docs]</a>
+<span class="k">class</span> <span class="nc">ParamFieldConfig</span><span class="p">(</span><span class="n">FieldConfig</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;These fields represent all other set/get parameters backed with a single</span>
 <span class="sd">    register&quot;&quot;&quot;</span>
     <span class="n">type_regex</span> <span class="o">=</span> <span class="s2">&quot;(param|read|write).*&quot;</span>
 
-<div class="viewcode-block" id="ParamFieldConfig.register_addresses"><a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.ParamFieldConfig.register_addresses">[docs]</a>    <span class="k">def</span> <span class="nf">register_addresses</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">counters</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">register_addresses</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">counters</span><span class="p">):</span>
         <span class="c1"># type: (FieldCounter) -&gt; None</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">extension</span><span class="p">:</span>
             <span class="n">address</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
@@ -653,61 +1042,79 @@
             <span class="n">address</span> <span class="o">=</span> <span class="n">counters</span><span class="o">.</span><span class="n">new_field</span><span class="p">()</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">registers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
-            <span class="n">RegisterConfig</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">address</span><span class="p">,</span> <span class="n">extension</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">extension</span><span class="p">,</span> <span class="n">write_extension</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">extension_write</span><span class="p">,</span> <span class="n">read_extension</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">extension_read</span><span class="p">))</span></div>
+            <span class="n">RegisterConfig</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">address</span><span class="p">,</span> <span class="n">extension</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">extension</span><span class="p">,</span> <span class="n">write_extension</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">extension_write</span><span class="p">,</span> <span class="n">read_extension</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">extension_read</span><span class="p">))</span>
 
-<div class="viewcode-block" id="ParamFieldConfig.config_line"><a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.ParamFieldConfig.config_line">[docs]</a>    <span class="k">def</span> <span class="nf">config_line</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="ParamFieldConfig.config_line">
+<a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.ParamFieldConfig.config_line">[docs]</a>
+    <span class="k">def</span> <span class="nf">config_line</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="c1"># type: () -&gt; str</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Produce the line that should go in the config file after name&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">initial_value</span><span class="p">:</span>
             <span class="k">return</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2"> = </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">initial_value</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">ParamFieldConfig</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">config_line</span><span class="p">()</span></div></div>
+            <span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">ParamFieldConfig</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">config_line</span><span class="p">()</span></div>
+</div>
 
-<div class="viewcode-block" id="CalcExtensionFieldConfig"><a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.CalcExtensionFieldConfig">[docs]</a><span class="k">class</span> <span class="nc">CalcExtensionFieldConfig</span><span class="p">(</span><span class="n">ParamFieldConfig</span><span class="p">):</span>
+
+<div class="viewcode-block" id="CalcExtensionFieldConfig">
+<a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.CalcExtensionFieldConfig">[docs]</a>
+<span class="k">class</span> <span class="nc">CalcExtensionFieldConfig</span><span class="p">(</span><span class="n">ParamFieldConfig</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;These fields act in the same way as write record from the VHDL generation </span>
 <span class="sd">    point of view, but do not have a config entry&quot;&quot;&quot;</span>
     <span class="n">type_regex</span> <span class="o">=</span> <span class="s2">&quot;(extension_write|extension_read)&quot;</span>
 
-<div class="viewcode-block" id="CalcExtensionFieldConfig.register_addresses"><a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.CalcExtensionFieldConfig.register_addresses">[docs]</a>    <span class="k">def</span> <span class="nf">register_addresses</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">counters</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">register_addresses</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">counters</span><span class="p">):</span>
         <span class="c1"># type: (FieldCounter) -&gt; None</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">CalcExtensionFieldConfig</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">register_addresses</span><span class="p">(</span><span class="n">counters</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">no_config</span> <span class="o">=</span> <span class="kc">True</span></div></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">no_config</span> <span class="o">=</span> <span class="kc">True</span></div>
 
-<div class="viewcode-block" id="EnumParamFieldConfig"><a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.EnumParamFieldConfig">[docs]</a><span class="k">class</span> <span class="nc">EnumParamFieldConfig</span><span class="p">(</span><span class="n">ParamFieldConfig</span><span class="p">):</span>
+
+<div class="viewcode-block" id="EnumParamFieldConfig">
+<a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.EnumParamFieldConfig">[docs]</a>
+<span class="k">class</span> <span class="nc">EnumParamFieldConfig</span><span class="p">(</span><span class="n">ParamFieldConfig</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;An enum field with its integer entries and string values&quot;&quot;&quot;</span>
     <span class="n">type_regex</span> <span class="o">=</span> <span class="s2">&quot;(param|read|write) enum&quot;</span>
 
-<div class="viewcode-block" id="EnumParamFieldConfig.parse_extra_config"><a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.EnumParamFieldConfig.parse_extra_config">[docs]</a>    <span class="k">def</span> <span class="nf">parse_extra_config</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">extra_config</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">parse_extra_config</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">extra_config</span><span class="p">):</span>
         <span class="c1"># type: (Dict[str, Any]) -&gt; Iterable[str]</span>
         <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">extra_config</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
             <span class="k">assert</span> <span class="n">k</span><span class="o">.</span><span class="n">isdigit</span><span class="p">(),</span> <span class="s2">&quot;Only expecting integer enum entries in </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span>
                 <span class="n">extra_config</span><span class="p">,)</span>
-            <span class="k">yield</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2"> </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">pad</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">spaces</span><span class="o">=</span><span class="mi">3</span><span class="p">),</span> <span class="n">v</span><span class="p">)</span></div></div>
+            <span class="k">yield</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2"> </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">pad</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">spaces</span><span class="o">=</span><span class="mi">3</span><span class="p">),</span> <span class="n">v</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="UintParamFieldConfig"><a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.UintParamFieldConfig">[docs]</a><span class="k">class</span> <span class="nc">UintParamFieldConfig</span><span class="p">(</span><span class="n">ParamFieldConfig</span><span class="p">):</span>
+
+<div class="viewcode-block" id="UintParamFieldConfig">
+<a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.UintParamFieldConfig">[docs]</a>
+<span class="k">class</span> <span class="nc">UintParamFieldConfig</span><span class="p">(</span><span class="n">ParamFieldConfig</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;A special These fields represent all other set/get parameters backed with</span>
 <span class="sd">     a single register&quot;&quot;&quot;</span>
     <span class="n">type_regex</span> <span class="o">=</span> <span class="s2">&quot;(param|read|write) uint&quot;</span>
 
     <span class="n">max_value</span> <span class="o">=</span> <span class="kc">None</span>
 
-<div class="viewcode-block" id="UintParamFieldConfig.parse_extra_config"><a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.UintParamFieldConfig.parse_extra_config">[docs]</a>    <span class="k">def</span> <span class="nf">parse_extra_config</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">extra_config</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">parse_extra_config</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">extra_config</span><span class="p">):</span>
         <span class="c1"># type: (Dict[str, Any]) -&gt; iter[str]</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">max_value</span> <span class="o">=</span> <span class="n">extra_config</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;max_value&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
         <span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">UintParamFieldConfig</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">parse_extra_config</span><span class="p">(</span>
-            <span class="n">extra_config</span><span class="p">)</span></div>
+            <span class="n">extra_config</span><span class="p">)</span>
 
-<div class="viewcode-block" id="UintParamFieldConfig.config_line"><a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.UintParamFieldConfig.config_line">[docs]</a>    <span class="k">def</span> <span class="nf">config_line</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="UintParamFieldConfig.config_line">
+<a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.UintParamFieldConfig.config_line">[docs]</a>
+    <span class="k">def</span> <span class="nf">config_line</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="c1"># type: () -&gt; str</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Produce the line that should go in the config file after name&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">max_value</span><span class="p">:</span>
             <span class="k">return</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2"> </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">max_value</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">UintParamFieldConfig</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">config_line</span><span class="p">()</span></div></div>
+            <span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">UintParamFieldConfig</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">config_line</span><span class="p">()</span></div>
+</div>
 
 
-<div class="viewcode-block" id="ScalarParamFieldConfig"><a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.ScalarParamFieldConfig">[docs]</a><span class="k">class</span> <span class="nc">ScalarParamFieldConfig</span><span class="p">(</span><span class="n">ParamFieldConfig</span><span class="p">):</span>
+
+<div class="viewcode-block" id="ScalarParamFieldConfig">
+<a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.ScalarParamFieldConfig">[docs]</a>
+<span class="k">class</span> <span class="nc">ScalarParamFieldConfig</span><span class="p">(</span><span class="n">ParamFieldConfig</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot; A special Read config for reading the different config of a</span>
 <span class="sd">    read scalar&quot;&quot;&quot;</span>
     <span class="n">type_regex</span> <span class="o">=</span> <span class="s2">&quot;(param|read|write) scalar&quot;</span>
@@ -716,15 +1123,17 @@
     <span class="n">offset</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="n">units</span> <span class="o">=</span> <span class="kc">None</span>
 
-<div class="viewcode-block" id="ScalarParamFieldConfig.parse_extra_config"><a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.ScalarParamFieldConfig.parse_extra_config">[docs]</a>    <span class="k">def</span> <span class="nf">parse_extra_config</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">extra_config</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">parse_extra_config</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">extra_config</span><span class="p">):</span>
         <span class="c1"># type: (Dict[str, Any]) -&gt; iter[str]</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">scale</span> <span class="o">=</span> <span class="n">extra_config</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;scale&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">offset</span> <span class="o">=</span> <span class="n">extra_config</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;offset&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">units</span> <span class="o">=</span> <span class="n">extra_config</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;units&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
         <span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">ScalarParamFieldConfig</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">parse_extra_config</span><span class="p">(</span>
-            <span class="n">extra_config</span><span class="p">)</span></div>
+            <span class="n">extra_config</span><span class="p">)</span>
 
-<div class="viewcode-block" id="ScalarParamFieldConfig.config_line"><a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.ScalarParamFieldConfig.config_line">[docs]</a>    <span class="k">def</span> <span class="nf">config_line</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="ScalarParamFieldConfig.config_line">
+<a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.ScalarParamFieldConfig.config_line">[docs]</a>
+    <span class="k">def</span> <span class="nf">config_line</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="c1"># type: () -&gt; str</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Produce the line that should go in the config file after name&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">units</span><span class="p">:</span>
@@ -732,43 +1141,56 @@
                 <span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">scale</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">offset</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">units</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="c1"># In case no units are declared, this removes trailing whitespace</span>
-            <span class="k">return</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2"> </span><span class="si">%s</span><span class="s2"> </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">scale</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">offset</span><span class="p">)</span></div></div>
+            <span class="k">return</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2"> </span><span class="si">%s</span><span class="s2"> </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">scale</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">offset</span><span class="p">)</span></div>
+</div>
 
 
-<div class="viewcode-block" id="BitMuxFieldConfig"><a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.BitMuxFieldConfig">[docs]</a><span class="k">class</span> <span class="nc">BitMuxFieldConfig</span><span class="p">(</span><span class="n">FieldConfig</span><span class="p">):</span>
+
+<div class="viewcode-block" id="BitMuxFieldConfig">
+<a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.BitMuxFieldConfig">[docs]</a>
+<span class="k">class</span> <span class="nc">BitMuxFieldConfig</span><span class="p">(</span><span class="n">FieldConfig</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;These fields represent a single entry on the pos bus&quot;&quot;&quot;</span>
     <span class="n">type_regex</span> <span class="o">=</span> <span class="s2">&quot;bit_mux&quot;</span>
 
-<div class="viewcode-block" id="BitMuxFieldConfig.register_addresses"><a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.BitMuxFieldConfig.register_addresses">[docs]</a>    <span class="k">def</span> <span class="nf">register_addresses</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">counters</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">register_addresses</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">counters</span><span class="p">):</span>
         <span class="c1"># type: (FieldCounter) -&gt; None</span>
         <span class="c1"># One register for the mux value, one for a delay line</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">registers</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span>
             <span class="n">RegisterConfig</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">counters</span><span class="o">.</span><span class="n">new_field</span><span class="p">()),</span>
-            <span class="n">RegisterConfig</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s2">&quot;_DLY&quot;</span><span class="p">,</span> <span class="n">counters</span><span class="o">.</span><span class="n">new_field</span><span class="p">())])</span></div></div>
+            <span class="n">RegisterConfig</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s2">&quot;_DLY&quot;</span><span class="p">,</span> <span class="n">counters</span><span class="o">.</span><span class="n">new_field</span><span class="p">())])</span></div>
 
 
-<div class="viewcode-block" id="PosMuxFieldConfig"><a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.PosMuxFieldConfig">[docs]</a><span class="k">class</span> <span class="nc">PosMuxFieldConfig</span><span class="p">(</span><span class="n">FieldConfig</span><span class="p">):</span>
+
+<div class="viewcode-block" id="PosMuxFieldConfig">
+<a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.PosMuxFieldConfig">[docs]</a>
+<span class="k">class</span> <span class="nc">PosMuxFieldConfig</span><span class="p">(</span><span class="n">FieldConfig</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;The fields represent a position input multiplexer selection&quot;&quot;&quot;</span>
     <span class="n">type_regex</span> <span class="o">=</span> <span class="s2">&quot;pos_mux&quot;</span>
 
-<div class="viewcode-block" id="PosMuxFieldConfig.register_addresses"><a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.PosMuxFieldConfig.register_addresses">[docs]</a>    <span class="k">def</span> <span class="nf">register_addresses</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">counters</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">register_addresses</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">counters</span><span class="p">):</span>
         <span class="c1"># type: (FieldCounter) -&gt; None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">registers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
-            <span class="n">RegisterConfig</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">counters</span><span class="o">.</span><span class="n">new_field</span><span class="p">()))</span></div></div>
+            <span class="n">RegisterConfig</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">counters</span><span class="o">.</span><span class="n">new_field</span><span class="p">()))</span></div>
 
 
-<div class="viewcode-block" id="TimeFieldConfig"><a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.TimeFieldConfig">[docs]</a><span class="k">class</span> <span class="nc">TimeFieldConfig</span><span class="p">(</span><span class="n">FieldConfig</span><span class="p">):</span>
+
+<div class="viewcode-block" id="TimeFieldConfig">
+<a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.TimeFieldConfig">[docs]</a>
+<span class="k">class</span> <span class="nc">TimeFieldConfig</span><span class="p">(</span><span class="n">FieldConfig</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;The fields represent a configurable timer parameter &quot;&quot;&quot;</span>
     <span class="n">type_regex</span> <span class="o">=</span> <span class="s2">&quot;time&quot;</span>
 
-<div class="viewcode-block" id="TimeFieldConfig.register_addresses"><a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.TimeFieldConfig.register_addresses">[docs]</a>    <span class="k">def</span> <span class="nf">register_addresses</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">counters</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">register_addresses</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">counters</span><span class="p">):</span>
         <span class="c1"># type: (FieldCounter) -&gt; None</span>
         <span class="c1"># One register for the _L value and one for the _H value</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">registers</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span>
             <span class="n">RegisterConfig</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s2">&quot;_L&quot;</span><span class="p">,</span> <span class="n">counters</span><span class="o">.</span><span class="n">new_field</span><span class="p">()),</span>
-            <span class="n">RegisterConfig</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s2">&quot;_H&quot;</span><span class="p">,</span> <span class="n">counters</span><span class="o">.</span><span class="n">new_field</span><span class="p">())])</span></div></div>
+            <span class="n">RegisterConfig</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s2">&quot;_H&quot;</span><span class="p">,</span> <span class="n">counters</span><span class="o">.</span><span class="n">new_field</span><span class="p">())])</span></div>
 
-<div class="viewcode-block" id="TargetSiteConfig"><a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.TargetSiteConfig">[docs]</a><span class="k">class</span> <span class="nc">TargetSiteConfig</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+<div class="viewcode-block" id="TargetSiteConfig">
+<a class="viewcode-back" href="../../../reference/framework.html#common.python.configs.TargetSiteConfig">[docs]</a>
+<span class="k">class</span> <span class="nc">TargetSiteConfig</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;The config for the target sites&quot;&quot;&quot;</span>
     <span class="c1">#: Regex for matching a type string to this field</span>
     <span class="n">type_regex</span> <span class="o">=</span> <span class="kc">None</span>
@@ -792,30 +1214,57 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">dirs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">option</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">interfaces</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s2">&quot;_&quot;</span> <span class="o">+</span> <span class="n">option</span><span class="p">)</span></div>
 
+
 </pre></div>
 
-           </div>
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"></div>
+              
+            
           </div>
-          <footer>
-
-  <hr/>
-
-  <div role="contentinfo">
-    <p>&#169; Copyright 2015, Diamond Light Source.</p>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
   </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
-   
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.15.2.
+</p></div>
+      
+    </div>
+  
+</div>
 
-</footer>
-        </div>
-      </div>
-    </section>
-  </div>
-  <script>
-      jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
-      });
-  </script> 
-
-</body>
+  </footer>
+  </body>
 </html>
