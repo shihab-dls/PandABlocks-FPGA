@@ -10,20 +10,20 @@ jobs:
         if: github.ref_type == 'tag'
         run: sleep 60
 
-      - name: Checkout Source
+      - name: Checkout
         uses: actions/checkout@v4
         with:
-          # require history to get back to last tag for version number of branches
+          # Need this to get version number from last tag
           fetch-depth: 0
 
       - name: Install system packages
         run: sudo apt-get install graphviz
 
       - name: Install python packages
-        uses: ./github/actions/install_requirements
+        uses: ./.github/actions/install_requirements
 
       - name: Build docs
-        run: cd PandABlocks-fpga && tox -e docs
+        run: tox -e docs
 
       - name: Remove environment.pickle
         run: rm build/html/.doctrees/environment.pickle
