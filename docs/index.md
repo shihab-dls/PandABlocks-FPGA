@@ -2,7 +2,7 @@
 html_theme.sidebar_secondary.remove: true
 ---
 
-```{include} ../README.md
+```{include} ../README.rst
 :end-before: <!-- README only content
 ```
 
@@ -10,7 +10,7 @@ html_theme.sidebar_secondary.remove: true
 How the documentation is structured
 -----------------------------------
 
-Documentation is split into [three categories](https://diataxis.fr), also accessible from links in the top bar.
+Documentation is split into three categories, also accessible from links in the top bar.
 
 <!-- https://sphinx-design.readthedocs.io/en/latest/grids.html -->
 
