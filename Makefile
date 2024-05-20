@@ -175,7 +175,7 @@ BUILD_RST_FILES = $(wildcard docs/build/*.rst)
 SRC_RST_FILES = $(filter-out $(BUILD_RST_FILES),$(ALL_RST_FILES))
 
 $(DOCS_HTML_DIR): docs/conf.py $(SRC_RST_FILES)
-	$(SPHINX_BUILD) -b html docs $@
+	tox -e docs
 
 docs: $(DOCS_HTML_DIR)
 .PHONY: docs
