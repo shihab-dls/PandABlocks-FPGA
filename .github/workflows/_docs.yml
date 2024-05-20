@@ -10,10 +10,11 @@ jobs:
         if: github.ref_type == 'tag'
         run: sleep 60
 
-      - name: Checkout
-        uses: actions/checkout@v4
+      - name: Checkout Source
+        uses: actions/checkout@v2
         with:
-          # Need this to get version number from last tag
+          path: PandABlocks-fpga
+          # require history to get back to last tag for version number of branches
           fetch-depth: 0
 
       - name: Install system packages
@@ -23,7 +24,7 @@ jobs:
         uses: ./.github/actions/install_requirements
 
       - name: Build docs
-        run: tox -e docs
+        run: cd PandABlocks-fpga && tox -e docs
 
       - name: Remove environment.pickle
         run: rm build/html/.doctrees/environment.pickle

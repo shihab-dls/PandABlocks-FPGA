@@ -6,7 +6,6 @@
 
 import os
 import sys
-from common import python
 from pathlib import Path
 from subprocess import check_output
 from pkg_resources import require
