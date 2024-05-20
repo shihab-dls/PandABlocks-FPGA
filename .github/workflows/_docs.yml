@@ -21,7 +21,7 @@ jobs:
         run: sudo apt-get install graphviz
 
       - name: Install python packages
-        uses: ./.github/actions/install_requirements
+        uses: ./PandABlocks-fpga/github/actions/install_requirements
 
       - name: Build docs
         run: cd PandABlocks-fpga && tox -e docs
