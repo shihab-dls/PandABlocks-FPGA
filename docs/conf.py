@@ -6,7 +6,7 @@
 
 import os
 import sys
-import common
+from common import python.sphinx_timing_directive
 from pathlib import Path
 from subprocess import check_output
 from pkg_resources import require
