@@ -10,7 +10,6 @@ from pathlib import Path
 from subprocess import check_output
 from pkg_resources import require
 import shutil
-from urllib.request import urlretrieve
 
 import requests
 
@@ -20,11 +19,6 @@ require("sphinx_rtd_theme")
 require("matplotlib")
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 sys.path.insert(0, ROOT)
-
-urlretrieve (
-    "https://raw.githubusercontent.com/shihab-dls/PandABlocks-FPGA/master/docs/index.md",
-    "reference/check.md"
-)
 
 # Copy across the module rst files into the build dir
 def setup(app):
@@ -169,8 +163,8 @@ copybutton_prompt_is_regexp = True
 # a list of builtin themes.
 #
 html_theme = "pydata_sphinx_theme"
-github_repo = "PandABlocks-FPGA"
-github_user = "PandABlocks"
+github_repo = project
+github_user = "shihab-dls"
 switcher_json = f"https://{github_user}.github.io/{github_repo}/switcher.json"
 switcher_exists = requests.get(switcher_json).ok
 if not switcher_exists:
