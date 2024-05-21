@@ -21,10 +21,10 @@ jobs:
       - run: cd repos/PandABlocks-fpga
 
       - name: Install system packages
-        run: sudo yum install graphviz
+        run: sudo yum install tox
 
-      - name: Install python packages
-        uses: ./repos/PandABlocks-fpga/.github/actions/install_requirements
+        #      - name: Install python packages
+        #        uses: ./repos/PandABlocks-fpga/.github/actions/install_requirements
 
       - name: Build docs
         run: mkdir build && tox -e docs
