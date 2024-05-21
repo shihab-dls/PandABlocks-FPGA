@@ -25,7 +25,7 @@ Documentation is split into three categories, also accessible from links in the 
 how-to
 ```
 +++
-Practical step-by-step guides for the more experienced user.
+Extending the functionality of, and generating new blocks for, a PandABlocks device.
 :::
 
 :::{grid-item-card} {material-regular}`menu_book;2em`
@@ -34,7 +34,7 @@ Practical step-by-step guides for the more experienced user.
 reference
 ```
 +++
-Technical reference material.
+General reference documentation, and working on the core autogeneration framework.
 :::
 
 ::::
