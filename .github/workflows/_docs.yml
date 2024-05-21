@@ -4,7 +4,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
+    container:
+      image: shihabdls/pandablocks-container-extension:v3.2
     steps:
       - name: Avoid git conflicts when tag and branch pushed at same time
         if: github.ref_type == 'tag'
@@ -13,8 +14,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
+          path: PandABlocks-fpga
           # Need this to get version number from last tag
           fetch-depth: 0
+      
+      - run: cd PandABlocks-fpga
 
       - name: Install system packages
         run: sudo apt-get install graphviz
