@@ -28,6 +28,8 @@ jobs:
         run: |
           mkdir build
           cd repos/PandABlocks-fpga
+          ls
+          cat pyproject.toml
           tox -e docs
 
       - name: Upload built docs artifact
