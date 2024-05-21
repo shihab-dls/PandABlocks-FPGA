@@ -24,7 +24,7 @@ jobs:
         run: sudo yum install graphviz
 
       - name: Install python packages
-        uses: repos/PandABlocks-fpga/.github/actions/install_requirements
+        uses: ./repos/PandABlocks-fpga/.github/actions/install_requirements
 
       - name: Build docs
         run: mkdir build && tox -e docs
